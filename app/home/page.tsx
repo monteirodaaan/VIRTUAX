@@ -397,23 +397,23 @@ function HomePageContent() {
               </p>
             </div>
 
-            {/* Metrics cards - Updated labels v2 */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mt-8 sm:mt-10 md:mt-12 px-4 sm:px-0" suppressHydrationWarning key="metrics-updated">
-              <div className="text-center p-4 sm:p-5 md:p-6 bg-brand/5 rounded-xl border border-brand/20">
+            {/* Metrics cards section - cache bust v3 */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mt-8 sm:mt-10 md:mt-12 px-4 sm:px-0">
+              <div className="text-center p-4 sm:p-5 md:p-6 bg-brand/5 rounded-xl border border-brand/20" data-metric="localidades">
                 <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand mb-1 sm:mb-2">+5</div>
-                <div className="text-xs sm:text-sm text-gray-600 font-semibold" suppressHydrationWarning>Localidades</div>
+                <div className="text-xs sm:text-sm text-gray-600 font-semibold">Localidades</div>
               </div>
-              <div className="text-center p-4 sm:p-5 md:p-6 bg-[#f86c05]/5 rounded-xl border border-[#f86c05]/20">
+              <div className="text-center p-4 sm:p-5 md:p-6 bg-[#f86c05]/5 rounded-xl border border-[#f86c05]/20" data-metric="excelencia">
                 <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#f86c05] mb-1 sm:mb-2">97.5%</div>
-                <div className="text-xs sm:text-sm text-gray-600 font-semibold" suppressHydrationWarning>Excelência</div>
+                <div className="text-xs sm:text-sm text-gray-600 font-semibold">Excelência</div>
               </div>
-              <div className="text-center p-4 sm:p-5 md:p-6 bg-[#f86c05]/5 rounded-xl border border-[#f86c05]/20">
+              <div className="text-center p-4 sm:p-5 md:p-6 bg-[#f86c05]/5 rounded-xl border border-[#f86c05]/20" data-metric="disponibilidade">
                 <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#f86c05] mb-1 sm:mb-2">24/7</div>
-                <div className="text-xs sm:text-sm text-gray-600 font-semibold" suppressHydrationWarning>Disponibilidade</div>
+                <div className="text-xs sm:text-sm text-gray-600 font-semibold">Disponibilidade</div>
               </div>
-              <div className="text-center p-4 sm:p-5 md:p-6 bg-[#f86c05]/5 rounded-xl border border-[#f86c05]/20">
+              <div className="text-center p-4 sm:p-5 md:p-6 bg-[#f86c05]/5 rounded-xl border border-[#f86c05]/20" data-metric="clientes">
                 <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#f86c05] mb-1 sm:mb-2">+9.000</div>
-                <div className="text-xs sm:text-sm text-gray-600 font-semibold" suppressHydrationWarning>Clientes</div>
+                <div className="text-xs sm:text-sm text-gray-600 font-semibold">Clientes</div>
               </div>
             </div>
           </div>
