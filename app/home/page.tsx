@@ -118,7 +118,7 @@ function HomePageContent() {
     },
     {
       title: "Velocidade que Você Merece",
-      subtitle: "Planos a partir de 1 GB com instalação gratuita",
+      subtitle: "Planos a partir de 1GB com instalação gratuita",
       bg: "from-orange-500 to-amber-500",
     },
     {
