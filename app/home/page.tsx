@@ -83,7 +83,7 @@ const plans = [
   },
   {
     id: "ultra",
-    name: "1000 MB",
+    name: "1GB",
     speed: "1000 Mbps",
     features: [
       "Canais de TV",
