@@ -83,7 +83,7 @@ const plans = [
   },
   {
     id: "ultra",
-    name: "1000 MB",
+    name: "1GB",
     speed: "1000 Mbps",
     features: [
       "Canais de TV",
@@ -118,7 +118,7 @@ function HomePageContent() {
     },
     {
       title: "Velocidade que Você Merece",
-      subtitle: "Planos a partir de 100 MB com instalação gratuita",
+      subtitle: "Planos a partir de 1 GB com instalação gratuita",
       bg: "from-orange-500 to-amber-500",
     },
     {
@@ -234,25 +234,22 @@ function HomePageContent() {
               Contato
             </button>
             
-            {/* Seletor de cidade na navbar */}
-            <div className="flex items-center gap-2">
-              <Select value={selectedCity} onValueChange={setSelectedCity}>
-                <SelectTrigger className="h-9 text-xs lg:text-sm font-semibold bg-background border border-gray-300 rounded-md w-[1]" style={{ color: "var(--brand)" }}>
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  {cities.map((city) => (
-                    <SelectItem
-                      key={city.value}
-                      value={city.value}
-                      className="text-sm"
-                    >
-                      {city.label}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
+            <Select value={selectedCity} onValueChange={setSelectedCity}>
+              <SelectTrigger className="h-9 text-xs lg:text-sm font-semibold bg-white text-brand border-2 border-white rounded-md !w-auto min-w-fit px-3">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                {cities.map((city) => (
+                  <SelectItem
+                    key={city.value}
+                    value={city.value}
+                    className="text-sm"
+                  >
+                    {city.label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
             
             <a
               href="http://central.virtuax.com.br/"
@@ -417,7 +414,7 @@ function HomePageContent() {
               </div>
               <div className="text-center p-4 sm:p-5 md:p-6 bg-[#f86c05]/5 rounded-xl border border-[#f86c05]/20">
                 <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#f86c05] mb-1 sm:mb-2">97.5%</div>
-                <div className="text-xs sm:text-sm text-gray-600 font-semibold">Uptime (Tempo ON)</div>
+                <div className="text-xs sm:text-sm text-gray-600 font-semibold">Satisfação</div>
               </div>
               <div className="text-center p-4 sm:p-5 md:p-6 bg-[#f86c05]/5 rounded-xl border border-[#f86c05]/20">
                 <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#f86c05] mb-1 sm:mb-2">24/7</div>
