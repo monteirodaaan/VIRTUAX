@@ -370,7 +370,7 @@ function HomePageContent() {
                   <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold mb-2 sm:mb-3 md:mb-4">
                     {banner.title}
                   </h2>
-                  <p className="text-sm sm:text-base md:text-lg lg:text-xl opacity-90">{banner.subtitle}</p>
+                  <p className="text-sm sm:text-base md:text-lg lg:text-xl opacity-90" suppressHydrationWarning>{banner.subtitle}</p>
                 </div>
               </div>
             </div>
