@@ -110,6 +110,7 @@ function HomePageContent() {
   const [planType, setPlanType] = useState<"residencial" | "empresarial">("residencial")
   const [currentBannerIndex, setCurrentBannerIndex] = useState(0)
 
+  // Banner carousel for hero section
   const banners = [
     {
       title: "Internet de Alta Velocidade",
