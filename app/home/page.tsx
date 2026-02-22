@@ -171,7 +171,7 @@ function HomePageContent() {
         <header className="fixed top-0 w-full border-gray-200 z-50 text-brand-foreground bg-brand py-3 sm:py-4 border-b-0" role="banner">
         <div className="w-full px-4 sm:px-6 md:px-8 h-14 sm:h-16 flex items-center justify-between">
           {/* Left side - City selector */}
-          <div className="hidden md:flex items-center flex-1">
+          <div className="hidden md:flex items-center">
             <Select value={selectedCity} onValueChange={setSelectedCity}>
               <SelectTrigger className="h-9 text-xs lg:text-sm font-semibold bg-background border border-gray-300 rounded-md !w-auto px-2 text-brand">
                 <SelectValue />
