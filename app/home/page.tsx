@@ -234,22 +234,24 @@ function HomePageContent() {
               Contato
             </button>
             
-            <Select value={selectedCity} onValueChange={setSelectedCity}>
-              <SelectTrigger className="h-9 text-xs lg:text-sm font-semibold bg-white text-brand border-2 border-white rounded-md !w-auto min-w-fit px-3">
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent>
-                {cities.map((city) => (
-                  <SelectItem
-                    key={city.value}
-                    value={city.value}
-                    className="text-sm"
-                  >
-                    {city.label}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+            <div className="flex items-center gap-2">
+              <Select value={selectedCity} onValueChange={setSelectedCity}>
+                <SelectTrigger className="h-9 text-xs lg:text-sm font-semibold bg-white text-brand border-2 border-white rounded-md !w-auto min-w-fit px-3">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  {cities.map((city) => (
+                    <SelectItem
+                      key={city.value}
+                      value={city.value}
+                      className="text-sm"
+                    >
+                      {city.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
             
             <a
               href="http://central.virtuax.com.br/"
