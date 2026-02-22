@@ -236,7 +236,7 @@ function HomePageContent() {
             
             <div className="flex items-center gap-2">
               <Select value={selectedCity} onValueChange={setSelectedCity}>
-                <SelectTrigger className="h-9 text-xs lg:text-sm font-semibold bg-white text-brand border-2 border-white rounded-md !w-auto min-w-fit px-3">
+                <SelectTrigger className="h-9 text-xs lg:text-sm font-semibold bg-white border-2 border-white rounded-md !w-auto min-w-fit px-3" style={{ color: "var(--brand)" }}>
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
