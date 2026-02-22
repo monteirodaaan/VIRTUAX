@@ -169,9 +169,9 @@ function HomePageContent() {
   return (
       <div className="min-h-screen relative bg-background">
         <header className="fixed top-0 w-full border-gray-200 z-50 text-brand-foreground bg-brand py-3 sm:py-4 border-b-0" role="banner">
-        <div className="container mx-auto px-4 sm:px-6 md:px-8 h-14 sm:h-16 flex items-center justify-center relative">
+        <div className="w-full px-4 sm:px-6 md:px-8 h-14 sm:h-16 flex items-center justify-between">
           {/* Left side - City selector */}
-          <div className="absolute left-4 sm:left-6 md:left-8 hidden md:flex items-center">
+          <div className="hidden md:flex items-center flex-1">
             <Select value={selectedCity} onValueChange={setSelectedCity}>
               <SelectTrigger className="h-9 text-xs lg:text-sm font-semibold bg-background border border-gray-300 rounded-md !w-auto px-2 text-brand">
                 <SelectValue />
@@ -191,17 +191,19 @@ function HomePageContent() {
           </div>
 
           {/* Center - Logo */}
-          <Image
-            src="/images/logo.webp"
-            alt="VirtuaX Telecom - Provedor de Internet Fibra Óptica na Paraíba"
-            width={120}
-            height={30}
-            className="h-6 sm:h-7 md:h-8 w-auto"
-            priority
-          />
+          <div className="flex-1 flex justify-center">
+            <Image
+              src="/images/logo.webp"
+              alt="VirtuaX Telecom - Provedor de Internet Fibra Óptica na Paraíba"
+              width={120}
+              height={30}
+              className="h-6 sm:h-7 md:h-8 w-auto"
+              priority
+            />
+          </div>
 
           {/* Right side - Navigation */}
-          <nav className="absolute right-4 sm:right-6 md:right-8 hidden md:flex items-center gap-4 lg:gap-6 text-background" aria-label="Navegação principal">
+          <nav className="hidden md:flex items-center gap-4 lg:gap-6 text-background flex-1 justify-end" aria-label="Navegação principal">
             <button
               onClick={() => scrollToSection("sobre")}
               className="text-xs lg:text-sm font-semibold hover:text-gray-100 transition-colors text-card"
