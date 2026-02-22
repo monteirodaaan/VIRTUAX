@@ -169,7 +169,7 @@ function HomePageContent() {
   return (
       <div className="min-h-screen relative bg-background">
         <header className="fixed top-0 w-full border-gray-200 z-50 text-brand-foreground bg-brand py-3 sm:py-4 border-b-0" role="banner">
-        <div className="w-full px-8 sm:px-12 md:px-16 lg:px-20 h-14 sm:h-16 flex items-center justify-between relative">
+        <div className="container mx-auto px-8 sm:px-12 md:px-16 lg:px-20 h-14 sm:h-16 flex items-center justify-between relative">
           {/* Left side - City selector */}
           <div className="hidden md:flex items-center">
             <Select value={selectedCity} onValueChange={setSelectedCity}>
