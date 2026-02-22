@@ -237,7 +237,7 @@ function HomePageContent() {
             {/* Seletor de cidade na navbar */}
             <div className="flex items-center gap-2">
               <Select value={selectedCity} onValueChange={setSelectedCity}>
-                <SelectTrigger className="h-9 text-xs lg:text-sm font-semibold bg-background border border-gray-300 rounded-md w-[1]" style={{ color: "var(--brand)" }}>
+                <SelectTrigger className="h-9 text-xs lg:text-sm font-semibold bg-background border border-gray-300 rounded-md w-auto px-2" style={{ color: "var(--brand)" }}>
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
