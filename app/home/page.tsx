@@ -366,8 +366,8 @@ function HomePageContent() {
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-black/40" />
                 {/* Conteúdo */}
-                <div className="container mx-auto px-4 sm:px-6 md:px-8 text-center text-white relative z-10">
-                  <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold mb-2 sm:mb-3 md:mb-4">
+                <div className="container mx-auto px-4 sm:px-6 md:px-8 text-center text-white relative z-10" suppressHydrationWarning>
+                  <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold mb-2 sm:mb-3 md:mb-4" suppressHydrationWarning>
                     {banner.title}
                   </h2>
                   <p className="text-sm sm:text-base md:text-lg lg:text-xl opacity-90" suppressHydrationWarning>{banner.subtitle}</p>
