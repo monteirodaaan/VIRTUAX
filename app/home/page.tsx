@@ -99,7 +99,7 @@ const plans = [
 function HomePageContent() {
   const searchParams = useSearchParams()
   const [selectedCity, setSelectedCity] = useState("areia")
-  
+
   // Sincronizar com URL quando o componente monta
   useEffect(() => {
     const cityFromUrl = searchParams.get("city") || "areia"
@@ -136,40 +136,9 @@ function HomePageContent() {
     return () => clearInterval(interval)
   }, [banners.length])
 
-  // Auto-play para o carousel de planos - ciclo entre 0 e 1 apenas (mostra 3 cards sempre)
-  useEffect(() => {
-    if (planType === "residencial") {
-      const interval = setInterval(() => {
-        setCurrentPlanIndex((prev) => {
-          // Com 4 planos mostrando 3 por vez, só podemos ir de 0 a 1
-          // 0 = mostra planos 0,1,2 (100MB, 300MB, 600MB)
-          // 1 = mostra planos 1,2,3 (300MB, 600MB, 1GB)
-          return prev === 0 ? 1 : 0
-        })
-      }, 4000)
-      return () => clearInterval(interval)
-    }
-  }, [planType])
-
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id)
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-      setMobileMenuOpen(false)
-    }
-  }
-
-  const nextPlan = () => {
-    setCurrentPlanIndex((prev) => (prev + 1) % plans.length)
-  }
-
-  const prevPlan = () => {
-    setCurrentPlanIndex((prev) => (prev - 1 + plans.length) % plans.length)
-  }
-
   return (
-      <div className="min-h-screen relative bg-background">
-        <header className="fixed top-0 w-full border-gray-200 z-50 text-brand-foreground bg-brand py-3 sm:py-4 border-b-0" role="banner">
+    <div className="min-h-screen relative bg-background">
+      <header className="fixed top-0 w-full border-gray-200 z-50 text-brand-foreground bg-brand py-3 sm:py-4 border-b-0" role="banner">
         <div className="container mx-auto px-4 sm:px-6 md:px-8 h-14 sm:h-16 flex items-center justify-between">
           <Image
             src="/images/logo.webp"
@@ -234,7 +203,7 @@ function HomePageContent() {
             >
               Contato
             </button>
-            
+
             <div className="flex items-center gap-2">
               <Select value={selectedCity} onValueChange={setSelectedCity}>
                 <SelectTrigger className="h-9 text-xs lg:text-sm font-semibold bg-white border-2 border-white rounded-md !w-auto min-w-fit px-3" style={{ color: "var(--brand)" }}>
@@ -253,7 +222,7 @@ function HomePageContent() {
                 </SelectContent>
               </Select>
             </div>
-            
+
             <a
               href="http://central.virtuax.com.br/"
               target="_blank"
@@ -303,7 +272,7 @@ function HomePageContent() {
               >
                 Contato
               </button>
-              
+
               <div className="py-2">
                 <Select value={selectedCity} onValueChange={setSelectedCity}>
                   <SelectTrigger className="h-9 text-sm font-semibold bg-white text-brand border border-gray-300 rounded-md w-full">
@@ -322,7 +291,7 @@ function HomePageContent() {
                   </SelectContent>
                 </Select>
               </div>
-              
+
               <a
                 href="http://central.virtuax.com.br/"
                 target="_blank"
@@ -344,9 +313,8 @@ function HomePageContent() {
           {banners.map((banner, index) => (
             <div
               key={index}
-              className={`absolute inset-0 transition-all duration-700 ease-in-out ${
-                index === currentBannerIndex ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full"
-              }`}
+              className={`absolute inset-0 transition-all duration-700 ease-in-out ${index === currentBannerIndex ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full"
+                }`}
             >
               <div className="w-full h-full flex items-center justify-center relative">
                 {/* Background Mobile */}
@@ -382,9 +350,8 @@ function HomePageContent() {
             <button
               key={index}
               onClick={() => setCurrentBannerIndex(index)}
-              className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all ${
-                index === currentBannerIndex ? "bg-white w-6 sm:w-8" : "bg-white/50"
-              }`}
+              className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all ${index === currentBannerIndex ? "bg-white w-6 sm:w-8" : "bg-white/50"
+                }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
@@ -543,22 +510,20 @@ function HomePageContent() {
             <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-6 sm:mb-8 px-4 sm:px-0">
               <button
                 onClick={() => setPlanType("residencial")}
-                className={`flex items-center justify-center gap-2 px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold transition-all text-sm sm:text-base ${
-                  planType === "residencial"
+                className={`flex items-center justify-center gap-2 px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold transition-all text-sm sm:text-base ${planType === "residencial"
                     ? "bg-[#f86c05] text-white"
                     : "bg-white text-gray-700 border border-gray-300"
-                }`}
+                  }`}
               >
                 <Home className="h-4 w-4 sm:h-5 sm:w-5" />
                 Residencial
               </button>
               <button
                 onClick={() => setPlanType("empresarial")}
-                className={`flex items-center justify-center gap-2 px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold transition-all text-sm sm:text-base ${
-                  planType === "empresarial"
+                className={`flex items-center justify-center gap-2 px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold transition-all text-sm sm:text-base ${planType === "empresarial"
                     ? "bg-[#f86c05] text-white"
                     : "bg-white text-gray-700 border border-gray-300"
-                }`}
+                  }`}
               >
                 <Building2 className="h-4 w-4 sm:h-5 sm:w-5" />
                 Empresarial
@@ -576,8 +541,8 @@ function HomePageContent() {
                   const features = plan.features
 
                   return (
-                    <div 
-                      key={plan.id} 
+                    <div
+                      key={plan.id}
                       className="flex relative"
                     >
                       {isRecommended && (
@@ -587,11 +552,10 @@ function HomePageContent() {
                           </div>
                         </div>
                       )}
-                      
+
                       <div
-                        className={`relative bg-gradient-to-br from-white via-white to-orange-50/30 rounded-2xl p-6 lg:p-8 flex flex-col w-full transition-all overflow-hidden hover:-translate-y-1 ${
-                          isRecommended ? "border-2 border-brand shadow-xl" : "border border-gray-200 shadow-lg hover:shadow-xl hover:border-brand/40"
-                        }`}
+                        className={`relative bg-gradient-to-br from-white via-white to-orange-50/30 rounded-2xl p-6 lg:p-8 flex flex-col w-full transition-all overflow-hidden hover:-translate-y-1 ${isRecommended ? "border-2 border-brand shadow-xl" : "border border-gray-200 shadow-lg hover:shadow-xl hover:border-brand/40"
+                          }`}
                       >
                         {/* Elementos decorativos de fundo */}
                         <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#f86c05]/10 to-transparent rounded-full -translate-y-1/2 translate-x-1/2" />
@@ -599,8 +563,8 @@ function HomePageContent() {
 
                         <div className="text-center mb-6 relative z-10">
                           {/* Ícone de velocidade dentro do card - diferente para cada plano */}
-                          
-                          
+
+
                           {/* Velocidade em MB - Destaque principal */}
                           <div className="mb-3 flex items-baseline justify-center gap-2">
                             <div className="text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-brand to-orange-600 leading-tight">
@@ -610,14 +574,14 @@ function HomePageContent() {
                               {plan.name.split(' ')[1]}
                             </div>
                           </div>
-                          
+
                           {/* Barra decorativa */}
                           <div className="flex items-center justify-center gap-1 mb-4">
                             <div className="h-1 w-8 bg-gradient-to-r from-transparent to-[#f86c05] rounded-full" />
                             <div className="h-1 w-8 bg-[#f86c05] rounded-full" />
                             <div className="h-1 w-8 bg-gradient-to-l from-transparent to-[#f86c05] rounded-full" />
                           </div>
-                          
+
                           {/* Preço */}
                           <div className="text-4xl lg:text-5xl font-bold text-gray-900 mb-1">
                             {price.toFixed(2).replace(".", ",")}
@@ -625,12 +589,12 @@ function HomePageContent() {
                           <p className="text-gray-500 text-xs font-medium uppercase tracking-wide">mensalmente</p>
                         </div>
 
-                          <div className="h-px bg-gradient-to-r from-transparent via-brand/30 to-transparent mb-6" />
+                        <div className="h-px bg-gradient-to-r from-transparent via-brand/30 to-transparent mb-6" />
 
                         <ul className="space-y-3 mb-8 flex-1">
                           {features.map((feature, i) => (
                             <li key={i} className="flex items-center gap-3">
-                                  <div className="w-6 h-6 rounded-full bg-gradient-to-br from-brand to-orange-500 flex items-center justify-center flex-shrink-0">
+                              <div className="w-6 h-6 rounded-full bg-gradient-to-br from-brand to-orange-500 flex items-center justify-center flex-shrink-0">
                                 <Check className="h-4 w-4 text-white" />
                               </div>
                               <span className="text-sm text-gray-700 font-medium">{feature}</span>
@@ -657,7 +621,7 @@ function HomePageContent() {
                 <div className="relative overflow-hidden">
                   <div className="absolute -top-40 -right-40 w-80 h-80 bg-brand/5 rounded-full blur-3xl"></div>
                   <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-brand/5 rounded-full blur-3xl"></div>
-                  
+
                   <div className="relative z-10 p-8 sm:p-12 md:p-16 lg:p-20">
                     <div className="mb-10 sm:mb-12 md:mb-14">
                       <div className="inline-block px-4 py-1.5 rounded-full bg-brand/15 border border-brand/40 mb-6">
@@ -665,7 +629,7 @@ function HomePageContent() {
                           Solução Corporativa
                         </span>
                       </div>
-                      
+
                       <h3 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
                         Planos Personalizados Para Empresas{" "}
                         <span className="text-brand">em {cities.find(c => c.value === selectedCity)?.label}</span>
