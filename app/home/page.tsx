@@ -300,6 +300,26 @@ function HomePageContent() {
               >
                 Contato
               </button>
+              
+              <div className="py-2">
+                <Select value={selectedCity} onValueChange={setSelectedCity}>
+                  <SelectTrigger className="h-9 text-sm font-semibold bg-white text-brand border border-gray-300 rounded-md w-full">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {cities.map((city) => (
+                      <SelectItem
+                        key={city.value}
+                        value={city.value}
+                        className="text-sm"
+                      >
+                        {city.label}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+              
               <a
                 href="http://central.virtuax.com.br/"
                 target="_blank"
