@@ -146,6 +146,7 @@ function HomePageContent() {
       bg: "",
       type: "image",
       imagePath: "/images/banner-alta-velocidade.webp",
+      imagePathMobile: "/images/banner-alta-velocidade-mobile.webp",
     },
   ]
 
@@ -337,7 +338,18 @@ function HomePageContent() {
               {banner.type === "image" ? (
                 // Image banner - full background image only
                 <div className="w-full h-full bg-orange-500 flex items-center justify-center">
-                  <div className="relative w-full h-full">
+                  {/* Mobile version */}
+                  <div className="relative w-full h-full md:hidden">
+                    <Image
+                      src={banner.imagePathMobile || banner.imagePath || ""}
+                      alt="Banner Alta Velocidade VirtuaX Mobile"
+                      fill
+                      className="object-cover"
+                      priority
+                    />
+                  </div>
+                  {/* Desktop version */}
+                  <div className="relative w-full h-full hidden md:block">
                     <Image
                       src={banner.imagePath || ""}
                       alt="Banner Alta Velocidade VirtuaX"
