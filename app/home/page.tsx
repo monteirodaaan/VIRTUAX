@@ -140,15 +140,6 @@ function HomePageContent() {
     <div className="min-h-screen relative bg-background">
       <header className="fixed top-0 w-full border-gray-200 z-50 text-brand-foreground bg-brand py-3 sm:py-4 border-b-0" role="banner">
         <div className="container mx-auto px-4 sm:px-6 md:px-8 h-14 sm:h-16 flex items-center justify-between">
-          <Image
-            src="/images/logo.webp"
-            alt="VirtuaX Telecom - Provedor de Internet Fibra Óptica na Paraíba"
-            width={120}
-            height={30}
-            className="h-6 sm:h-7 md:h-8 w-auto"
-            priority
-          />
-
           <nav className="hidden md:flex items-center gap-4 lg:gap-6 text-background" aria-label="Navegação principal">
             <button
               onClick={() => scrollToSection("sobre")}
@@ -203,26 +194,9 @@ function HomePageContent() {
             >
               Contato
             </button>
+          </nav>
 
-            <div className="flex items-center gap-2">
-              <Select value={selectedCity} onValueChange={setSelectedCity}>
-                <SelectTrigger className="h-9 text-xs lg:text-sm font-semibold bg-white border-2 border-white rounded-md !w-auto min-w-fit px-3" style={{ color: "var(--brand)" }}>
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  {cities.map((city) => (
-                    <SelectItem
-                      key={city.value}
-                      value={city.value}
-                      className="text-sm"
-                    >
-                      {city.label}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
-
+          <div className="flex-1 flex justify-center">
             <a
               href="http://central.virtuax.com.br/"
               target="_blank"
@@ -231,7 +205,7 @@ function HomePageContent() {
             >
               Área do Cliente
             </a>
-          </nav>
+          </div>
 
           <button
             className="md:hidden text-white"
@@ -305,6 +279,37 @@ function HomePageContent() {
       </header>
 
       <div className="h-14 sm:h-16" />
+
+      {/* Logo and City Selection Section */}
+      <section className="bg-brand py-6 sm:py-8 md:py-10">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 flex flex-col items-center gap-4">
+          <Image
+            src="/images/logo.webp"
+            alt="VirtuaX Telecom - Provedor de Internet Fibra Óptica na Paraíba"
+            width={140}
+            height={35}
+            className="h-8 sm:h-9 md:h-10 w-auto"
+            priority
+          />
+          <p className="text-white text-sm sm:text-base font-semibold text-center">Escolha sua localização</p>
+          <Select value={selectedCity} onValueChange={setSelectedCity}>
+            <SelectTrigger className="h-10 text-sm font-semibold bg-white border-2 border-white rounded-lg !w-auto min-w-fit px-4" style={{ color: "var(--brand)" }}>
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              {cities.map((city) => (
+                <SelectItem
+                  key={city.value}
+                  value={city.value}
+                  className="text-sm"
+                >
+                  {city.label}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+      </section>
 
       <section className="relative overflow-hidden">
         <div className="relative h-[calc(100vh-3.5rem)] sm:h-[calc(100vh-4rem)]">
