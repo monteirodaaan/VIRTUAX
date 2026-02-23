@@ -229,12 +229,13 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
+        <meta name="theme-color" content="#f86c05" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`font-sans antialiased bg-[#f86c05]`}>
+      <body className={`font-sans antialiased bg-[#f86c05]`} style={{ backgroundColor: '#f86c05' }}>
         {children}
         <Analytics />
       </body>

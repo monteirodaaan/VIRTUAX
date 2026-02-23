@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation"
 import { MapPin } from "lucide-react"
 import Image from "next/image"
+import { useState, useEffect } from "react"
 
 const cities = [
   { value: "areia", label: "Areia" },
@@ -14,9 +15,27 @@ const cities = [
 
 export default function CitySelectionPage() {
   const router = useRouter()
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    // Simulate initial load completion
+    setIsLoading(false)
+  }, [])
 
   const handleCitySelect = (cityValue: string) => {
+    setIsLoading(true)
     router.push(`/home?city=${cityValue}`)
+  }
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#ff8c3a] to-[#f86c05]">
+        <div className="text-center">
+          <div className="w-16 h-16 border-4 border-white border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-white font-semibold text-lg">Carregando...</p>
+        </div>
+      </div>
+    )
   }
 
   return (
@@ -56,6 +75,7 @@ export default function CitySelectionPage() {
                 width={200}
                 height={50}
                 className="h-12 sm:h-14 md:h-16 w-auto mx-auto"
+                priority
               />
               <h1 className="font-bold text-white text-2xl sm:text-3xl md:text-4xl">Escolha sua localização</h1>
               <p className="text-base sm:text-lg text-white/95 font-medium">Com o melhor provedor da região</p>
