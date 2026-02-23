@@ -582,9 +582,14 @@ function HomePageContent() {
                             <div className="h-1 w-8 bg-gradient-to-l from-transparent to-[#f86c05] rounded-full" />
                           </div>
 
-                          {/* Preço */}
-                          <div className="text-4xl lg:text-5xl font-bold text-gray-900 mb-1">
-                            {price.toFixed(2).replace(".", ",")}
+                          {/* Preço com check */}
+                          <div className="flex items-center justify-center gap-3 mb-1">
+                            <div className="w-6 h-6 rounded-full bg-gradient-to-br from-brand to-orange-500 flex items-center justify-center flex-shrink-0">
+                              <Check className="h-4 w-4 text-white" />
+                            </div>
+                            <div className="text-4xl lg:text-5xl font-bold text-gray-900">
+                              {price.toFixed(2).replace(".", ",")}
+                            </div>
                           </div>
                           <p className="text-gray-500 text-xs font-medium uppercase tracking-wide">mensalmente</p>
                         </div>
