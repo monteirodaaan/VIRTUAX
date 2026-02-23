@@ -68,7 +68,7 @@ export default function CitySelectionPage() {
                 <button
                   key={city.value}
                   onClick={() => handleCitySelect(city.value)}
-                  className="w-full bg-white rounded-md px-6 sm:px-8 py-4 sm:py-5 flex items-center justify-center gap-3 transition-all hover:shadow-lg hover:scale-[1.02] hover:bg-[#f86c05] hover:text-white group"
+                  className="w-full bg-white rounded-2xl px-6 sm:px-8 py-4 sm:py-5 flex items-center justify-center gap-3 transition-all hover:shadow-lg hover:scale-[1.02] hover:bg-[#f86c05] hover:text-white group"
                 >
                   <MapPin className="h-5 w-5 sm:h-6 sm:w-6 text-[#f86c05] group-hover:text-white transition-colors" />
                   <span className="text-lg sm:text-xl font-bold text-gray-700 group-hover:text-white transition-colors">
@@ -86,7 +86,7 @@ export default function CitySelectionPage() {
               href="http://central.virtuax.com.br/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full px-4 sm:px-5 md:px-6 py-3 sm:py-4 bg-white text-[#f86c05] font-bold rounded-lg hover:bg-gray-50 transition-colors text-sm sm:text-base text-center block"
+              className="w-full px-4 sm:px-5 md:px-6 py-3 sm:py-4 bg-white text-[#f86c05] font-bold rounded-2xl hover:bg-gray-50 transition-colors text-sm sm:text-base text-center block"
             >
               Área do cliente
             </a>
