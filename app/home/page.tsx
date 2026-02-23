@@ -331,7 +331,7 @@ function HomePageContent() {
           {banners.map((banner, index) => (
             <div
               key={index}
-              className={`absolute inset-0 transition-all duration-700 ease-in-out ${index === currentBannerIndex ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full"
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentBannerIndex ? "opacity-100" : "opacity-0"
                 }`}
             >
               {banner.type === "image" ? (
