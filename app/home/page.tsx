@@ -336,14 +336,16 @@ function HomePageContent() {
             >
               {banner.type === "image" ? (
                 // Image banner - full background image only
-                <div className="w-full h-full bg-orange-500 flex items-center justify-center relative">
-                  <Image
-                    src={banner.imagePath || ""}
-                    alt="Banner Alta Velocidade VirtuaX"
-                    fill
-                    className="object-contain"
-                    priority
-                  />
+                <div className="w-full h-full bg-orange-500 flex items-center justify-center">
+                  <div className="relative w-full h-full">
+                    <Image
+                      src={banner.imagePath || ""}
+                      alt="Banner Alta Velocidade VirtuaX"
+                      fill
+                      className="object-contain"
+                      priority
+                    />
+                  </div>
                 </div>
               ) : (
                 // Text banner - with background and overlay
