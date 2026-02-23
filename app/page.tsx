@@ -1,8 +1,7 @@
 "use client"
 
-import { useState } from "react"
 import { useRouter } from "next/navigation"
-import { ChevronDown, MapPin } from "lucide-react"
+import { MapPin } from "lucide-react"
 import Image from "next/image"
 
 const cities = [
@@ -14,13 +13,9 @@ const cities = [
 ]
 
 export default function CitySelectionPage() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [selectedCity, setSelectedCity] = useState("")
   const router = useRouter()
 
   const handleCitySelect = (cityValue: string) => {
-    setSelectedCity(cityValue)
-    setIsOpen(false)
     router.push(`/home?city=${cityValue}`)
   }
 
@@ -66,36 +61,19 @@ export default function CitySelectionPage() {
               <p className="text-base sm:text-lg text-white/95 font-medium">Com o melhor provedor da região</p>
             </div>
 
-            <div className="relative">
-              <button
-                onClick={() => setIsOpen(!isOpen)}
-                className="w-full bg-white rounded-xl px-4 sm:px-6 py-4 sm:py-5 flex items-center justify-center text-center transition-all hover:shadow-lg"
-              >
-                <MapPin className="h-5 w-5 sm:h-6 sm:w-6 mr-3" style={{ color: "#f86c05" }} />
-                <span className="text-lg sm:text-xl font-bold text-[#f86c05] flex-1 text-center">
-                  {selectedCity ? cities.find((c) => c.value === selectedCity)?.label : "Escolha sua localização"}
-                </span>
-                <ChevronDown
-                  className={`h-5 w-5 sm:h-6 sm:w-6 transition-transform ${isOpen ? "rotate-180" : ""}`}
-                  style={{ color: "#f86c05" }}
-                />
-              </button>
-
-              {isOpen && (
-                <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl overflow-hidden shadow-lg z-50">
-                  {cities.map((city, index) => (
-                    <div key={city.value}>
-                      <button
-                        onClick={() => handleCitySelect(city.value)}
-                        className="w-full px-4 sm:px-6 py-3 sm:py-4 text-center text-base sm:text-lg font-semibold transition-all hover:bg-[#f86c05] hover:text-white text-gray-700"
-                      >
-                        {city.label}
-                      </button>
-                      {index < cities.length - 1 && <div className="h-px bg-gray-200 mx-4" />}
-                    </div>
-                  ))}
-                </div>
-              )}
+            <div className="space-y-3 sm:space-y-4">
+              {cities.map((city) => (
+                <button
+                  key={city.value}
+                  onClick={() => handleCitySelect(city.value)}
+                  className="w-full bg-white rounded-xl px-6 sm:px-8 py-4 sm:py-5 flex items-center justify-center gap-3 transition-all hover:shadow-lg hover:scale-[1.02] hover:bg-[#f86c05] hover:text-white group"
+                >
+                  <MapPin className="h-5 w-5 sm:h-6 sm:w-6 text-[#f86c05] group-hover:text-white transition-colors" />
+                  <span className="text-lg sm:text-xl font-bold text-gray-700 group-hover:text-white transition-colors">
+                    {city.label}
+                  </span>
+                </button>
+              ))}
             </div>
           </div>
         </div>
