@@ -389,7 +389,7 @@ function HomePageContent() {
                 <span className="text-brand font-bold text-xs sm:text-sm uppercase tracking-wider">Sobre Nós</span>
               </div>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 text-left">
-                Conectado <span className="text-brand">{cityNames[selectedCity] || "sua região"}</span> com qualidade VirtuaX
+                Conectado <span className="text-brand">{cityNames[selectedCity] || "sua região"}</span><br />com qualidade VirtuaX
               </h2>
             </div>
 
