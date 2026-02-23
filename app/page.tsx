@@ -59,8 +59,7 @@ export default function CitySelectionPage() {
                 className="h-12 sm:h-14 md:h-16 w-auto mx-auto"
                 priority
               />
-              <h1 className="font-bold text-white text-2xl sm:text-3xl md:text-4xl">Escolha sua localização</h1>
-              <p className="text-base sm:text-lg text-white/95 font-medium">Com o melhor provedor da região</p>
+              <h1 className="font-bold text-white text-2xl sm:text-3xl md:text-4xl">Escolha sua região</h1>
             </div>
 
             <div className="space-y-3 sm:space-y-4 mb-8 sm:mb-10">
