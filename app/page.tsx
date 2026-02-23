@@ -58,9 +58,9 @@ export default function CitySelectionPage() {
               <Image
                 src="/images/logo.webp"
                 alt="VirtuaX Logo"
-                width={140}
-                height={35}
-                className="h-8 sm:h-9 md:h-10 w-auto mx-auto"
+                width={200}
+                height={50}
+                className="h-12 sm:h-14 md:h-16 w-auto mx-auto"
               />
               <h1 className="font-bold text-white text-2xl sm:text-3xl md:text-4xl">Escolha sua localização</h1>
               <p className="text-base sm:text-lg text-white/95 font-medium">Com o melhor provedor da região</p>
