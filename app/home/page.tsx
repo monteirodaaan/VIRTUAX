@@ -126,16 +126,26 @@ function HomePageContent() {
       title: "Internet de Alta Velocidade",
       subtitle: "Fibra óptica de última geração para sua casa ou empresa",
       bg: "from-orange-600 to-orange-500",
+      type: "text",
     },
     {
       title: "Velocidade que Você Merece",
       subtitle: "Planos a partir de 1GB com instalação gratuita",
       bg: "from-orange-500 to-amber-500",
+      type: "text",
     },
     {
       title: "Suporte 24/7",
       subtitle: "Equipe sempre pronta para te atender",
       bg: "from-amber-600 to-orange-600",
+      type: "text",
+    },
+    {
+      title: "",
+      subtitle: "",
+      bg: "",
+      type: "image",
+      imagePath: "/images/banner-alta-velocidade.webp",
     },
   ]
 
@@ -321,34 +331,48 @@ function HomePageContent() {
           {banners.map((banner, index) => (
             <div
               key={index}
-              className={`absolute inset-0 transition-all duration-700 ease-in-out ${index === currentBannerIndex ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full"
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentBannerIndex ? "opacity-100" : "opacity-0"
                 }`}
             >
-              <div className="w-full h-full flex items-center justify-center relative">
-                {/* Background Mobile */}
-                <div
-                  className="absolute inset-0 md:hidden bg-cover bg-center"
-                  style={{
-                    backgroundImage: `url(/images/banner-${currentBannerIndex + 1}-mobile.jpg)`,
-                  }}
-                />
-                {/* Background Desktop */}
-                <div
-                  className="absolute inset-0 hidden md:block bg-cover bg-center"
-                  style={{
-                    backgroundImage: `url(/images/banner-${currentBannerIndex + 1}-desktop.jpg)`,
-                  }}
-                />
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-black/40" />
-                {/* Conteúdo */}
-                <div className="container mx-auto px-4 sm:px-6 md:px-8 text-center text-white relative z-10" suppressHydrationWarning>
-                  <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold mb-2 sm:mb-3 md:mb-4" suppressHydrationWarning>
-                    {banner.title}
-                  </h2>
-                  <p className="text-sm sm:text-base md:text-lg lg:text-xl opacity-90" suppressHydrationWarning>{banner.subtitle}</p>
+              {banner.type === "image" ? (
+                // Image banner - full background image only
+                <div className="w-full h-full bg-orange-500 flex items-center justify-center relative">
+                  <Image
+                    src={banner.imagePath || ""}
+                    alt="Banner Alta Velocidade VirtuaX"
+                    fill
+                    className="object-contain"
+                    priority
+                  />
                 </div>
-              </div>
+              ) : (
+                // Text banner - with background and overlay
+                <div className="w-full h-full flex items-center justify-center relative">
+                  {/* Background Mobile */}
+                  <div
+                    className="absolute inset-0 md:hidden bg-cover bg-center"
+                    style={{
+                      backgroundImage: `url(/images/banner-${currentBannerIndex + 1}-mobile.jpg)`,
+                    }}
+                  />
+                  {/* Background Desktop */}
+                  <div
+                    className="absolute inset-0 hidden md:block bg-cover bg-center"
+                    style={{
+                      backgroundImage: `url(/images/banner-${currentBannerIndex + 1}-desktop.jpg)`,
+                    }}
+                  />
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-black/40" />
+                  {/* Conteúdo */}
+                  <div className="container mx-auto px-4 sm:px-6 md:px-8 text-center text-white relative z-10" suppressHydrationWarning>
+                    <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold mb-2 sm:mb-3 md:mb-4" suppressHydrationWarning>
+                      {banner.title}
+                    </h2>
+                    <p className="text-sm sm:text-base md:text-lg lg:text-xl opacity-90" suppressHydrationWarning>{banner.subtitle}</p>
+                  </div>
+                </div>
+              )}
             </div>
           ))}
         </div>
