@@ -383,14 +383,15 @@ function HomePageContent() {
               </h2>
             </div>
 
+            {/* About section - trust message - cache bust */}
             <div className="space-y-4 sm:space-y-5 md:space-y-6 text-gray-700 text-base sm:text-lg leading-relaxed px-4 sm:px-0">
               <p>
                 A <strong className="text-brand">VirtuaX</strong> leva fibra óptica de alta performance para cidades da Paraíba, com velocidade real, estabilidade constante e atendimento que resolve.
               </p>
               <p>
-                Com experi����ncia no mercado de telecom, entregamos internet ultra-rápida para residências e empresas que precisam trabalhar, estudar, criar e se divertir sem interrupções.
+                Com experiência no mercado de telecom, entregamos internet ultra-rápida para residências e empresas que precisam trabalhar, estudar, criar e se divertir sem interrupções.
               </p>
-              <p>
+              <p className="text-brand font-semibold">
                 Mais do que conexão, oferecemos confiança: planos claros, preços justos e suporte humano sempre que você precisar.
               </p>
             </div>
