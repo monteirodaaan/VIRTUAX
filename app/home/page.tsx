@@ -99,7 +99,7 @@ const plans = [
 function HomePageContent() {
   const searchParams = useSearchParams()
   const [selectedCity, setSelectedCity] = useState("areia")
-  
+
   // Sincronizar com URL quando o componente monta
   useEffect(() => {
     const cityFromUrl = searchParams.get("city") || "areia"
@@ -110,6 +110,7 @@ function HomePageContent() {
   const [planType, setPlanType] = useState<"residencial" | "empresarial">("residencial")
   const [currentBannerIndex, setCurrentBannerIndex] = useState(0)
 
+  // Banner carousel for hero section
   const banners = [
     {
       title: "Internet de Alta Velocidade",
@@ -118,7 +119,7 @@ function HomePageContent() {
     },
     {
       title: "Velocidade que Você Merece",
-      subtitle: "Planos a partir de 1 GB com instalação gratuita",
+      subtitle: "Planos a partir de 1GB com instalação gratuita",
       bg: "from-orange-500 to-amber-500",
     },
     {
@@ -135,40 +136,9 @@ function HomePageContent() {
     return () => clearInterval(interval)
   }, [banners.length])
 
-  // Auto-play para o carousel de planos - ciclo entre 0 e 1 apenas (mostra 3 cards sempre)
-  useEffect(() => {
-    if (planType === "residencial") {
-      const interval = setInterval(() => {
-        setCurrentPlanIndex((prev) => {
-          // Com 4 planos mostrando 3 por vez, só podemos ir de 0 a 1
-          // 0 = mostra planos 0,1,2 (100MB, 300MB, 600MB)
-          // 1 = mostra planos 1,2,3 (300MB, 600MB, 1GB)
-          return prev === 0 ? 1 : 0
-        })
-      }, 4000)
-      return () => clearInterval(interval)
-    }
-  }, [planType])
-
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id)
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-      setMobileMenuOpen(false)
-    }
-  }
-
-  const nextPlan = () => {
-    setCurrentPlanIndex((prev) => (prev + 1) % plans.length)
-  }
-
-  const prevPlan = () => {
-    setCurrentPlanIndex((prev) => (prev - 1 + plans.length) % plans.length)
-  }
-
   return (
-      <div className="min-h-screen relative bg-background">
-        <header className="fixed top-0 w-full border-gray-200 z-50 text-brand-foreground bg-brand py-3 sm:py-4 border-b-0" role="banner">
+    <div className="min-h-screen relative bg-background">
+      <header className="fixed top-0 w-full border-gray-200 z-50 text-brand-foreground bg-brand py-3 sm:py-4 border-b-0" role="banner">
         <div className="container mx-auto px-4 sm:px-6 md:px-8 h-14 sm:h-16 flex items-center justify-between">
           <Image
             src="/images/logo.webp"
@@ -233,7 +203,7 @@ function HomePageContent() {
             >
               Contato
             </button>
-            
+
             <div className="flex items-center gap-2">
               <Select value={selectedCity} onValueChange={setSelectedCity}>
                 <SelectTrigger className="h-9 text-xs lg:text-sm font-semibold bg-white border-2 border-white rounded-md !w-auto min-w-fit px-3" style={{ color: "var(--brand)" }}>
@@ -252,13 +222,12 @@ function HomePageContent() {
                 </SelectContent>
               </Select>
             </div>
-            
+
             <a
               href="http://central.virtuax.com.br/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center font-semibold hover:bg-gray-50 transition-colors text-xs lg:text-sm px-3 lg:px-5 border-2 border-white rounded-md h-9"
-              style={{ backgroundColor: "white", color: "var(--brand)" }}
+              className="inline-flex items-center justify-center font-semibold transition-all duration-200 text-xs lg:text-sm px-4 lg:px-6 rounded-lg h-9 bg-white text-brand hover:bg-opacity-90 shadow-sm hover:shadow-md"
             >
               Área do Cliente
             </a>
@@ -302,10 +271,10 @@ function HomePageContent() {
               >
                 Contato
               </button>
-              
-              <div className="py-2">
+
+              <div className="py-1 mt-1">
                 <Select value={selectedCity} onValueChange={setSelectedCity}>
-                  <SelectTrigger className="h-9 text-sm font-semibold bg-white text-brand border border-gray-300 rounded-md w-full">
+                  <SelectTrigger className="h-9 text-sm font-semibold bg-white text-brand border-2 border-brand rounded-md w-auto min-w-fit">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
@@ -321,13 +290,12 @@ function HomePageContent() {
                   </SelectContent>
                 </Select>
               </div>
-              
+
               <a
                 href="http://central.virtuax.com.br/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full mt-2 inline-flex items-center justify-center font-semibold hover:bg-gray-50 transition-colors text-xs lg:text-sm px-3 lg:px-5 border-2 border-white rounded-md h-9"
-                style={{ backgroundColor: "var(--brand)", color: "white" }}
+                className="w-full mt-2 inline-flex items-center justify-center font-semibold transition-all duration-200 text-sm px-4 rounded-lg h-10 bg-brand text-white hover:bg-opacity-90 shadow-sm hover:shadow-md"
               >
                 Área do Cliente
               </a>
@@ -343,9 +311,8 @@ function HomePageContent() {
           {banners.map((banner, index) => (
             <div
               key={index}
-              className={`absolute inset-0 transition-all duration-700 ease-in-out ${
-                index === currentBannerIndex ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full"
-              }`}
+              className={`absolute inset-0 transition-all duration-700 ease-in-out ${index === currentBannerIndex ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full"
+                }`}
             >
               <div className="w-full h-full flex items-center justify-center relative">
                 {/* Background Mobile */}
@@ -365,11 +332,11 @@ function HomePageContent() {
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-black/40" />
                 {/* Conteúdo */}
-                <div className="container mx-auto px-4 sm:px-6 md:px-8 text-center text-white relative z-10">
-                  <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold mb-2 sm:mb-3 md:mb-4">
+                <div className="container mx-auto px-4 sm:px-6 md:px-8 text-center text-white relative z-10" suppressHydrationWarning>
+                  <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold mb-2 sm:mb-3 md:mb-4" suppressHydrationWarning>
                     {banner.title}
                   </h2>
-                  <p className="text-sm sm:text-base md:text-lg lg:text-xl opacity-90">{banner.subtitle}</p>
+                  <p className="text-sm sm:text-base md:text-lg lg:text-xl opacity-90" suppressHydrationWarning>{banner.subtitle}</p>
                 </div>
               </div>
             </div>
@@ -381,9 +348,8 @@ function HomePageContent() {
             <button
               key={index}
               onClick={() => setCurrentBannerIndex(index)}
-              className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all ${
-                index === currentBannerIndex ? "bg-white w-6 sm:w-8" : "bg-white/50"
-              }`}
+              className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all ${index === currentBannerIndex ? "bg-white w-6 sm:w-8" : "bg-white/50"
+                }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
@@ -422,29 +388,30 @@ function HomePageContent() {
                 A <strong className="text-brand">VirtuaX</strong> leva fibra óptica de alta performance para cidades da Paraíba, com velocidade real, estabilidade constante e atendimento que resolve.
               </p>
               <p>
-                Com experiência no mercado de telecom, entregamos internet ultra-rápida para residências e empresas que precisam trabalhar, estudar, criar e se divertir sem interrupções.
+                Com experi����ncia no mercado de telecom, entregamos internet ultra-rápida para residências e empresas que precisam trabalhar, estudar, criar e se divertir sem interrupções.
               </p>
               <p>
                 Mais do que conexão, oferecemos confiança: planos claros, preços justos e suporte humano sempre que você precisar.
               </p>
             </div>
 
+            {/* Metrics cards section - cache bust v3 */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mt-8 sm:mt-10 md:mt-12 px-4 sm:px-0">
-              <div className="text-center p-4 sm:p-5 md:p-6 bg-brand/5 rounded-xl border border-brand/20">
+              <div className="text-center p-4 sm:p-5 md:p-6 bg-brand/5 rounded-xl border border-brand/20" data-metric="localidades">
                 <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand mb-1 sm:mb-2">+5</div>
-                <div className="text-xs sm:text-sm text-gray-600 font-semibold">Cidades Atendidas</div>
+                <div className="text-xs sm:text-sm text-gray-600 font-semibold">Localidades</div>
               </div>
-              <div className="text-center p-4 sm:p-5 md:p-6 bg-[#f86c05]/5 rounded-xl border border-[#f86c05]/20">
+              <div className="text-center p-4 sm:p-5 md:p-6 bg-[#f86c05]/5 rounded-xl border border-[#f86c05]/20" data-metric="excelencia">
                 <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#f86c05] mb-1 sm:mb-2">97.5%</div>
-                <div className="text-xs sm:text-sm text-gray-600 font-semibold">Satisfação</div>
+                <div className="text-xs sm:text-sm text-gray-600 font-semibold">Excelência</div>
               </div>
-              <div className="text-center p-4 sm:p-5 md:p-6 bg-[#f86c05]/5 rounded-xl border border-[#f86c05]/20">
+              <div className="text-center p-4 sm:p-5 md:p-6 bg-[#f86c05]/5 rounded-xl border border-[#f86c05]/20" data-metric="disponibilidade">
                 <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#f86c05] mb-1 sm:mb-2">24/7</div>
-                <div className="text-xs sm:text-sm text-gray-600 font-semibold">Suporte Disponível</div>
+                <div className="text-xs sm:text-sm text-gray-600 font-semibold">Disponibilidade</div>
               </div>
-              <div className="text-center p-4 sm:p-5 md:p-6 bg-[#f86c05]/5 rounded-xl border border-[#f86c05]/20">
+              <div className="text-center p-4 sm:p-5 md:p-6 bg-[#f86c05]/5 rounded-xl border border-[#f86c05]/20" data-metric="clientes">
                 <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#f86c05] mb-1 sm:mb-2">+9.000</div>
-                <div className="text-xs sm:text-sm text-gray-600 font-semibold">Clientes Satisfeitos</div>
+                <div className="text-xs sm:text-sm text-gray-600 font-semibold">Clientes</div>
               </div>
             </div>
           </div>
@@ -542,22 +509,20 @@ function HomePageContent() {
             <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-6 sm:mb-8 px-4 sm:px-0">
               <button
                 onClick={() => setPlanType("residencial")}
-                className={`flex items-center justify-center gap-2 px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold transition-all text-sm sm:text-base ${
-                  planType === "residencial"
+                className={`flex items-center justify-center gap-2 px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold transition-all text-sm sm:text-base ${planType === "residencial"
                     ? "bg-[#f86c05] text-white"
                     : "bg-white text-gray-700 border border-gray-300"
-                }`}
+                  }`}
               >
                 <Home className="h-4 w-4 sm:h-5 sm:w-5" />
                 Residencial
               </button>
               <button
                 onClick={() => setPlanType("empresarial")}
-                className={`flex items-center justify-center gap-2 px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold transition-all text-sm sm:text-base ${
-                  planType === "empresarial"
+                className={`flex items-center justify-center gap-2 px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold transition-all text-sm sm:text-base ${planType === "empresarial"
                     ? "bg-[#f86c05] text-white"
                     : "bg-white text-gray-700 border border-gray-300"
-                }`}
+                  }`}
               >
                 <Building2 className="h-4 w-4 sm:h-5 sm:w-5" />
                 Empresarial
@@ -575,8 +540,8 @@ function HomePageContent() {
                   const features = plan.features
 
                   return (
-                    <div 
-                      key={plan.id} 
+                    <div
+                      key={plan.id}
                       className="flex relative"
                     >
                       {isRecommended && (
@@ -586,11 +551,10 @@ function HomePageContent() {
                           </div>
                         </div>
                       )}
-                      
+
                       <div
-                        className={`relative bg-gradient-to-br from-white via-white to-orange-50/30 rounded-2xl p-6 lg:p-8 flex flex-col w-full transition-all overflow-hidden hover:-translate-y-1 ${
-                          isRecommended ? "border-2 border-brand shadow-xl" : "border border-gray-200 shadow-lg hover:shadow-xl hover:border-brand/40"
-                        }`}
+                        className={`relative bg-gradient-to-br from-white via-white to-orange-50/30 rounded-2xl p-6 lg:p-8 flex flex-col w-full transition-all overflow-hidden hover:-translate-y-1 ${isRecommended ? "border-2 border-brand shadow-xl" : "border border-gray-200 shadow-lg hover:shadow-xl hover:border-brand/40"
+                          }`}
                       >
                         {/* Elementos decorativos de fundo */}
                         <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#f86c05]/10 to-transparent rounded-full -translate-y-1/2 translate-x-1/2" />
@@ -598,8 +562,8 @@ function HomePageContent() {
 
                         <div className="text-center mb-6 relative z-10">
                           {/* Ícone de velocidade dentro do card - diferente para cada plano */}
-                          
-                          
+
+
                           {/* Velocidade em MB - Destaque principal */}
                           <div className="mb-3 flex items-baseline justify-center gap-2">
                             <div className="text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-brand to-orange-600 leading-tight">
@@ -609,14 +573,14 @@ function HomePageContent() {
                               {plan.name.split(' ')[1]}
                             </div>
                           </div>
-                          
+
                           {/* Barra decorativa */}
                           <div className="flex items-center justify-center gap-1 mb-4">
                             <div className="h-1 w-8 bg-gradient-to-r from-transparent to-[#f86c05] rounded-full" />
                             <div className="h-1 w-8 bg-[#f86c05] rounded-full" />
                             <div className="h-1 w-8 bg-gradient-to-l from-transparent to-[#f86c05] rounded-full" />
                           </div>
-                          
+
                           {/* Preço */}
                           <div className="text-4xl lg:text-5xl font-bold text-gray-900 mb-1">
                             {price.toFixed(2).replace(".", ",")}
@@ -624,15 +588,15 @@ function HomePageContent() {
                           <p className="text-gray-500 text-xs font-medium uppercase tracking-wide">mensalmente</p>
                         </div>
 
-                          <div className="h-px bg-gradient-to-r from-transparent via-brand/30 to-transparent mb-6" />
+                        <div className="h-px bg-gradient-to-r from-transparent via-brand/30 to-transparent mb-6" />
 
                         <ul className="space-y-3 mb-8 flex-1">
                           {features.map((feature, i) => (
-                            <li key={i} className="flex items-center gap-3">
-                                  <div className="w-6 h-6 rounded-full bg-gradient-to-br from-brand to-orange-500 flex items-center justify-center flex-shrink-0">
+                            <li key={i} className="flex items-start gap-3">
+                              <div className="w-6 h-6 rounded-full bg-gradient-to-br from-brand to-orange-500 flex items-center justify-center flex-shrink-0 mt-0.5">
                                 <Check className="h-4 w-4 text-white" />
                               </div>
-                              <span className="text-sm text-gray-700 font-medium">{feature}</span>
+                              <span className="text-sm text-gray-700 font-medium leading-relaxed">{feature}</span>
                             </li>
                           ))}
                         </ul>
@@ -656,7 +620,7 @@ function HomePageContent() {
                 <div className="relative overflow-hidden">
                   <div className="absolute -top-40 -right-40 w-80 h-80 bg-brand/5 rounded-full blur-3xl"></div>
                   <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-brand/5 rounded-full blur-3xl"></div>
-                  
+
                   <div className="relative z-10 p-8 sm:p-12 md:p-16 lg:p-20">
                     <div className="mb-10 sm:mb-12 md:mb-14">
                       <div className="inline-block px-4 py-1.5 rounded-full bg-brand/15 border border-brand/40 mb-6">
@@ -664,7 +628,7 @@ function HomePageContent() {
                           Solução Corporativa
                         </span>
                       </div>
-                      
+
                       <h3 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
                         Planos Personalizados Para Empresas{" "}
                         <span className="text-brand">em {cities.find(c => c.value === selectedCity)?.label}</span>
