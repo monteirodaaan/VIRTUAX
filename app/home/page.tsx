@@ -514,7 +514,7 @@ function HomePageContent() {
             <div className="inline-block px-4 sm:px-6 py-1.5 sm:py-2 rounded-full bg-brand/10 border border-brand/30 mb-4 sm:mb-6 border-orange-500 bg-transparent">
               <span className="text-brand font-bold text-xs sm:text-sm uppercase tracking-wider">Planos</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">Escolha seu plano</h2>
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">Escolha seu plano em {cityNames[selectedCity] || "sua região"}</h2>
 
             <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-6 sm:mb-8 px-4 sm:px-0">
               <button
