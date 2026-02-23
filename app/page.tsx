@@ -66,7 +66,7 @@ export default function CitySelectionPage() {
                 <button
                   key={city.value}
                   onClick={() => handleCitySelect(city.value)}
-                  className="w-full bg-white rounded-md px-6 sm:px-8 py-4 sm:py-5 flex items-center justify-center gap-3 transition-all hover:shadow-lg hover:scale-[1.02] hover:bg-[#f86c05] hover:text-white group"
+                  className="w-full bg-white rounded-xl px-6 sm:px-8 py-4 sm:py-5 flex items-center justify-center gap-3 transition-all hover:shadow-lg hover:scale-[1.02] hover:bg-[#f86c05] hover:text-white group"
                 >
                   <MapPin className="h-5 w-5 sm:h-6 sm:w-6 text-[#f86c05] group-hover:text-white transition-colors" />
                   <span className="text-lg sm:text-xl font-bold text-gray-700 group-hover:text-white transition-colors">
