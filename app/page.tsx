@@ -34,14 +34,10 @@ export default function CitySelectionPage() {
 
       <div className="relative z-10 flex flex-col min-h-screen">
         <header className="w-full px-4 sm:px-6 md:px-8 py-4 md:py-6">
-          <div className="container mx-auto flex items-center justify-between">
-            <Image
-              src="/images/logo.webp"
-              alt="VirtuaX Logo"
-              width={140}
-              height={35}
-              className="h-7 sm:h-8 md:h-9 w-auto"
-            />
+          <div className="container mx-auto flex items-center justify-between h-12 sm:h-14">
+            {/* Empty left side for spacing */}
+            <div className="flex-1" />
+            {/* Centered Área do Cliente */}
             <a
               href="http://central.virtuax.com.br/"
               target="_blank"
@@ -50,13 +46,23 @@ export default function CitySelectionPage() {
             >
               Área do cliente
             </a>
+            {/* Empty right side for spacing */}
+            <div className="flex-1" />
           </div>
         </header>
 
-        <div className="flex-1 flex items-center justify-center px-4 sm:px-6 md:px-8 py-8">
+        <div className="flex-1 flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-8">
+          {/* Logo and Location Selection Section */}
           <div className="w-full max-w-md">
-            <div className="text-center mb-6 sm:mb-8 space-y-2">
-              <h1 className="font-bold text-white text-2xl sm:text-3xl md:text-4xl">Selecione sua cidade</h1>
+            <div className="text-center mb-8 sm:mb-10 space-y-4">
+              <Image
+                src="/images/logo.webp"
+                alt="VirtuaX Logo"
+                width={140}
+                height={35}
+                className="h-8 sm:h-9 md:h-10 w-auto mx-auto"
+              />
+              <h1 className="font-bold text-white text-2xl sm:text-3xl md:text-4xl">Escolha sua localização</h1>
               <p className="text-base sm:text-lg text-white/95 font-medium">Com o melhor provedor da região</p>
             </div>
 
