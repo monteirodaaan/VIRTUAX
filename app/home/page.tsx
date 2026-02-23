@@ -1,4 +1,4 @@
-"import { AnimatedCounter } from "@/components/animated-counter""
+"use client"
 
 import { useState, useEffect } from "react"
 import { useSearchParams } from "next/navigation"
@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
+import { AnimatedCounter } from "@/components/animated-counter"
 import { Textarea } from "@/components/ui/textarea"
 import {
   Menu,
