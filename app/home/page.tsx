@@ -724,7 +724,7 @@ function HomePageContent() {
                     <div className="bg-gradient-to-r from-brand/25 via-brand/15 to-transparent border border-brand/40 rounded-2xl p-8 sm:p-10 md:p-12 text-center">
                       <p className="text-sm sm:text-base text-gray-300 mb-4">Cada empresa tem necessidades únicas</p>
                       <h4 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                        Solicite um Orçamento Personalizado
+                        Solicite um orçamento personalizado
                       </h4>
                       <p className="text-sm sm:text-base text-gray-300 mb-8 max-w-xl mx-auto">
                         Nossa equipe de especialistas analisará suas necessidades específicas e criará a melhor solução para seu negócio
