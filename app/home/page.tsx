@@ -383,6 +383,7 @@ function HomePageContent() {
               </h2>
             </div>
 
+            {/* About section - trust message - cache bust */}
             <div className="space-y-4 sm:space-y-5 md:space-y-6 text-gray-700 text-base sm:text-lg leading-relaxed px-4 sm:px-0">
               <p>
                 A <strong className="text-brand">VirtuaX</strong> leva fibra óptica de alta performance para cidades da Paraíba, com velocidade real, estabilidade constante e atendimento que resolve.
