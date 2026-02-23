@@ -594,11 +594,11 @@ function HomePageContent() {
 
                         <ul className="space-y-3 mb-8 flex-1">
                           {features.map((feature, i) => (
-                            <li key={i} className="flex items-center gap-3">
-                              <div className="w-6 h-6 rounded-full bg-gradient-to-br from-brand to-orange-500 flex items-center justify-center flex-shrink-0">
+                            <li key={i} className="flex items-start gap-3">
+                              <div className="w-6 h-6 rounded-full bg-gradient-to-br from-brand to-orange-500 flex items-center justify-center flex-shrink-0 mt-0.5">
                                 <Check className="h-4 w-4 text-white" />
                               </div>
-                              <span className="text-sm text-gray-700 font-medium">{feature}</span>
+                              <span className="text-sm text-gray-700 font-medium leading-relaxed">{feature}</span>
                             </li>
                           ))}
                         </ul>
