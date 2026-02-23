@@ -390,7 +390,7 @@ function HomePageContent() {
               <p>
                 Com experiência no mercado de telecom, entregamos internet ultra-rápida para residências e empresas que precisam trabalhar, estudar, criar e se divertir sem interrupções.
               </p>
-              <p>
+              <p className="text-brand font-semibold">
                 Mais do que conexão, oferecemos confiança: planos claros, preços justos e suporte humano sempre que você precisar.
               </p>
             </div>
