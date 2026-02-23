@@ -342,7 +342,7 @@ function HomePageContent() {
                       src={banner.imagePath || ""}
                       alt="Banner Alta Velocidade VirtuaX"
                       fill
-                      className="object-contain"
+                      className="object-cover"
                       priority
                     />
                   </div>
