@@ -336,7 +336,7 @@ function HomePageContent() {
             >
               {banner.type === "image" ? (
                 // Image banner - full background image only
-                <div className="w-full h-full bg-orange-500 flex items-center justify-center">
+                <div className="w-full h-full bg-orange-500 flex items-center justify-center relative">
                   <Image
                     src={banner.imagePath || ""}
                     alt="Banner Alta Velocidade VirtuaX"
