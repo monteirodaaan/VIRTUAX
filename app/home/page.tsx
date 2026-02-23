@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
+import { AnimatedCounter } from "@/components/animated-counter"
 import { Textarea } from "@/components/ui/textarea"
 import {
   Menu,
@@ -171,7 +172,7 @@ function HomePageContent() {
               className="text-xs lg:text-sm font-semibold hover:text-gray-100 transition-colors text-card"
               aria-label="Ir para seção Benefícios"
             >
-              Benefícios
+              Benefícios VirtuaX
             </button>
             <div className="relative group">
               <button
@@ -388,7 +389,7 @@ function HomePageContent() {
                 <span className="text-brand font-bold text-xs sm:text-sm uppercase tracking-wider">Sobre Nós</span>
               </div>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 text-left">
-                Conectado <span className="text-brand">{cityNames[selectedCity] || "sua região"}</span> com qualidade VirtuaX
+                Conectado <span className="text-brand">{cityNames[selectedCity] || "sua região"}</span><br />com qualidade VirtuaX
               </h2>
             </div>
 
@@ -408,11 +409,15 @@ function HomePageContent() {
             {/* Metrics cards section - cache bust v3 */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mt-8 sm:mt-10 md:mt-12 px-4 sm:px-0">
               <div className="text-center p-4 sm:p-5 md:p-6 bg-brand/5 rounded-xl border border-brand/20" data-metric="localidades">
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand mb-1 sm:mb-2">+5</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand mb-1 sm:mb-2">
+                  <AnimatedCounter end="+5" />
+                </div>
                 <div className="text-xs sm:text-sm text-gray-600 font-semibold">Localidades</div>
               </div>
               <div className="text-center p-4 sm:p-5 md:p-6 bg-[#f86c05]/5 rounded-xl border border-[#f86c05]/20" data-metric="excelencia">
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#f86c05] mb-1 sm:mb-2">97.5%</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#f86c05] mb-1 sm:mb-2">
+                  <AnimatedCounter end="97.5%" />
+                </div>
                 <div className="text-xs sm:text-sm text-gray-600 font-semibold">Excelência</div>
               </div>
               <div className="text-center p-4 sm:p-5 md:p-6 bg-[#f86c05]/5 rounded-xl border border-[#f86c05]/20" data-metric="disponibilidade">
@@ -420,7 +425,9 @@ function HomePageContent() {
                 <div className="text-xs sm:text-sm text-gray-600 font-semibold">Disponibilidade</div>
               </div>
               <div className="text-center p-4 sm:p-5 md:p-6 bg-[#f86c05]/5 rounded-xl border border-[#f86c05]/20" data-metric="clientes">
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#f86c05] mb-1 sm:mb-2">+9.000</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#f86c05] mb-1 sm:mb-2">
+                  <AnimatedCounter end="+9.000" />
+                </div>
                 <div className="text-xs sm:text-sm text-gray-600 font-semibold">Clientes</div>
               </div>
             </div>
@@ -435,7 +442,7 @@ function HomePageContent() {
               <span className="text-brand font-bold text-xs sm:text-sm uppercase tracking-wider">Diferenciais</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-white via-brand to-white bg-clip-text text-transparent">
-              Benefícios
+              Benefícios VirtuaX
             </h2>
             <p className="max-w-2xl mx-auto leading-relaxed text-base sm:text-lg px-4 text-foreground">
               Vantagens exclusivas que fazem a diferença na sua conexão
