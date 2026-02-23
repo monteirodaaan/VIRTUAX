@@ -435,6 +435,22 @@ function HomePageContent() {
         </div>
       </section>
 
+      {/* Promotional Banner Section */}
+      <section className="relative overflow-hidden py-8 sm:py-12 md:py-16 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8">
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+            <Image
+              src="/images/promo-banner-1giga.webp"
+              alt="Planos de até 1 GIGA - Velocidade que impressional"
+              width={1400}
+              height={600}
+              className="w-full h-auto object-cover"
+              priority={false}
+            />
+          </div>
+        </div>
+      </section>
+
       <section id="beneficios" className="relative z-10 py-16 sm:py-20 md:py-24 lg:py-32 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-16">
           <div className="text-center mb-12 sm:mb-16 md:mb-20 space-y-4 sm:space-y-6">
