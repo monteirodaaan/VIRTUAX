@@ -561,12 +561,12 @@ function HomePageContent() {
                         <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#f86c05]/10 to-transparent rounded-full -translate-y-1/2 translate-x-1/2" />
                         <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-[#f86c05]/5 to-transparent rounded-full translate-y-1/2 -translate-x-1/2" />
 
-                        <div className="text-center mb-6 relative z-10">
+                        <div className="text-left mb-6 relative z-10">
                           {/* Ícone de velocidade dentro do card - diferente para cada plano */}
 
 
                           {/* Velocidade em MB - Destaque principal */}
-                          <div className="mb-3 flex items-baseline justify-center gap-2">
+                          <div className="mb-3 flex items-baseline justify-start gap-2">
                             <div className="text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-brand to-orange-600 leading-tight">
                               {plan.name.split(' ')[0]}
                             </div>
@@ -576,14 +576,14 @@ function HomePageContent() {
                           </div>
 
                           {/* Barra decorativa */}
-                          <div className="flex items-center justify-center gap-1 mb-4">
+                          <div className="flex items-center justify-start gap-1 mb-4">
                             <div className="h-1 w-8 bg-gradient-to-r from-transparent to-[#f86c05] rounded-full" />
                             <div className="h-1 w-8 bg-[#f86c05] rounded-full" />
                             <div className="h-1 w-8 bg-gradient-to-l from-transparent to-[#f86c05] rounded-full" />
                           </div>
 
-                          {/* Preço com centralização */}
-                          <div className="text-center">
+                          {/* Preço alinhado à esquerda */}
+                          <div className="text-left">
                             <div className="text-4xl lg:text-5xl font-bold text-gray-900 mb-1">
                               {price.toFixed(2).replace(".", ",")}
                             </div>
