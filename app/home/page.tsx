@@ -172,7 +172,7 @@ function HomePageContent() {
               className="text-xs lg:text-sm font-semibold hover:text-gray-100 transition-colors text-card"
               aria-label="Ir para seção Benefícios"
             >
-              Benefícios
+              Benefícios VirtuaX
             </button>
             <div className="relative group">
               <button
@@ -442,7 +442,7 @@ function HomePageContent() {
               <span className="text-brand font-bold text-xs sm:text-sm uppercase tracking-wider">Diferenciais</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-white via-brand to-white bg-clip-text text-transparent">
-              Benefícios
+              Benefícios VirtuaX
             </h2>
             <p className="max-w-2xl mx-auto leading-relaxed text-base sm:text-lg px-4 text-foreground">
               Vantagens exclusivas que fazem a diferença na sua conexão
