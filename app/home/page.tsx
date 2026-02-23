@@ -272,9 +272,9 @@ function HomePageContent() {
                 Contato
               </button>
 
-              <div className="py-1 mt-1">
+              <div className="py-1 mt-1 flex justify-center">
                 <Select value={selectedCity} onValueChange={setSelectedCity}>
-                  <SelectTrigger className="h-9 text-sm font-semibold bg-white text-brand border-2 border-brand rounded-md w-full">
+                  <SelectTrigger className="h-9 text-sm font-semibold bg-white text-brand border-2 border-brand rounded-md w-auto min-w-fit">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
