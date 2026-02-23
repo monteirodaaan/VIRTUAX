@@ -96,6 +96,15 @@ const plans = [
   },
 ]
 
+// Mapeamento de cidades
+const cityNames: { [key: string]: string } = {
+  areia: "Areia",
+  bananeiras: "Bananeiras",
+  cacimba: "Cacimba de Dentro",
+  serraria: "Serraria",
+  solanea: "Solânea",
+}
+
 function HomePageContent() {
   const searchParams = useSearchParams()
   const [selectedCity, setSelectedCity] = useState("areia")
@@ -379,7 +388,7 @@ function HomePageContent() {
                 <span className="text-brand font-bold text-xs sm:text-sm uppercase tracking-wider">Sobre Nós</span>
               </div>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 text-left">
-                Conectando a Paraíba com Qualidade
+                Conectado <span className="text-brand">{cityNames[selectedCity] || "sua região"}</span> com qualidade VirtuaX
               </h2>
             </div>
 
@@ -505,7 +514,7 @@ function HomePageContent() {
             <div className="inline-block px-4 sm:px-6 py-1.5 sm:py-2 rounded-full bg-brand/10 border border-brand/30 mb-4 sm:mb-6 border-orange-500 bg-transparent">
               <span className="text-brand font-bold text-xs sm:text-sm uppercase tracking-wider">Planos</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">Escolha seu plano</h2>
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">Escolha seu plano<br />em <span className="text-brand">{cityNames[selectedCity] || "sua região"}</span></h2>
 
             <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-6 sm:mb-8 px-4 sm:px-0">
               <button
@@ -724,7 +733,7 @@ function HomePageContent() {
                     <div className="bg-gradient-to-r from-brand/25 via-brand/15 to-transparent border border-brand/40 rounded-2xl p-8 sm:p-10 md:p-12 text-center">
                       <p className="text-sm sm:text-base text-gray-300 mb-4">Cada empresa tem necessidades únicas</p>
                       <h4 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                        Solicite um Orçamento Personalizado
+                        Solicite um orçamento personalizado
                       </h4>
                       <p className="text-sm sm:text-base text-gray-300 mb-8 max-w-xl mx-auto">
                         Nossa equipe de especialistas analisará suas necessidades específicas e criará a melhor solução para seu negócio

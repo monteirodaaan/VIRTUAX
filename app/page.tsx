@@ -1,9 +1,9 @@
 "use client"
 
-import { useState } from "react"
 import { useRouter } from "next/navigation"
-import { ChevronDown, MapPin } from "lucide-react"
+import { MapPin } from "lucide-react"
 import Image from "next/image"
+import { useState, useEffect } from "react"
 
 const cities = [
   { value: "areia", label: "Areia" },
@@ -14,14 +14,28 @@ const cities = [
 ]
 
 export default function CitySelectionPage() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [selectedCity, setSelectedCity] = useState("")
   const router = useRouter()
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    // Simulate initial load completion
+    setIsLoading(false)
+  }, [])
 
   const handleCitySelect = (cityValue: string) => {
-    setSelectedCity(cityValue)
-    setIsOpen(false)
+    setIsLoading(true)
     router.push(`/home?city=${cityValue}`)
+  }
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#ff8c3a] to-[#f86c05]">
+        <div className="text-center">
+          <div className="w-16 h-16 border-4 border-white border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-white font-semibold text-lg">Carregando...</p>
+        </div>
+      </div>
+    )
   }
 
   return (
@@ -33,24 +47,6 @@ export default function CitySelectionPage() {
       <div className="absolute inset-0 bg-gradient-to-br from-[#ff8c3a]/30 to-[#f86c05]/30" />
 
       <div className="relative z-10 flex flex-col min-h-screen">
-        <header className="w-full px-4 sm:px-6 md:px-8 py-4 md:py-6">
-          <div className="container mx-auto flex items-center justify-between h-12 sm:h-14">
-            {/* Empty left side for spacing */}
-            <div className="flex-1" />
-            {/* Centered Área do Cliente */}
-            <a
-              href="http://central.virtuax.com.br/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 bg-white text-[#f86c05] font-bold rounded-lg hover:bg-gray-50 transition-colors text-xs sm:text-sm"
-            >
-              Área do cliente
-            </a>
-            {/* Empty right side for spacing */}
-            <div className="flex-1" />
-          </div>
-        </header>
-
         <div className="flex-1 flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-8">
           {/* Logo and Location Selection Section */}
           <div className="w-full max-w-md">
@@ -58,57 +54,43 @@ export default function CitySelectionPage() {
               <Image
                 src="/images/logo.webp"
                 alt="VirtuaX Logo"
-                width={140}
-                height={35}
-                className="h-8 sm:h-9 md:h-10 w-auto mx-auto"
+                width={200}
+                height={50}
+                className="h-12 sm:h-14 md:h-16 w-auto mx-auto"
+                priority
               />
-              <h1 className="font-bold text-white text-2xl sm:text-3xl md:text-4xl">Escolha sua localização</h1>
-              <p className="text-base sm:text-lg text-white/95 font-medium">Com o melhor provedor da região</p>
+              <h1 className="font-bold text-white text-2xl sm:text-3xl md:text-4xl">Escolha sua região</h1>
             </div>
 
-            <div className="relative">
-              <button
-                onClick={() => setIsOpen(!isOpen)}
-                className="w-full bg-white rounded-xl px-4 sm:px-6 py-4 sm:py-5 flex items-center justify-center text-center transition-all hover:shadow-lg"
-              >
-                <MapPin className="h-5 w-5 sm:h-6 sm:w-6 mr-3" style={{ color: "#f86c05" }} />
-                <span className="text-lg sm:text-xl font-bold text-[#f86c05] flex-1 text-center">
-                  {selectedCity ? cities.find((c) => c.value === selectedCity)?.label : "Escolha sua localização"}
-                </span>
-                <ChevronDown
-                  className={`h-5 w-5 sm:h-6 sm:w-6 transition-transform ${isOpen ? "rotate-180" : ""}`}
-                  style={{ color: "#f86c05" }}
-                />
-              </button>
-
-              {isOpen && (
-                <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl overflow-hidden shadow-lg z-50">
-                  {cities.map((city, index) => (
-                    <div key={city.value}>
-                      <button
-                        onClick={() => handleCitySelect(city.value)}
-                        className="w-full px-4 sm:px-6 py-3 sm:py-4 text-center text-base sm:text-lg font-semibold transition-all hover:bg-[#f86c05] hover:text-white text-gray-700"
-                      >
-                        {city.label}
-                      </button>
-                      {index < cities.length - 1 && <div className="h-px bg-gray-200 mx-4" />}
-                    </div>
-                  ))}
-                </div>
-              )}
+            <div className="space-y-3 sm:space-y-4 mb-8 sm:mb-10">
+              {cities.map((city) => (
+                <button
+                  key={city.value}
+                  onClick={() => handleCitySelect(city.value)}
+                  className="w-full bg-white rounded-2xl px-6 sm:px-8 py-4 sm:py-5 flex items-center justify-center gap-3 transition-all hover:shadow-lg hover:scale-[1.02] hover:bg-[#f86c05] hover:text-white group"
+                >
+                  <MapPin className="h-5 w-5 sm:h-6 sm:w-6 text-[#f86c05] group-hover:text-white transition-colors" />
+                  <span className="text-lg sm:text-xl font-bold text-gray-700 group-hover:text-white transition-colors">
+                    {city.label}
+                  </span>
+                </button>
+              ))}
             </div>
+
+            {/* Separator line */}
+            <div className="my-6 sm:my-8 h-px bg-white/20"></div>
+
+            {/* Área do Cliente Button */}
+            <a
+              href="http://central.virtuax.com.br/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full px-4 sm:px-5 md:px-6 py-3 sm:py-4 bg-white text-[#f86c05] font-bold rounded-2xl hover:bg-gray-50 transition-colors text-sm sm:text-base text-center block"
+            >
+              Área do cliente
+            </a>
           </div>
         </div>
-
-        <footer className="py-6 sm:py-8 text-center">
-          <div className="container mx-auto px-4 sm:px-6">
-            <p className="text-white font-bold text-xs sm:text-sm">VIRTUAX EMPRESA X</p>
-            <p className="text-white/90 text-xs mt-2 max-w-md mx-auto leading-relaxed px-4">
-              Descrição: Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been
-              the industry's standard dummy text
-            </p>
-          </div>
-        </footer>
       </div>
     </div>
   )
