@@ -233,26 +233,6 @@ function HomePageContent() {
             </a>
           </nav>
 
-          {/* Mobile city selector */}
-          <div className="md:hidden flex items-center gap-2">
-            <Select value={selectedCity} onValueChange={setSelectedCity}>
-              <SelectTrigger className="h-9 text-xs font-semibold bg-white border-2 border-white rounded-md !w-auto min-w-fit px-2" style={{ color: "var(--brand)" }}>
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent>
-                {cities.map((city) => (
-                  <SelectItem
-                    key={city.value}
-                    value={city.value}
-                    className="text-sm"
-                  >
-                    {city.label}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
-
           <button
             className="md:hidden text-white"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -291,6 +271,25 @@ function HomePageContent() {
               >
                 Contato
               </button>
+
+              <div className="py-3 border-t border-gray-200">
+                <Select value={selectedCity} onValueChange={setSelectedCity}>
+                  <SelectTrigger className="h-9 text-sm font-semibold bg-white text-brand border-2 border-brand rounded-md w-full">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {cities.map((city) => (
+                      <SelectItem
+                        key={city.value}
+                        value={city.value}
+                        className="text-sm"
+                      >
+                        {city.label}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
 
               <a
                 href="http://central.virtuax.com.br/"
@@ -389,7 +388,7 @@ function HomePageContent() {
                 A <strong className="text-brand">VirtuaX</strong> leva fibra óptica de alta performance para cidades da Paraíba, com velocidade real, estabilidade constante e atendimento que resolve.
               </p>
               <p>
-                Com experiência no mercado de telecom, entregamos internet ultra-rápida para residências e empresas que precisam trabalhar, estudar, criar e se divertir sem interrupções.
+                Com experi��ncia no mercado de telecom, entregamos internet ultra-rápida para residências e empresas que precisam trabalhar, estudar, criar e se divertir sem interrupções.
               </p>
               <p>
                 Mais do que conexão, oferecemos confiança: planos claros, preços justos e suporte humano sempre que você precisar.
