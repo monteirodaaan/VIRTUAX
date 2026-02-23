@@ -123,24 +123,6 @@ function HomePageContent() {
   // Banner carousel for hero section
   const banners = [
     {
-      title: "Internet de Alta Velocidade",
-      subtitle: "Fibra óptica de última geração para sua casa ou empresa",
-      bg: "from-orange-600 to-orange-500",
-      type: "text",
-    },
-    {
-      title: "Velocidade que Você Merece",
-      subtitle: "Planos a partir de 1GB com instalação gratuita",
-      bg: "from-orange-500 to-amber-500",
-      type: "text",
-    },
-    {
-      title: "Suporte 24/7",
-      subtitle: "Equipe sempre pronta para te atender",
-      bg: "from-amber-600 to-orange-600",
-      type: "text",
-    },
-    {
       title: "",
       subtitle: "",
       bg: "",
