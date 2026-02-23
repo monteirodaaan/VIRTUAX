@@ -272,7 +272,7 @@ function HomePageContent() {
                 Contato
               </button>
 
-              <div className="py-3 border-t border-gray-200">
+              <div className="py-1 mt-1">
                 <Select value={selectedCity} onValueChange={setSelectedCity}>
                   <SelectTrigger className="h-9 text-sm font-semibold bg-white text-brand border-2 border-brand rounded-md w-full">
                     <SelectValue />
