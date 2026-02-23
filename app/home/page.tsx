@@ -227,12 +227,31 @@ function HomePageContent() {
               href="http://central.virtuax.com.br/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center font-semibold hover:bg-gray-50 transition-colors text-xs lg:text-sm px-3 lg:px-5 border-2 border-white rounded-md h-9"
-              style={{ backgroundColor: "white", color: "var(--brand)" }}
+              className="inline-flex items-center justify-center font-semibold transition-all duration-200 text-xs lg:text-sm px-4 lg:px-6 rounded-lg h-9 bg-white text-brand hover:bg-opacity-90 shadow-sm hover:shadow-md"
             >
               Área do Cliente
             </a>
           </nav>
+
+          {/* Mobile city selector */}
+          <div className="md:hidden flex items-center gap-2">
+            <Select value={selectedCity} onValueChange={setSelectedCity}>
+              <SelectTrigger className="h-9 text-xs font-semibold bg-white border-2 border-white rounded-md !w-auto min-w-fit px-2" style={{ color: "var(--brand)" }}>
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                {cities.map((city) => (
+                  <SelectItem
+                    key={city.value}
+                    value={city.value}
+                    className="text-sm"
+                  >
+                    {city.label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
 
           <button
             className="md:hidden text-white"
@@ -273,31 +292,11 @@ function HomePageContent() {
                 Contato
               </button>
 
-              <div className="py-2">
-                <Select value={selectedCity} onValueChange={setSelectedCity}>
-                  <SelectTrigger className="h-9 text-sm font-semibold bg-white text-brand border border-gray-300 rounded-md w-full">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {cities.map((city) => (
-                      <SelectItem
-                        key={city.value}
-                        value={city.value}
-                        className="text-sm"
-                      >
-                        {city.label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-
               <a
                 href="http://central.virtuax.com.br/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full mt-2 inline-flex items-center justify-center font-semibold hover:bg-gray-50 transition-colors text-xs lg:text-sm px-3 lg:px-5 border-2 border-white rounded-md h-9"
-                style={{ backgroundColor: "var(--brand)", color: "white" }}
+                className="w-full mt-2 inline-flex items-center justify-center font-semibold transition-all duration-200 text-sm px-4 rounded-lg h-10 bg-brand text-white hover:bg-opacity-90 shadow-sm hover:shadow-md"
               >
                 Área do Cliente
               </a>
