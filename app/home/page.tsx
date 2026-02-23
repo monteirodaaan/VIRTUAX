@@ -96,6 +96,15 @@ const plans = [
   },
 ]
 
+// Mapeamento de cidades
+const cityNames: { [key: string]: string } = {
+  areia: "Areia",
+  bananeiras: "Bananeiras",
+  cacimba: "Cacimba de Dentro",
+  serraria: "Serraria",
+  solanea: "Solânea",
+}
+
 function HomePageContent() {
   const searchParams = useSearchParams()
   const [selectedCity, setSelectedCity] = useState("areia")
@@ -379,7 +388,7 @@ function HomePageContent() {
                 <span className="text-brand font-bold text-xs sm:text-sm uppercase tracking-wider">Sobre Nós</span>
               </div>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 text-left">
-                Conectando a Paraíba com Qualidade
+                Conectado {cityNames[selectedCity] || "sua região"} com qualidade VirtuaX
               </h2>
             </div>
 
