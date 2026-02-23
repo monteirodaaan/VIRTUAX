@@ -374,8 +374,8 @@ function HomePageContent() {
       <section id="sobre" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto my-4 sm:my-6">
-            <div className="text-left mb-8 sm:mb-10 md:mb-12 flex items-center gap-3 sm:gap-4 flex-wrap">
-              <div className="inline-block px-4 sm:px-6 rounded-full bg-brand/10 border border-brand/30 bg-transparent border-orange-500">
+            <div className="text-left mb-8 sm:mb-10 md:mb-12 px-4 sm:px-0">
+              <div className="inline-block px-4 sm:px-6 rounded-full bg-brand/10 border border-brand/30 bg-transparent border-orange-500 mb-4 sm:mb-6">
                 <span className="text-brand font-bold text-xs sm:text-sm uppercase tracking-wider">Sobre Nós</span>
               </div>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 text-left">
