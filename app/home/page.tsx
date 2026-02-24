@@ -988,10 +988,10 @@ function HomePageContent() {
       <footer className="bg-gray-900 text-white">
         {/* Main Footer */}
         <div className="container mx-auto px-4 sm:px-6 md:px-8 py-14 sm:py-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-8 gap-10">
+          <div className="flex flex-col lg:flex-row lg:gap-16">
 
             {/* Coluna 1: Marca */}
-            <div className="space-y-5 lg:col-span-2">
+            <div className="space-y-5 lg:w-96 shrink-0">
               <Image
                 src="/images/logo.webp"
                 alt="VirtuaX"
@@ -1022,8 +1022,10 @@ function HomePageContent() {
               </div>
             </div>
 
-            {/* Coluna 2: Serviços */}
-            <div className="space-y-5 lg:col-span-2">
+            {/* Colunas 2-4: Serviços, Links, Suporte */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 lg:gap-16 ml-auto">
+              {/* Coluna 2: Serviços */}
+              <div className="space-y-5">
               <h3 className="text-white font-bold text-sm uppercase tracking-wider">Serviços</h3>
               <ul className="space-y-3">
                 <li><span className="text-sm text-gray-400">Internet Fibra Óptica</span></li>
@@ -1031,11 +1033,10 @@ function HomePageContent() {
                 <li><span className="text-sm text-gray-400">Plano Empresarial</span></li>
                 <li><span className="text-sm text-gray-400">Suporte Técnico</span></li>
                 <li><span className="text-sm text-gray-400">Instalação Gratuita</span></li>
-              </ul>
-            </div>
+              </div>
 
-            {/* Coluna 3: Links */}
-            <div className="space-y-5 lg:col-span-2">
+              {/* Coluna 3: Links */}
+              <div className="space-y-5">
               <h3 className="text-white font-bold text-sm uppercase tracking-wider">Links</h3>
               <ul className="space-y-3">
                 {[
@@ -1060,11 +1061,10 @@ function HomePageContent() {
                     </button>
                   </li>
                 ))}
-              </ul>
-            </div>
+              </div>
 
-            {/* Coluna 4: Suporte */}
-            <div className="space-y-5 lg:col-span-2">
+              {/* Coluna 4: Suporte */}
+              <div className="space-y-5">
               <h3 className="text-white font-bold text-sm uppercase tracking-wider">Suporte</h3>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
