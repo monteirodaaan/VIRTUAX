@@ -66,50 +66,80 @@ export default function CitySelectionPage() {
 
       <div className="relative z-10 flex flex-col min-h-screen">
         {/* Conteúdo central */}
-        <div className="flex-1 flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-8 -mt-28 sm:-mt-36">
-          <div className="w-full max-w-sm" style={{ maxWidth: "24rem" }}>
-            <div className="text-center mb-16 sm:mb-6 flex justify-center mt-2 sm:mt-0">
-              <div className="h-14 sm:h-[72px] md:h-[86px] w-auto">
-                <Image
-                  src="/images/logo.webp"
-                  alt="VirtuaX Logo"
-                  width={280}
-                  height={70}
-                  className="h-full w-auto"
-                  priority
-                />
-              </div>
+        <div className="flex-1 flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-8">
+          {/* Card glassmorphism */}
+          <div
+            className="w-full rounded-3xl px-8 py-10 flex flex-col items-center gap-8"
+            style={{
+              maxWidth: "22rem",
+              background: "rgba(255,255,255,0.12)",
+              backdropFilter: "blur(18px)",
+              WebkitBackdropFilter: "blur(18px)",
+              border: "1px solid rgba(255,255,255,0.3)",
+              boxShadow: "0 8px 32px rgba(0,0,0,0.18)",
+            }}
+          >
+            {/* Logo */}
+            <div className="flex justify-center">
+              <Image
+                src="/images/logo.webp"
+                alt="VirtuaX Logo"
+                width={200}
+                height={55}
+                className="w-auto drop-shadow-lg"
+                priority
+              />
             </div>
 
+            {/* Texto de instrução */}
+            <p className="text-white/90 text-sm font-medium tracking-wide text-center drop-shadow">
+              Selecione sua cidade para continuar
+            </p>
+
             {/* Custom Dropdown */}
-            <div ref={dropdownRef} className="relative">
+            <div ref={dropdownRef} className="relative w-full">
               {/* Trigger */}
               <button
                 onClick={() => setIsOpen((o) => !o)}
-                className="w-full flex items-center justify-center gap-3 bg-white rounded-2xl px-5 py-4 sm:py-5 shadow-lg transition-all hover:shadow-xl focus:outline-none relative"
+                className="w-full flex items-center gap-3 rounded-xl px-4 py-3.5 transition-all focus:outline-none relative"
+                style={{
+                  background: "rgba(255,255,255,0.22)",
+                  border: "1px solid rgba(255,255,255,0.4)",
+                  backdropFilter: "blur(8px)",
+                  WebkitBackdropFilter: "blur(8px)",
+                }}
               >
-                <MapPin className="h-5 w-5 text-[#f86c05] shrink-0" />
-                <span className={`text-base sm:text-lg font-semibold ${selectedCity ? "text-gray-800" : "text-gray-400"}`}>
+                <MapPin className="h-4 w-4 text-white shrink-0" />
+                <span className={`text-base font-semibold flex-1 text-left ${selectedCity ? "text-white" : "text-white/70"}`}>
                   {selectedCity ? selectedCity.label : "Selecione sua cidade..."}
                 </span>
                 <ChevronDown
-                  className={`h-5 w-5 text-gray-400 shrink-0 transition-transform duration-200 absolute right-5 ${isOpen ? "rotate-180" : ""}`}
+                  className={`h-4 w-4 text-white/80 shrink-0 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
                 />
               </button>
 
               {/* Options list */}
               {isOpen && (
-                <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl overflow-hidden shadow-2xl z-50">
+                <div
+                  className="absolute top-full left-0 right-0 mt-2 rounded-xl overflow-hidden z-50"
+                  style={{
+                    background: "rgba(255,255,255,0.18)",
+                    backdropFilter: "blur(20px)",
+                    WebkitBackdropFilter: "blur(20px)",
+                    border: "1px solid rgba(255,255,255,0.35)",
+                    boxShadow: "0 8px 24px rgba(0,0,0,0.2)",
+                  }}
+                >
                   {cities.map((city, index) => (
                     <button
                       key={city.value}
                       onClick={() => handleSelect(city)}
-                      className={`w-full flex items-center justify-center gap-3 px-5 py-4 transition-colors hover:bg-orange-50 hover:text-[#f86c05]
-                        ${selectedCity?.value === city.value ? "text-[#f86c05] bg-orange-50" : "text-gray-700"}
-                        ${index !== cities.length - 1 ? "border-b border-gray-100" : ""}
+                      className={`w-full flex items-center gap-3 px-4 py-3.5 transition-colors text-left
+                        ${selectedCity?.value === city.value ? "bg-white/20 text-white font-bold" : "text-white font-semibold hover:bg-white/15"}
+                        ${index !== cities.length - 1 ? "border-b border-white/15" : ""}
                       `}
                     >
-                      <span className="text-base font-semibold">{city.label}</span>
+                      <span className="text-sm drop-shadow">{city.label}</span>
                     </button>
                   ))}
                 </div>
