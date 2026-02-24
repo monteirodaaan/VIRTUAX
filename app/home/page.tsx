@@ -164,11 +164,12 @@ function HomePageContent() {
               width={120}
               height={30}
               className="h-6 sm:h-7 md:h-8 w-auto"
+              style={{ height: "auto" }}
               priority
             />
           </button>
 
-          <nav className="hidden md:flex items-center gap-4 lg:gap-6 text-background" aria-label="Navegação principal">
+          <nav className="hidden md:flex items-center gap-4 lg:gap-6 text-background" aria-label="Navegacao principal">
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               className="text-xs lg:text-sm font-semibold hover:text-gray-100 transition-colors text-card"
@@ -1065,6 +1066,7 @@ function HomePageContent() {
                   width={140}
                   height={36}
                   className="h-9 w-auto"
+                  style={{ height: "auto" }}
                 />
               </button>
               <p className="text-sm text-gray-400 leading-relaxed max-w-xs">
