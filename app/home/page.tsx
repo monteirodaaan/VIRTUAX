@@ -1033,6 +1033,7 @@ function HomePageContent() {
                 <li><span className="text-sm text-gray-400">Plano Empresarial</span></li>
                 <li><span className="text-sm text-gray-400">Suporte Técnico</span></li>
                 <li><span className="text-sm text-gray-400">Instalação Gratuita</span></li>
+              </ul>
               </div>
 
               {/* Coluna 3: Links */}
