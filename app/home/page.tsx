@@ -145,7 +145,7 @@ function HomePageContent() {
         <div className="container mx-auto px-4 sm:px-6 md:px-8 h-14 sm:h-16 flex items-center justify-between">
           <Image
             src="/images/logo.webp"
-            alt="VirtuaX Telecom - Provedor de Internet Fibra Óptica na Paraíba"
+            alt="VirtuaX"
             width={120}
             height={30}
             className="h-6 sm:h-7 md:h-8 w-auto"
@@ -227,7 +227,7 @@ function HomePageContent() {
             </div>
 
             <a
-              href="http://central.virtuax.com.br/"
+              href="https://virtuax.com.br/area-do-cliente"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center font-semibold transition-all duration-200 text-xs lg:text-sm px-4 lg:px-6 rounded-lg h-9 bg-white text-brand hover:bg-opacity-90 shadow-sm hover:shadow-md"
@@ -295,7 +295,7 @@ function HomePageContent() {
               </div>
 
               <a
-                href="http://central.virtuax.com.br/"
+                href="https://virtuax.com.br/area-do-cliente"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full mt-2 inline-flex items-center justify-center font-semibold transition-all duration-200 text-sm px-4 rounded-lg h-10 bg-brand text-white hover:bg-opacity-90 shadow-sm hover:shadow-md"
