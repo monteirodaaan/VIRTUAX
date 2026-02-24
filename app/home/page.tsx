@@ -170,7 +170,7 @@ function HomePageContent() {
             />
           </button>
 
-          <nav className="hidden md:flex items-center gap-4 lg:gap-6 text-background" aria-label="Navegacao principal">
+          <nav className="hidden md:flex items-center gap-4 lg:gap-6 text-background">
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               className="text-xs lg:text-sm font-semibold hover:text-gray-100 transition-colors text-card"
@@ -1107,7 +1107,7 @@ function HomePageContent() {
                   {["Internet em Areia", "Internet em Bananeiras", "Internet em Cacimba de Dentro", "Internet em Serraria", "Internet em Solânea"].map((cidade) => {
                     let nomeCidade = cidade.replace("Internet em ", "").toLowerCase().replace(/\s+/g, "-");
                     if (nomeCidade === "cacimba-de-dentro") {
-                      nomeCidade = "cdd";
+                      nomeCidade = "cacimba";
                     }
                     return (
                       <li key={cidade}>
