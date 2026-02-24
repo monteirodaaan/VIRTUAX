@@ -1100,7 +1100,7 @@ function HomePageContent() {
         <div className="border-t border-gray-700">
           <div className="container mx-auto px-4 sm:px-6 md:px-8 py-5 flex flex-col sm:flex-row justify-between items-center gap-3">
             <p className="text-xs text-gray-500 text-center sm:text-left">
-              © 2025 VirtuaX. Todos os direitos reservados — Dev.{" "}
+              © 2026 VirtuaX. Todos os direitos reservados — Dev.{" "}
               <span className="text-brand font-semibold">November Marketing</span>{" "}
               Design{" "}
               <span className="text-brand font-semibold">dm.art.br</span>
