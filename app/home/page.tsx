@@ -560,6 +560,39 @@ function HomePageContent() {
                 Planos acessíveis com o melhor custo-benefício da região. Qualidade premium sem pesar no bolso.
               </p>
             </div>
+
+            {/* Download APP Section */}
+            <div className="w-full col-span-full flex flex-col items-center justify-center mt-8 sm:mt-12">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-500 mb-8 sm:mb-10">
+                Baixe nosso APP
+              </h2>
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <a 
+                  href="https://play.google.com/store/apps/details?id=com.innave.virtuax&hl=pt_BR" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:opacity-90 transition-opacity"
+                >
+                  <img 
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ativo%202-gG8m72SXp24pzz4bznyR6pF1ztLAtu.webp"
+                    alt="GET IT ON Google Play"
+                    className="h-auto w-80"
+                  />
+                </a>
+                <a 
+                  href="https://apps.apple.com/br/app/virtuax/id1626854055" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:opacity-90 transition-opacity"
+                >
+                  <img 
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ativo%203-NDV0qKwxj8VPlXMVKTMh6UxP5YUGVL.webp"
+                    alt="DOWNLOAD ON THE App Store"
+                    className="h-auto w-80"
+                  />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -864,7 +897,7 @@ function HomePageContent() {
                     <p className="text-gray-600 text-xs sm:text-sm">
                       {planType === "empresarial"
                         ? "Especialistas em soluções corporativas"
-                        : "Segunda a sexta, das 8h ����������s 18h"}
+                        : "Segunda a sexta, das 8h às 18h"}
                     </p>
                   </div>
                 </div>
