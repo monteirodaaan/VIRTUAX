@@ -1105,7 +1105,10 @@ function HomePageContent() {
                 <h3 className="text-xs font-bold uppercase tracking-widest text-gray-500">Cobertura</h3>
                 <ul className="flex flex-col gap-3.5">
                   {["Internet em Areia", "Internet em Bananeiras", "Internet em Cacimba de Dentro", "Internet em Serraria", "Internet em Solânea"].map((cidade) => {
-                    const nomeCidade = cidade.replace("Internet em ", "").toLowerCase().replace(/\s+/g, "-");
+                    let nomeCidade = cidade.replace("Internet em ", "").toLowerCase().replace(/\s+/g, "-");
+                    if (nomeCidade === "cacimba-de-dentro") {
+                      nomeCidade = "cdd";
+                    }
                     return (
                       <li key={cidade}>
                         <Link href={`/home?city=${nomeCidade}`} className="text-sm text-gray-400 hover:text-white transition-colors duration-200">
