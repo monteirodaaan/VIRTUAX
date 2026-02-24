@@ -1100,6 +1100,7 @@ function HomePageContent() {
               </ul>
               </div>
             </div>
+          </div>
         </div>
 
         {/* Bottom Bar */}
