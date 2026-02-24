@@ -163,7 +163,7 @@ function HomePageContent() {
               alt="VirtuaX"
               width={120}
               height={30}
-              className="h-6 sm:h-7 md:h-8 w-auto"
+              className="h-4 sm:h-5 md:h-6 w-auto"
               style={{ height: "auto" }}
               priority
             />
@@ -1065,7 +1065,7 @@ function HomePageContent() {
                   alt="VirtuaX"
                   width={140}
                   height={36}
-                  className="h-9 w-auto"
+                  className="h-6 w-auto"
                   style={{ height: "auto" }}
                 />
               </button>
