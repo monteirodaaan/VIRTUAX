@@ -57,7 +57,7 @@ export default function CitySelectionPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col relative">
+      <div className="min-h-screen flex flex-col relative overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/images/orange-gradient-bg.webp')" }}
