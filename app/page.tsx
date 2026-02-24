@@ -1,7 +1,7 @@
 "use client"
 
 import { useRouter } from "next/navigation"
-import { MapPin, ChevronDown } from "lucide-react"
+import { MapPin, ChevronDown, User } from "lucide-react"
 import Image from "next/image"
 import { useState, useEffect, useRef } from "react"
 
@@ -71,9 +71,10 @@ export default function CitySelectionPage() {
             href="http://central.virtuax.com.br/"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-2.5 bg-white text-[#f86c05] font-bold rounded-2xl hover:bg-gray-50 transition-colors text-sm sm:text-base text-center"
+            className="inline-flex items-center gap-2 px-6 py-2.5 bg-white text-[#f86c05] font-bold rounded-2xl hover:bg-gray-50 transition-colors text-sm sm:text-base"
           >
-            Área do cliente
+            <User className="h-4 w-4 shrink-0" />
+            Área do Cliente
           </a>
         </div>
 
