@@ -561,31 +561,37 @@ function HomePageContent() {
               </p>
             </div>
 
-            <div className="flex flex-col gap-6 justify-center items-center w-full">
-              <a 
-                href="https://play.google.com/store/apps/details?id=com.innave.virtuax&hl=pt_BR" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="hover:opacity-90 transition-opacity"
-              >
-                <img 
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ativo%202-gG8m72SXp24pzz4bznyR6pF1ztLAtu.webp"
-                  alt="GET IT ON Google Play"
-                  className="h-auto w-80"
-                />
-              </a>
-              <a 
-                href="https://apps.apple.com/br/app/virtuax/id1626854055" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="hover:opacity-90 transition-opacity"
-              >
-                <img 
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ativo%203-NDV0qKwxj8VPlXMVKTMh6UxP5YUGVL.webp"
-                  alt="DOWNLOAD ON THE App Store"
-                  className="h-auto w-80"
-                />
-              </a>
+            {/* Download APP Section */}
+            <div className="w-full col-span-full flex flex-col items-center justify-center mt-8 sm:mt-12">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-white via-brand to-white bg-clip-text text-transparent mb-8 sm:mb-10">
+                Baixe nosso APP
+              </h2>
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <a 
+                  href="https://play.google.com/store/apps/details?id=com.innave.virtuax&hl=pt_BR" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:opacity-90 transition-opacity"
+                >
+                  <img 
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ativo%202-gG8m72SXp24pzz4bznyR6pF1ztLAtu.webp"
+                    alt="GET IT ON Google Play"
+                    className="h-auto w-80"
+                  />
+                </a>
+                <a 
+                  href="https://apps.apple.com/br/app/virtuax/id1626854055" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:opacity-90 transition-opacity"
+                >
+                  <img 
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ativo%203-NDV0qKwxj8VPlXMVKTMh6UxP5YUGVL.webp"
+                    alt="DOWNLOAD ON THE App Store"
+                    className="h-auto w-80"
+                  />
+                </a>
+              </div>
             </div>
           </div>
         </div>
