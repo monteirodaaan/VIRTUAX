@@ -208,6 +208,32 @@ function HomePageContent() {
                 </button>
               </div>
             </div>
+            {/* End of dropdown menu for plans */}
+            <button
+              onClick={() => scrollToSection("contato")}
+              className="text-xs lg:text-sm font-semibold hover:text-gray-300 transition-colors text-background"
+            >
+              Contato
+            </button>
+
+            <div className="flex items-center gap-2">
+              <Select value={selectedCity} onValueChange={setSelectedCity}>
+                <SelectTrigger className="h-9 text-xs lg:text-sm font-semibold bg-white border-2 border-white rounded-md !w-auto min-w-fit px-3" style={{ color: "var(--brand)" }}>
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  {cities.map((city) => (
+                    <SelectItem
+                      key={city.value}
+                      value={city.value}
+                      className="text-sm"
+                    >
+                      {city.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
 
             <a
               href="#area-do-cliente"
@@ -216,7 +242,225 @@ function HomePageContent() {
               Área do Cliente
             </a>
           </nav>
-        </header>
+
+          <button
+            className="md:hidden text-white"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-menu"
+          >
+            {mobileMenuOpen ? <X className="h-5 w-5 sm:h-6 sm:w-6" /> : <Menu className="h-5 w-5 sm:h-6 sm:w-6" />}
+          </button>
+        </div>
+
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-white border-t border-gray-200" id="mobile-menu">
+            <nav className="container mx-auto px-4 sm:px-6 md:px-8 py-4 flex flex-col gap-2" aria-label="Menu de navegação mobile">
+              <button
+                onClick={() => scrollToSection("sobre")}
+                className="text-left text-sm font-semibold text-gray-700 hover:text-brand transition-colors py-2"
+              >
+                Sobre
+              </button>
+              <button
+                onClick={() => scrollToSection("beneficios")}
+                className="text-left text-sm font-semibold text-gray-700 hover:text-brand transition-colors py-2"
+              >
+                Benefícios
+              </button>
+              <button
+                onClick={() => scrollToSection("planos")}
+                className="text-left text-sm font-semibold text-gray-700 hover:text-brand transition-colors py-2"
+              >
+                Planos
+              </button>
+              <button
+                onClick={() => scrollToSection("contato")}
+                className="text-left text-sm font-semibold text-gray-700 hover:text-brand transition-colors py-2"
+              >
+                Contato
+              </button>
+
+              <div className="py-1 mt-1">
+                <Select value={selectedCity} onValueChange={setSelectedCity}>
+                  <SelectTrigger className="h-9 text-sm font-semibold bg-white text-brand border-2 border-brand rounded-md w-auto min-w-fit">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {cities.map((city) => (
+                      <SelectItem
+                        key={city.value}
+                        value={city.value}
+                        className="text-sm"
+                      >
+                        {city.label}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <a
+                href="#area-do-cliente"
+                className="w-full mt-2 inline-flex items-center justify-center font-semibold transition-all duration-200 text-sm px-4 rounded-lg h-10 bg-brand text-white hover:bg-opacity-90 shadow-sm hover:shadow-md"
+              >
+                Área do Cliente
+              </a>
+            </nav>
+          </div>
+        )}
+      </header>
+
+      <div className="h-14 sm:h-16" />
+
+      <section className="relative overflow-hidden">
+        <div className="relative h-[calc(100vh-3.5rem)] sm:h-[calc(100vh-4rem)]">
+          {banners.map((banner, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentBannerIndex ? "opacity-100" : "opacity-0"
+                }`}
+            >
+              {banner.type === "image" ? (
+                // Image banner - full background image only
+                <div className="w-full h-full bg-orange-500 flex items-center justify-center">
+                  {/* Mobile version */}
+                  <div className="relative w-full h-full md:hidden">
+                    <Image
+                      src={banner.imagePathMobile || banner.imagePath || ""}
+                      alt="Banner Alta Velocidade VirtuaX Mobile"
+                      fill
+                      sizes="100%"
+                      className="object-cover"
+                      priority
+                    />
+                  </div>
+                  {/* Desktop version */}
+                  <div className="relative w-full h-full hidden md:block">
+                    <Image
+                      src={banner.imagePath || ""}
+                      alt="Banner Alta Velocidade VirtuaX"
+                      fill
+                      sizes="100%"
+                      className="object-cover"
+                      priority
+                    />
+                  </div>
+                </div>
+              ) : (
+                // Text banner - with background and overlay
+                <div className="w-full h-full flex items-center justify-center relative">
+                  {/* Background Mobile */}
+                  <div
+                    className="absolute inset-0 md:hidden bg-cover bg-center"
+                    style={{
+                      backgroundImage: `url(/images/banner-${currentBannerIndex + 1}-mobile.jpg)`,
+                    }}
+                  />
+                  {/* Background Desktop */}
+                  <div
+                    className="absolute inset-0 hidden md:block bg-cover bg-center"
+                    style={{
+                      backgroundImage: `url(/images/banner-${currentBannerIndex + 1}-desktop.jpg)`,
+                    }}
+                  />
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-black/40" />
+                  {/* Conteúdo */}
+                  <div className="container mx-auto px-4 sm:px-6 md:px-8 text-center text-white relative z-10" suppressHydrationWarning>
+                    <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold mb-2 sm:mb-3 md:mb-4" suppressHydrationWarning>
+                      {banner.title}
+                    </h2>
+                    <p className="text-sm sm:text-base md:text-lg lg:text-xl opacity-90" suppressHydrationWarning>{banner.subtitle}</p>
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        <div className="absolute bottom-3 sm:bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
+          {banners.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentBannerIndex(index)}
+              className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all ${index === currentBannerIndex ? "bg-white w-6 sm:w-8" : "bg-white/50"
+                }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
+
+        <button
+          onClick={() => setCurrentBannerIndex((prev) => (prev - 1 + banners.length) % banners.length)}
+          className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-white transition-all z-10"
+          aria-label="Previous slide"
+        >
+          <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" />
+        </button>
+        <button
+          onClick={() => setCurrentBannerIndex((prev) => (prev + 1) % banners.length)}
+          className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-white transition-all z-10"
+          aria-label="Next slide"
+        >
+          <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" />
+        </button>
+      </section>
+
+      <section id="sobre" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-16">
+          <div className="max-w-4xl mx-auto my-4 sm:my-6">
+            <div className="text-left mb-8 sm:mb-10 md:mb-12 px-4 sm:px-0">
+              <div className="inline-block px-4 sm:px-6 rounded-full bg-brand/10 border border-brand/30 bg-transparent border-orange-500 mb-4 sm:mb-6">
+                <span className="text-brand font-bold text-xs sm:text-sm uppercase tracking-wider">Sobre Nós</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 text-left">
+                Conectado <span className="text-brand">{cityNames[selectedCity] || "sua região"}</span><br />com qualidade VirtuaX
+              </h2>
+            </div>
+
+            {/* About section - trust message - cache bust */}
+            <div className="space-y-4 sm:space-y-5 md:space-y-6 text-gray-700 text-base sm:text-lg leading-relaxed px-4 sm:px-0">
+              <p>
+                A <strong className="text-brand">VirtuaX</strong> leva fibra óptica de alta performance para cidades da Paraíba, com velocidade real, estabilidade constante e atendimento que resolve.
+              </p>
+              <p>
+                Com experiência no mercado de telecom, entregamos internet ultra-rápida para residências e empresas que precisam trabalhar, estudar, criar e se divertir sem interrupções.
+              </p>
+              <p className="text-brand font-semibold">
+                Mais do que conexão, oferecemos confiança: planos claros, preços justos e suporte humano sempre que você precisar.
+              </p>
+            </div>
+
+            {/* Metrics cards section - cache bust v3 */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mt-8 sm:mt-10 md:mt-12 px-4 sm:px-0">
+              <div className="text-center p-4 sm:p-5 md:p-6 bg-brand/5 rounded-xl border border-brand/20" data-metric="localidades">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand mb-1 sm:mb-2">
+                  <AnimatedCounter end="+5" />
+                </div>
+                <div className="text-xs sm:text-sm text-gray-600 font-semibold">Localidades</div>
+              </div>
+              <div className="text-center p-4 sm:p-5 md:p-6 bg-[#f86c05]/5 rounded-xl border border-[#f86c05]/20" data-metric="excelencia">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#f86c05] mb-1 sm:mb-2">
+                  <AnimatedCounter end="97.5%" />
+                </div>
+                <div className="text-xs sm:text-sm text-gray-600 font-semibold">Excelência</div>
+              </div>
+              <div className="text-center p-4 sm:p-5 md:p-6 bg-[#f86c05]/5 rounded-xl border border-[#f86c05]/20" data-metric="disponibilidade">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#f86c05] mb-1 sm:mb-2">24/7</div>
+                <div className="text-xs sm:text-sm text-gray-600 font-semibold">Disponibilidade</div>
+              </div>
+              <div className="text-center p-4 sm:p-5 md:p-6 bg-[#f86c05]/5 rounded-xl border border-[#f86c05]/20" data-metric="clientes">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#f86c05] mb-1 sm:mb-2">
+                  <AnimatedCounter end="+9.000" />
+                </div>
+                <div className="text-xs sm:text-sm text-gray-600 font-semibold">Clientes</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section id="beneficios" className="relative z-10 py-16 sm:py-20 md:py-24 lg:py-32 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-16">
@@ -541,60 +785,7 @@ function HomePageContent() {
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* App Download Section */}
-          <div className="mt-16 sm:mt-20 md:mt-24 pt-16 sm:pt-20 md:pt-24 border-t border-gray-200">
-            <div className="max-w-3xl mx-auto">
-              {/* Header */}
-              <div className="mb-8 sm:mb-10 md:mb-12 flex justify-center">
-                <Image
-                  src="/images/download-app-header.webp"
-                  alt="Baixe nosso APP"
-                  width={400}
-                  height={100}
-                  className="h-12 sm:h-14 md:h-16 w-auto"
-                />
-              </div>
-
-              {/* Download Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
-                <a
-                  href="https://play.google.com/store/apps/details?id=com.virtuax.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-transform hover:scale-105"
-                >
-                  <Image
-                    src="/images/google-play-badge.webp"
-                    alt="Get it on Google Play"
-                    width={250}
-                    height={80}
-                    className="h-12 sm:h-14 w-auto"
-                  />
-                </a>
-                <a
-                  href="https://apps.apple.com/br/app/virtuax/id1234567890"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-transform hover:scale-105"
-                >
-                  <Image
-                    src="/images/app-store-badge.webp"
-                    alt="Download on the App Store"
-                    width={250}
-                    height={80}
-                    className="h-12 sm:h-14 w-auto"
-                  />
-                </a>
-              </div>
-
-              {/* Description */}
-              <p className="text-center text-gray-600 text-sm sm:text-base mt-6 sm:mt-8">
-                Baixe o aplicativo VirtuaX e gerencie sua conexão, faturas e suporte em qualquer lugar
-              </p>
-            </div>
-          </div>
+          )}
         </div>
       </section>
 
