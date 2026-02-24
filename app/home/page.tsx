@@ -354,14 +354,14 @@ function HomePageContent() {
             >
               {banner.type === "image" ? (
                 // Image banner - full background image only
-                <div className="w-full h-full bg-orange-500 flex items-center justify-center">
+                <div className="absolute inset-0 bg-orange-500">
                   {/* Mobile version */}
                   <div className="relative w-full h-full md:hidden">
                     <Image
                       src={banner.imagePathMobile || banner.imagePath || ""}
                       alt="Banner Alta Velocidade VirtuaX Mobile"
                       fill
-                      sizes="100%"
+                      sizes="100vw"
                       className="object-cover"
                       priority
                     />
@@ -372,7 +372,7 @@ function HomePageContent() {
                       src={banner.imagePath || ""}
                       alt="Banner Alta Velocidade VirtuaX"
                       fill
-                      sizes="100%"
+                      sizes="100vw"
                       className="object-cover"
                       priority
                     />
