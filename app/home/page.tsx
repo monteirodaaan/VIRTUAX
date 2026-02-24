@@ -561,29 +561,29 @@ function HomePageContent() {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center col-span-1 sm:col-span-2">
+            <div className="flex flex-col gap-6 justify-center items-center w-full">
               <a 
-                href="https://play.google.com" 
+                href="https://play.google.com/store/apps/details?id=com.innave.virtuax&hl=pt_BR" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto hover:opacity-90 transition-opacity"
+                className="hover:opacity-90 transition-opacity"
               >
                 <img 
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ativo%202-gG8m72SXp24pzz4bznyR6pF1ztLAtu.webp"
                   alt="GET IT ON Google Play"
-                  className="h-auto w-full sm:w-80"
+                  className="h-auto w-80"
                 />
               </a>
               <a 
-                href="https://apps.apple.com" 
+                href="https://apps.apple.com/br/app/virtuax/id1626854055" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto hover:opacity-90 transition-opacity"
+                className="hover:opacity-90 transition-opacity"
               >
                 <img 
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ativo%203-NDV0qKwxj8VPlXMVKTMh6UxP5YUGVL.webp"
                   alt="DOWNLOAD ON THE App Store"
-                  className="h-auto w-full sm:w-80"
+                  className="h-auto w-80"
                 />
               </a>
             </div>
