@@ -75,6 +75,7 @@ export default function CitySelectionPage() {
                   alt="VirtuaX Logo"
                   width={280}
                   height={70}
+                  className="h-full w-auto"
                   priority
                 />
               </div>
