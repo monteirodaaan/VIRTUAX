@@ -150,7 +150,7 @@ function HomePageContent() {
 
   return (
     <div className="min-h-screen relative bg-background">
-      <header className="fixed top-0 w-full border-gray-200 z-50 text-brand-foreground bg-brand py-3 sm:py-4 border-b-0" role="banner">
+      <header className="fixed top-0 w-full border-gray-200 z-50 text-brand-foreground bg-gray-900 py-3 sm:py-4 border-b-0" role="banner">
         <div className="container mx-auto px-4 sm:px-6 md:px-8 h-14 sm:h-16 flex items-center justify-between">
           <Image
             src="/images/logo.webp"
