@@ -62,15 +62,17 @@ export default function CitySelectionPage() {
               <h1 className="font-bold text-white text-2xl sm:text-3xl md:text-4xl">Escolha sua região</h1>
             </div>
 
-            <div className="space-y-3 sm:space-y-4 mb-8 sm:mb-10">
-              {cities.map((city) => (
+            <div className="grid grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-10 w-full max-w-4xl mx-auto">
+              {cities.map((city, index) => (
                 <button
                   key={city.value}
                   onClick={() => handleCitySelect(city.value)}
-                  className="w-full bg-white rounded-2xl px-6 sm:px-8 py-4 sm:py-5 flex items-center justify-center gap-3 transition-all hover:shadow-lg hover:scale-[1.02] hover:bg-[#f86c05] hover:text-white group"
+                  className={`bg-white rounded-2xl aspect-square flex flex-col items-center justify-center gap-3 transition-all hover:shadow-lg hover:scale-[1.02] hover:bg-[#f86c05] hover:text-white group ${
+                    index >= 3 ? "col-span-3 sm:col-span-auto sm:col-start-2" : ""
+                  }`}
                 >
-                  <MapPin className="h-5 w-5 sm:h-6 sm:w-6 text-[#f86c05] group-hover:text-white transition-colors" />
-                  <span className="text-lg sm:text-xl font-bold text-gray-700 group-hover:text-white transition-colors">
+                  <MapPin className="h-5 w-5 sm:h-6 sm:w-6 text-[#f86c05] group-hover:text-white transition-colors flex-shrink-0" />
+                  <span className="text-base sm:text-lg font-bold text-gray-700 group-hover:text-white transition-colors text-center px-2">
                     {city.label}
                   </span>
                 </button>
