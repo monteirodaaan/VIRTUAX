@@ -988,10 +988,10 @@ function HomePageContent() {
       <footer className="bg-gray-900 text-white">
         {/* Main Footer */}
         <div className="container mx-auto px-4 sm:px-6 md:px-8 py-14 sm:py-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
 
             {/* Coluna 1: Marca */}
-            <div className="space-y-5">
+            <div className="space-y-5 lg:col-span-2">
               <Image
                 src="/images/logo.webp"
                 alt="VirtuaX"
