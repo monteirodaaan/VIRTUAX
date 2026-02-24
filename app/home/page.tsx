@@ -1042,7 +1042,7 @@ function HomePageContent() {
             </div>
 
             {/* Grid: 3 columns - full width on mobile, flex-1 on desktop */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-4 lg:gap-6 flex-1">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-4 lg:gap-6 flex-1 md:ml-auto">
               {/* Column 1: Cobertura */}
               <div className="space-y-5">
                 <h3 className="text-white font-bold text-sm uppercase tracking-wider">Cobertura</h3>
