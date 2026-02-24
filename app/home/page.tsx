@@ -988,7 +988,7 @@ function HomePageContent() {
       <footer className="bg-gray-900 text-gray-300 pt-12 sm:pt-16 md:pt-20 pb-8">
         <div className="container mx-auto px-4 sm:px-6 md:px-8">
           {/* Main Footer Content */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-12 sm:mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10 mb-12 sm:mb-16">
             {/* Column 1: Brand */}
             <div className="space-y-4">
               <Image
@@ -1014,9 +1014,31 @@ function HomePageContent() {
                 </a>
                 <a href="#" className="text-gray-400 hover:text-brand transition-colors" aria-label="WhatsApp">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20.463 3.488C18.217 1.24 15.231 0 12.029 0c-8.971 0-16.27 7.299-16.27 16.271 0 2.87.847 5.678 2.469 8.081L0 24l8.294-2.735c2.365 1.298 5.023 1.981 7.735 1.981 8.971 0 16.27-7.299 16.27-16.271 0-4.347-1.692-8.434-4.766-11.501zm-8.434 24.983c-2.42 0-4.795-.648-6.876-1.88l-.493-.291-5.383 1.778 1.81-5.596-.383-.608C1.913 16.328 1.275 14.226 1.275 12.03 1.275 4.908 7.612 -1.428 14.734 -1.428c3.625 0 7.029 1.414 9.584 3.969 2.554 2.555 3.968 5.959 3.968 9.584 0 7.122-6.337 13.459-13.459 13.459z"/>
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-5.031 1.378c-3.055 2.2-4.82 5.591-4.82 9.362 0 3.286 1.816 6.465 4.973 8.25l.591-.935c-.464-.292-.895-.666-1.298-1.061-2.821-2.822-4.366-6.582-4.366-10.254 0-3.672 1.545-7.432 4.366-10.254 2.822-2.822 6.582-4.366 10.254-4.366s7.432 1.545 10.254 4.366c2.822 2.822 4.366 6.582 4.366 10.254 0 3.672-1.545 7.432-4.366 10.254-1.383 1.383-3.05 2.467-4.823 3.256-.591.297-1.222.56-1.852.79l.591.935c1.852-.894 3.583-2.165 5.031-3.612 3.157-3.157 4.973-7.336 4.973-11.623 0-4.287-1.816-8.466-4.973-11.623-3.157-3.157-7.336-4.973-11.623-4.973z"/>
                   </svg>
                 </a>
+              </div>
+              {/* Baixe o App - Below Social Icons */}
+              <div className="pt-6 border-t border-gray-700">
+                <p className="text-xs text-gray-500 mb-3">Baixe nosso app</p>
+                <div className="flex gap-3">
+                  <a
+                    href="https://play.google.com/store/apps/details?id=com.virtuax.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-gray-400 hover:text-brand transition-colors"
+                  >
+                    Google Play
+                  </a>
+                  <a
+                    href="https://apps.apple.com/br/app/virtuax/id1234567890"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-gray-400 hover:text-brand transition-colors"
+                  >
+                    App Store
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -1100,30 +1122,12 @@ function HomePageContent() {
               </ul>
             </div>
 
-            {/* Column 4: Downloads */}
+            {/* Column 4: Hours */}
             <div className="space-y-4">
-              <h3 className="text-white font-semibold text-sm">Baixe o App</h3>
-              <div className="space-y-3">
-                <a
-                  href="https://play.google.com/store/apps/details?id=com.virtuax.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-sm text-gray-400 hover:text-brand transition-colors"
-                >
-                  Google Play
-                </a>
-                <a
-                  href="https://apps.apple.com/br/app/virtuax/id1234567890"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-sm text-gray-400 hover:text-brand transition-colors"
-                >
-                  App Store
-                </a>
-              </div>
-              <div className="space-y-2 pt-4">
-                <p className="text-xs text-gray-500">Horário de Atendimento</p>
-                <p className="text-xs text-gray-400">Segunda a Sexta: 8h - 18h</p>
+              <h3 className="text-white font-semibold text-sm">Horário de Atendimento</h3>
+              <div className="space-y-2">
+                <p className="text-xs text-gray-400">Segunda a Sexta</p>
+                <p className="text-sm text-gray-400 font-semibold">8h - 18h</p>
               </div>
             </div>
           </div>
