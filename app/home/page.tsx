@@ -1023,7 +1023,7 @@ function HomePageContent() {
             </div>
 
             {/* Colunas 2-4: Serviços, Links, Suporte */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 lg:gap-16 ml-auto">
+            <div className="grid grid-cols-3 gap-10 lg:gap-16 ml-auto">
               {/* Coluna 2: Serviços */}
               <div className="space-y-5">
               <h3 className="text-white font-bold text-sm uppercase tracking-wider">Serviços</h3>
