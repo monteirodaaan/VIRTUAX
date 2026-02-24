@@ -331,6 +331,7 @@ function HomePageContent() {
                       src={banner.imagePathMobile || banner.imagePath || ""}
                       alt="Banner Alta Velocidade VirtuaX Mobile"
                       fill
+                      sizes="100vw"
                       className="object-cover"
                       priority
                     />
@@ -341,6 +342,7 @@ function HomePageContent() {
                       src={banner.imagePath || ""}
                       alt="Banner Alta Velocidade VirtuaX"
                       fill
+                      sizes="100vw"
                       className="object-cover"
                       priority
                     />
