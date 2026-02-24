@@ -152,16 +152,29 @@ function HomePageContent() {
     <div className="min-h-screen relative bg-background">
       <header className="fixed top-0 w-full border-gray-200 z-50 text-brand-foreground bg-brand py-3 sm:py-4 border-b-0" role="banner">
         <div className="container mx-auto px-4 sm:px-6 md:px-8 h-14 sm:h-16 flex items-center justify-between">
-          <Image
-            src="/images/logo.webp"
-            alt="VirtuaX"
-            width={120}
-            height={30}
-            className="h-6 sm:h-7 md:h-8 w-auto"
-            priority
-          />
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="hover:opacity-80 transition-opacity cursor-pointer"
+            aria-label="Voltar ao topo"
+          >
+            <Image
+              src="/images/logo.webp"
+              alt="VirtuaX"
+              width={120}
+              height={30}
+              className="h-6 sm:h-7 md:h-8 w-auto"
+              priority
+            />
+          </button>
 
           <nav className="hidden md:flex items-center gap-4 lg:gap-6 text-background" aria-label="Navegação principal">
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              className="text-xs lg:text-sm font-semibold hover:text-gray-100 transition-colors text-card"
+              aria-label="Ir para o início"
+            >
+              Inicio
+            </button>
             <button
               onClick={() => scrollToSection("sobre")}
               className="text-xs lg:text-sm font-semibold hover:text-gray-100 transition-colors text-card"
@@ -257,6 +270,15 @@ function HomePageContent() {
         {mobileMenuOpen && (
           <div className="md:hidden bg-white border-t border-gray-200" id="mobile-menu">
             <nav className="container mx-auto px-4 sm:px-6 md:px-8 py-4 flex flex-col gap-2" aria-label="Menu de navegação mobile">
+              <button
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: "smooth" })
+                  setMobileMenuOpen(false)
+                }}
+                className="text-left text-sm font-semibold text-gray-700 hover:text-brand transition-colors py-2"
+              >
+                Inicio
+              </button>
               <button
                 onClick={() => scrollToSection("sobre")}
                 className="text-left text-sm font-semibold text-gray-700 hover:text-brand transition-colors py-2"
