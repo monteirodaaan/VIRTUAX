@@ -1003,14 +1003,17 @@ function HomePageContent() {
                 Conectando você ao mundo com fibra óptica de última geração. Internet em alta velocidade para sua casa ou empresa.
               </p>
               <div className="flex gap-6 pt-2 items-center">
-                <a href="#" aria-label="Facebook" className="text-white hover:text-brand transition-colors inline-flex">
+                <a href="#" aria-label="Facebook" className="inline-flex [&_svg]:fill-white hover:opacity-80 transition-opacity">
                   <Image src="/images/facebook-icon.svg" alt="Facebook" width={24} height={24} className="w-6 h-6" />
                 </a>
-                <a href="#" aria-label="Instagram" className="text-white hover:text-brand transition-colors inline-flex">
+                <a href="#" aria-label="Instagram" className="inline-flex [&_svg]:fill-white hover:opacity-80 transition-opacity">
                   <Image src="/images/instagram-icon.svg" alt="Instagram" width={24} height={24} className="w-6 h-6" />
                 </a>
-                <a href="#" aria-label="WhatsApp" className="text-white hover:text-brand transition-colors inline-flex">
+                <a href="#" aria-label="WhatsApp" className="inline-flex [&_svg]:fill-white hover:opacity-80 transition-opacity">
                   <Image src="/images/whatsapp-icon.svg" alt="WhatsApp" width={24} height={24} className="w-6 h-6" />
+                </a>
+                <a href="#" aria-label="Email" className="inline-flex [&_svg]:fill-white hover:opacity-80 transition-opacity">
+                  <Image src="/images/email-icon.svg" alt="Email" width={24} height={24} className="w-6 h-6" />
                 </a>
               </div>
             </div>
