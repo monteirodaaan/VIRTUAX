@@ -68,7 +68,7 @@ export default function CitySelectionPage() {
         {/* Conteúdo central */}
         <div className="flex-1 flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-8 -mt-28 sm:-mt-36">
           <div className="w-full max-w-sm" style={{ maxWidth: "24rem" }}>
-            <div className="text-center mb-16 sm:mb-6 flex justify-center -mt-4 sm:mt-0">
+            <div className="text-center mb-16 sm:mb-6 flex justify-center mt-2 sm:mt-0">
               <div className="h-14 sm:h-[72px] md:h-[86px] w-auto">
                 <Image
                   src="/images/logo.webp"
