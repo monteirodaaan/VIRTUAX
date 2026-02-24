@@ -1,9 +1,9 @@
 "use client"
 
 import { useRouter } from "next/navigation"
-import { MapPin } from "lucide-react"
+import { MapPin, ChevronDown } from "lucide-react"
 import Image from "next/image"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 
 const cities = [
   { value: "areia", label: "Areia" },
@@ -15,24 +15,42 @@ const cities = [
 
 export default function CitySelectionPage() {
   const router = useRouter()
-  const [isLoading, setIsLoading] = useState(true)
+  const [selectedCity, setSelectedCity] = useState<{ value: string; label: string } | null>(null)
+  const [isOpen, setIsOpen] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
+  const [bgLoaded, setBgLoaded] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    // Simulate initial load completion
-    setIsLoading(false)
+    const img = new window.Image()
+    img.src = "/images/orange-gradient-bg.webp"
+    img.onload = () => setBgLoaded(true)
+    img.onerror = () => setBgLoaded(true)
   }, [])
 
-  const handleCitySelect = (cityValue: string) => {
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setIsOpen(false)
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => document.removeEventListener("mousedown", handleClickOutside)
+  }, [])
+
+  const handleSelect = (city: { value: string; label: string }) => {
+    setSelectedCity(city)
+    setIsOpen(false)
     setIsLoading(true)
-    router.push(`/home?city=${cityValue}`)
+    router.push(`/home?city=${city.value}`)
   }
 
-  if (isLoading) {
+  if (!bgLoaded || isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#ff8c3a] to-[#f86c05]">
         <div className="text-center">
           <div className="w-16 h-16 border-4 border-white border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-white font-semibold text-lg">Carregando...</p>
+          {isLoading && <p className="text-white font-semibold text-lg">Carregando...</p>}
         </div>
       </div>
     )
@@ -47,48 +65,67 @@ export default function CitySelectionPage() {
       <div className="absolute inset-0 bg-gradient-to-br from-[#ff8c3a]/30 to-[#f86c05]/30" />
 
       <div className="relative z-10 flex flex-col min-h-screen">
-        <div className="flex-1 flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-8">
-          {/* Logo and Location Selection Section */}
+        {/* Área do Cliente — topo */}
+        <div className="flex justify-center pt-6 sm:pt-8">
+          <a
+            href="http://central.virtuax.com.br/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-2.5 bg-white text-[#f86c05] font-bold rounded-2xl hover:bg-gray-50 transition-colors text-sm sm:text-base text-center"
+          >
+            Área do cliente
+          </a>
+        </div>
+
+        {/* Conteúdo central */}
+        <div className="flex-1 flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-8 -mt-16 sm:-mt-20">
           <div className="w-full max-w-md">
-            <div className="text-center mb-8 sm:mb-10 space-y-4">
-              <Image
-                src="/images/logo.webp"
-                alt="VirtuaX Logo"
-                width={200}
-                height={50}
-                className="h-12 sm:h-14 md:h-16 w-auto mx-auto"
-                priority
-              />
-              <h1 className="font-bold text-white text-2xl sm:text-3xl md:text-4xl">Escolha sua região</h1>
+            <div className="text-center mb-4 sm:mb-5 flex justify-center">
+              <div className="h-16 sm:h-20 md:h-24 w-auto">
+                <Image
+                  src="/images/logo.webp"
+                  alt="VirtuaX Logo"
+                  width={280}
+                  height={70}
+                  priority
+                />
+              </div>
             </div>
 
-            <div className="space-y-3 sm:space-y-4 mb-8 sm:mb-10">
-              {cities.map((city) => (
-                <button
-                  key={city.value}
-                  onClick={() => handleCitySelect(city.value)}
-                  className="w-full bg-white rounded-2xl px-6 sm:px-8 py-4 sm:py-5 flex items-center justify-center gap-3 transition-all hover:shadow-lg hover:scale-[1.02] hover:bg-[#f86c05] hover:text-white group"
-                >
-                  <MapPin className="h-5 w-5 sm:h-6 sm:w-6 text-[#f86c05] group-hover:text-white transition-colors" />
-                  <span className="text-lg sm:text-xl font-bold text-gray-700 group-hover:text-white transition-colors">
-                    {city.label}
-                  </span>
-                </button>
-              ))}
+            {/* Custom Dropdown */}
+            <div ref={dropdownRef} className="relative">
+              {/* Trigger */}
+              <button
+                onClick={() => setIsOpen((o) => !o)}
+                className="w-full flex items-center justify-center gap-3 bg-white rounded-2xl px-5 py-4 sm:py-5 shadow-lg transition-all hover:shadow-xl focus:outline-none relative"
+              >
+                <MapPin className="h-5 w-5 text-[#f86c05] shrink-0" />
+                <span className={`text-base sm:text-lg font-semibold ${selectedCity ? "text-gray-800" : "text-gray-400"}`}>
+                  {selectedCity ? selectedCity.label : "Selecione sua cidade..."}
+                </span>
+                <ChevronDown
+                  className={`h-5 w-5 text-gray-400 shrink-0 transition-transform duration-200 absolute right-5 ${isOpen ? "rotate-180" : ""}`}
+                />
+              </button>
+
+              {/* Options list */}
+              {isOpen && (
+                <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl overflow-hidden shadow-2xl z-50">
+                  {cities.map((city, index) => (
+                    <button
+                      key={city.value}
+                      onClick={() => handleSelect(city)}
+                      className={`w-full flex items-center justify-center gap-3 px-5 py-4 transition-colors hover:bg-orange-50 hover:text-[#f86c05]
+                        ${selectedCity?.value === city.value ? "text-[#f86c05] bg-orange-50" : "text-gray-700"}
+                        ${index !== cities.length - 1 ? "border-b border-gray-100" : ""}
+                      `}
+                    >
+                      <span className="text-base font-semibold">{city.label}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
-
-            {/* Separator line */}
-            <div className="my-6 sm:my-8 h-px bg-white/20"></div>
-
-            {/* Área do Cliente Button */}
-            <a
-              href="http://central.virtuax.com.br/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full px-4 sm:px-5 md:px-6 py-3 sm:py-4 bg-white text-[#f86c05] font-bold rounded-2xl hover:bg-gray-50 transition-colors text-sm sm:text-base text-center block"
-            >
-              Área do cliente
-            </a>
           </div>
         </div>
       </div>
