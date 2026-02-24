@@ -181,14 +181,14 @@ function HomePageContent() {
             <button
               onClick={() => scrollToSection("sobre")}
               className="text-xs lg:text-sm font-semibold hover:text-gray-100 transition-colors text-card"
-              aria-label="Ir para seção Sobre"
+              aria-label="Ir para secao Sobre"
             >
               Sobre
             </button>
             <button
               onClick={() => scrollToSection("beneficios")}
               className="text-xs lg:text-sm font-semibold hover:text-gray-100 transition-colors text-card"
-              aria-label="Ir para seção Benefícios"
+              aria-label="Ir para secao Beneficios"
             >
               Benefícios
             </button>
@@ -275,7 +275,7 @@ function HomePageContent() {
 
         {mobileMenuOpen && (
           <div className="md:hidden bg-white border-t border-gray-200" id="mobile-menu">
-            <nav className="container mx-auto px-4 sm:px-6 md:px-8 py-4 flex flex-col gap-2" aria-label="Menu de navegação mobile">
+            <nav className="container mx-auto px-4 sm:px-6 md:px-8 py-4 flex flex-col gap-2" aria-label="Menu de navegacao mobile">
               <button
                 onClick={() => {
                   window.scrollTo({ top: 0, behavior: "smooth" })
