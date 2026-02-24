@@ -2,6 +2,7 @@
 
 import { useState, useEffect, Suspense } from "react"
 import { useSearchParams } from "next/navigation"
+import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
@@ -1103,11 +1104,16 @@ function HomePageContent() {
               <div className="flex flex-col gap-5">
                 <h3 className="text-xs font-bold uppercase tracking-widest text-gray-500">Cobertura</h3>
                 <ul className="flex flex-col gap-3.5">
-                  {["Internet em Areia", "Internet em Bananeiras", "Internet em Cacimba de Dentro", "Internet em Serraria", "Internet em Solânea"].map((cidade) => (
-                    <li key={cidade}>
-                      <span className="text-sm text-gray-400 leading-relaxed">{cidade}</span>
-                    </li>
-                  ))}
+                  {["Internet em Areia", "Internet em Bananeiras", "Internet em Cacimba de Dentro", "Internet em Serraria", "Internet em Solânea"].map((cidade) => {
+                    const nomeCidade = cidade.replace("Internet em ", "").toLowerCase();
+                    return (
+                      <li key={cidade}>
+                        <Link href={`/home?city=${nomeCidade}`} className="text-sm text-gray-400 hover:text-white transition-colors duration-200">
+                          {cidade}
+                        </Link>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
 
