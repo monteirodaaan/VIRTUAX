@@ -78,7 +78,7 @@ export default function CitySelectionPage() {
         </div>
 
         {/* Conteúdo central */}
-        <div className="flex-1 flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-8">
+        <div className="flex-1 flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-8 -mt-16 sm:-mt-20">
           <div className="w-full max-w-md">
             <div className="text-center mb-4 sm:mb-5">
               <Image
