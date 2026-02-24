@@ -1026,13 +1026,13 @@ function HomePageContent() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 lg:gap-16 ml-auto">
               {/* Coluna 2: Cobertura */}
               <div className="space-y-5">
-              <h3 className="text-white font-bold text-sm uppercase tracking-wider">Internet em {cityNames[selectedCity] || "sua região"}</h3>
+              <h3 className="text-white font-bold text-sm uppercase tracking-wider">Cobertura</h3>
               <ul className="space-y-3">
-                <li><span className="text-sm text-gray-400">Internet Fibra Óptica</span></li>
-                <li><span className="text-sm text-gray-400">Plano Residencial</span></li>
-                <li><span className="text-sm text-gray-400">Plano Empresarial</span></li>
-                <li><span className="text-sm text-gray-400">Suporte Técnico</span></li>
-                <li><span className="text-sm text-gray-400">Instalação Gratuita</span></li>
+                <li><span className="text-sm text-gray-400">Internet em Areia</span></li>
+                <li><span className="text-sm text-gray-400">Internet em Bananeiras</span></li>
+                <li><span className="text-sm text-gray-400">Internet em Cacimba de Dentro</span></li>
+                <li><span className="text-sm text-gray-400">Internet em Serraria</span></li>
+                <li><span className="text-sm text-gray-400">Internet em Solânea</span></li>
               </ul>
               </div>
 
