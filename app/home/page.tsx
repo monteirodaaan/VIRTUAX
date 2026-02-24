@@ -123,29 +123,12 @@ function HomePageContent() {
   // Banner carousel for hero section
   const banners = [
     {
-      title: "Internet de Alta Velocidade",
-      subtitle: "Fibra óptica de última geração para sua casa ou empresa",
-      bg: "from-orange-600 to-orange-500",
-      type: "text",
-    },
-    {
-      title: "Velocidade que Você Merece",
-      subtitle: "Planos a partir de 1GB com instalação gratuita",
-      bg: "from-orange-500 to-amber-500",
-      type: "text",
-    },
-    {
-      title: "Suporte 24/7",
-      subtitle: "Equipe sempre pronta para te atender",
-      bg: "from-amber-600 to-orange-600",
-      type: "text",
-    },
-    {
       title: "",
       subtitle: "",
       bg: "",
       type: "image",
       imagePath: "/images/banner-alta-velocidade.webp",
+      imagePathMobile: "/images/banner-alta-velocidade-mobile.webp",
     },
   ]
 
@@ -336,14 +319,27 @@ function HomePageContent() {
             >
               {banner.type === "image" ? (
                 // Image banner - full background image only
-                <div className="w-full h-full bg-orange-500 flex items-center justify-center relative">
-                  <Image
-                    src={banner.imagePath || ""}
-                    alt="Banner Alta Velocidade VirtuaX"
-                    fill
-                    className="object-contain"
-                    priority
-                  />
+                <div className="w-full h-full bg-orange-500 flex items-center justify-center">
+                  {/* Mobile version */}
+                  <div className="relative w-full h-full md:hidden">
+                    <Image
+                      src={banner.imagePathMobile || banner.imagePath || ""}
+                      alt="Banner Alta Velocidade VirtuaX Mobile"
+                      fill
+                      className="object-cover"
+                      priority
+                    />
+                  </div>
+                  {/* Desktop version */}
+                  <div className="relative w-full h-full hidden md:block">
+                    <Image
+                      src={banner.imagePath || ""}
+                      alt="Banner Alta Velocidade VirtuaX"
+                      fill
+                      className="object-cover"
+                      priority
+                    />
+                  </div>
                 </div>
               ) : (
                 // Text banner - with background and overlay
