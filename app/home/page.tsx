@@ -542,6 +542,46 @@ function HomePageContent() {
         </div>
       </section>
 
+      {/* App Download Section */}
+      <section className="py-12 sm:py-16 md:py-20 bg-white border-t border-gray-200">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-12 sm:mb-16">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Baixe nosso App
+              </h3>
+              <p className="text-gray-600 text-base sm:text-lg">
+                Gerencie sua conexão, faturas e suporte em qualquer lugar
+              </p>
+            </div>
+
+            {/* App Store Badges */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <a
+                href="#"
+                className="transition-transform hover:scale-105"
+                aria-label="Baixar no Google Play"
+              >
+                {/* Google Play Badge - adicione a imagem aqui */}
+                <div className="w-48 h-14 bg-gray-200 rounded-xl flex items-center justify-center text-gray-500">
+                  Google Play Badge
+                </div>
+              </a>
+              <a
+                href="#"
+                className="transition-transform hover:scale-105"
+                aria-label="Baixar na App Store"
+              >
+                {/* App Store Badge - adicione a imagem aqui */}
+                <div className="w-48 h-14 bg-gray-200 rounded-xl flex items-center justify-center text-gray-500">
+                  App Store Badge
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="planos" className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 md:px-8">
           <div className="text-center mb-8 sm:mb-10 md:mb-12">
