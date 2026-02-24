@@ -16,6 +16,7 @@ import {
   Shield,
   Zap,
   Users,
+  User,
   ChevronRight,
   Check,
   Star,
@@ -252,8 +253,9 @@ function HomePageContent() {
               href="https://virtuax.innave.com.br"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center font-semibold transition-all duration-200 text-xs lg:text-sm px-4 lg:px-6 rounded-lg h-9 bg-white text-brand hover:bg-opacity-90 shadow-sm hover:shadow-md"
+              className="inline-flex items-center gap-2 justify-center font-semibold transition-all duration-200 text-xs lg:text-sm px-4 lg:px-5 rounded-lg h-9 border border-white/40 text-white hover:bg-white/10 backdrop-blur-sm"
             >
+              <User className="h-3.5 w-3.5 shrink-0" />
               Área do Cliente
             </a>
           </nav>
@@ -329,8 +331,9 @@ function HomePageContent() {
                 href="https://virtuax.innave.com.br"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full mt-2 inline-flex items-center justify-center font-semibold transition-all duration-200 text-sm px-4 rounded-lg h-10 bg-brand text-white hover:bg-opacity-90 shadow-sm hover:shadow-md"
+                className="w-full mt-2 inline-flex items-center justify-center gap-2 font-semibold transition-all duration-200 text-sm px-4 rounded-lg h-10 bg-brand text-white hover:bg-brand/90"
               >
+                <User className="h-4 w-4 shrink-0" />
                 Área do Cliente
               </a>
             </nav>
