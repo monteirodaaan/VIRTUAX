@@ -121,6 +121,16 @@ function HomePageContent() {
   const [currentPlanIndex, setCurrentPlanIndex] = useState(0)
   const [planType, setPlanType] = useState<"residencial" | "empresarial">("residencial")
   const [currentBannerIndex, setCurrentBannerIndex] = useState(0)
+  const [activeIndex, setActiveIndex] = useState(0)
+  const [isPaused, setIsPaused] = useState(false)
+
+  useEffect(() => {
+    if (isPaused) return
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % plans.length)
+    }, 3500)
+    return () => clearInterval(interval)
+  }, [isPaused])
 
   // Função para scroll suave para as seções
   const scrollToSection = (sectionId: string) => {
@@ -639,18 +649,27 @@ function HomePageContent() {
           </div>
 
           {planType === "residencial" ? (
-            <div className="max-w-7xl mx-auto pt-8">
+            <div
+              className="max-w-7xl mx-auto pt-8"
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
+            >
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 px-4">
-                {plans.map((plan) => {
+                {plans.map((plan, index) => {
                   const price =
                     pricingData[selectedCity as keyof typeof pricingData][plan.id as keyof typeof pricingData.areia]
                   const isRecommended = plan.id === "intermediario"
+                  const isActive = index === activeIndex
                   const features = plan.features
 
                   return (
                     <div
                       key={plan.id}
                       className="flex relative"
+                      onClick={() => {
+                        setActiveIndex(index)
+                        setIsPaused(false)
+                      }}
                     >
                       {isRecommended && (
                         <div className="absolute -top-5 left-1/2 -translate-x-1/2 z-20">
@@ -661,7 +680,7 @@ function HomePageContent() {
                       )}
 
                       <div
-                        className={`relative bg-gradient-to-br from-white via-white to-orange-50/30 rounded-2xl p-6 lg:p-8 flex flex-col w-full transition-all overflow-hidden hover:-translate-y-1 ${isRecommended ? "border-2 border-brand shadow-xl" : "border border-gray-200 shadow-lg hover:shadow-xl hover:border-brand/40"
+                        className={`relative bg-gradient-to-br from-white via-white to-orange-50/30 rounded-2xl p-6 lg:p-8 flex flex-col w-full transition-all overflow-hidden hover:-translate-y-1 ${isActive ? "border-2 border-brand shadow-xl" : "border border-gray-200 shadow-lg hover:shadow-xl hover:border-brand/40"
                           }`}
                       >
                         {/* Elementos decorativos de fundo */}
@@ -716,7 +735,7 @@ function HomePageContent() {
                           className="w-full font-semibold py-3 rounded-xl transition-all duration-300 hover:scale-105"
                           style={{ backgroundColor: "var(--brand)", color: "white" }}
                         >
-                          {isRecommended ? "Escolher Agora" : "Contratar"}
+                          {isActive ? "Escolher agora" : "Contratar"}
                         </Button>
                       </div>
                     </div>
