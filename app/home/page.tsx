@@ -167,7 +167,7 @@ function HomePageContent() {
             />
           </button>
 
-          <nav className="hidden md:flex items-center gap-4 lg:gap-6 text-background" aria-label="Navegação principal">
+          <nav className="hidden md:flex items-center gap-4 lg:gap-6 text-background" aria-label="Navegacao principal">
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               className="text-xs lg:text-sm font-semibold hover:text-gray-100 transition-colors text-card"
