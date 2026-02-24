@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, Suspense } from "react"
 import { useSearchParams } from "next/navigation"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
@@ -1124,7 +1124,9 @@ function HomePageContent() {
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-white">
-      <HomePageContent />
+      <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-white"><div className="animate-pulse">Carregando...</div></div>}>
+        <HomePageContent />
+      </Suspense>
     </div>
   )
 }
