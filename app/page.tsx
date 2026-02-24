@@ -96,16 +96,14 @@ export default function CitySelectionPage() {
               {/* Trigger */}
               <button
                 onClick={() => setIsOpen((o) => !o)}
-                className="w-full flex items-center justify-between gap-3 bg-white rounded-2xl px-5 py-4 sm:py-5 shadow-lg transition-all hover:shadow-xl focus:outline-none"
+                className="w-full flex items-center justify-center gap-3 bg-white rounded-2xl px-5 py-4 sm:py-5 shadow-lg transition-all hover:shadow-xl focus:outline-none relative"
               >
-                <div className="flex items-center gap-3">
-                  <MapPin className="h-5 w-5 text-[#f86c05] shrink-0" />
-                  <span className={`text-base sm:text-lg font-semibold ${selectedCity ? "text-gray-800" : "text-gray-400"}`}>
-                    {selectedCity ? selectedCity.label : "Selecione sua cidade..."}
-                  </span>
-                </div>
+                <MapPin className="h-5 w-5 text-[#f86c05] shrink-0" />
+                <span className={`text-base sm:text-lg font-semibold ${selectedCity ? "text-gray-800" : "text-gray-400"}`}>
+                  {selectedCity ? selectedCity.label : "Selecione sua cidade..."}
+                </span>
                 <ChevronDown
-                  className={`h-5 w-5 text-gray-400 shrink-0 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+                  className={`h-5 w-5 text-gray-400 shrink-0 transition-transform duration-200 absolute right-5 ${isOpen ? "rotate-180" : ""}`}
                 />
               </button>
 
@@ -116,12 +114,11 @@ export default function CitySelectionPage() {
                     <button
                       key={city.value}
                       onClick={() => handleSelect(city)}
-                      className={`w-full flex items-center gap-3 px-5 py-4 text-left transition-colors hover:bg-orange-50 hover:text-[#f86c05] group
+                      className={`w-full flex items-center justify-center gap-3 px-5 py-4 transition-colors hover:bg-orange-50 hover:text-[#f86c05]
                         ${selectedCity?.value === city.value ? "text-[#f86c05] bg-orange-50" : "text-gray-700"}
                         ${index !== cities.length - 1 ? "border-b border-gray-100" : ""}
                       `}
                     >
-                      <MapPin className="h-4 w-4 text-[#f86c05] shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" />
                       <span className="text-base font-semibold">{city.label}</span>
                     </button>
                   ))}
