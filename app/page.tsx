@@ -1,9 +1,9 @@
 "use client"
 
 import { useRouter } from "next/navigation"
-import { MapPin } from "lucide-react"
+import { MapPin, ChevronDown } from "lucide-react"
 import Image from "next/image"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 
 const cities = [
   { value: "areia", label: "Areia" },
@@ -15,16 +15,13 @@ const cities = [
 
 export default function CitySelectionPage() {
   const router = useRouter()
-  const [isLoading, setIsLoading] = useState(true)
+  const [selectedCity, setSelectedCity] = useState("")
+  const [isLoading, setIsLoading] = useState(false)
 
-  useEffect(() => {
-    // Simulate initial load completion
-    setIsLoading(false)
-  }, [])
-
-  const handleCitySelect = (cityValue: string) => {
+  const handleConfirm = () => {
+    if (!selectedCity) return
     setIsLoading(true)
-    router.push(`/home?city=${cityValue}`)
+    router.push(`/home?city=${selectedCity}`)
   }
 
   if (isLoading) {
@@ -48,7 +45,6 @@ export default function CitySelectionPage() {
 
       <div className="relative z-10 flex flex-col min-h-screen">
         <div className="flex-1 flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-8">
-          {/* Logo and Location Selection Section */}
           <div className="w-full max-w-md">
             <div className="text-center mb-8 sm:mb-10 space-y-4">
               <Image
@@ -60,24 +56,39 @@ export default function CitySelectionPage() {
                 priority
               />
               <h1 className="font-bold text-white text-2xl sm:text-3xl md:text-4xl">Escolha sua região</h1>
+              <p className="text-white/80 text-sm sm:text-base">Selecione a cidade para ver os planos disponíveis</p>
             </div>
 
-            <div className="space-y-3 sm:space-y-4 mb-8 sm:mb-10">
-              {cities.map((city) => (
-                <button
-                  key={city.value}
-                  onClick={() => handleCitySelect(city.value)}
-                  className="w-full bg-white rounded-2xl px-6 sm:px-8 py-4 sm:py-5 flex items-center justify-center gap-3 transition-all hover:shadow-lg hover:scale-[1.02] hover:bg-[#f86c05] hover:text-white group"
+            {/* Dropdown */}
+            <div className="mb-4 relative">
+              <div className="relative">
+                <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-[#f86c05] pointer-events-none z-10" />
+                <select
+                  value={selectedCity}
+                  onChange={(e) => setSelectedCity(e.target.value)}
+                  className="w-full appearance-none bg-white rounded-2xl pl-12 pr-12 py-4 sm:py-5 text-base sm:text-lg font-semibold text-gray-700 cursor-pointer focus:outline-none focus:ring-2 focus:ring-white/50 transition-all shadow-lg"
                 >
-                  <MapPin className="h-5 w-5 sm:h-6 sm:w-6 text-[#f86c05] group-hover:text-white transition-colors" />
-                  <span className="text-lg sm:text-xl font-bold text-gray-700 group-hover:text-white transition-colors">
-                    {city.label}
-                  </span>
-                </button>
-              ))}
+                  <option value="" disabled>Selecione sua cidade...</option>
+                  {cities.map((city) => (
+                    <option key={city.value} value={city.value}>
+                      {city.label}
+                    </option>
+                  ))}
+                </select>
+                <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400 pointer-events-none" />
+              </div>
             </div>
 
-            {/* Separator line */}
+            {/* Confirm Button */}
+            <button
+              onClick={handleConfirm}
+              disabled={!selectedCity}
+              className="w-full py-4 sm:py-5 rounded-2xl font-bold text-base sm:text-lg transition-all shadow-lg disabled:opacity-50 disabled:cursor-not-allowed bg-[#f86c05] text-white hover:bg-[#e55f00] hover:scale-[1.02] disabled:hover:scale-100"
+            >
+              Ver Planos
+            </button>
+
+            {/* Separator */}
             <div className="my-6 sm:my-8 h-px bg-white/20"></div>
 
             {/* Área do Cliente Button */}
