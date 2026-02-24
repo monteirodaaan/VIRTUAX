@@ -1062,6 +1062,7 @@ function HomePageContent() {
                     </button>
                   </li>
                 ))}
+              </ul>
               </div>
 
               {/* Coluna 4: Suporte */}
