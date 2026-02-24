@@ -561,43 +561,34 @@ function HomePageContent() {
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-[#f86c05]/30 rounded-2xl p-6 sm:p-7 md:p-8 hover:-translate-y-3 transition-all duration-500 group">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#f86c05]/20 flex items-center justify-center mb-4 sm:mb-5 group-hover:scale-110 transition-transform duration-300 mx-auto">
-                <svg className="h-6 w-6 sm:h-7 sm:w-7 text-[#f86c05]" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M3 13.5h8v8.4H6.75c-.825 0-1.5-.675-1.5-1.5v-6.9zm10 0h8V19.5c0 .825-.675 1.5-1.5 1.5H13v-8.4zM3 3h2.25L9.3 9.9H3V3zm10 0h8v6.9h-6.3L13 3z"/>
-                </svg>
-              </div>
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 text-center">Baixe no PlayStore</h3>
-              <p className="text-gray-300 text-sm sm:text-base leading-relaxed text-center mb-4 sm:mb-6">
-                Controle sua conexão na palma da sua mão com nosso app exclusivo para Android.
-              </p>
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center col-span-1 sm:col-span-2">
               <a 
                 href="https://play.google.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="block w-full bg-brand hover:bg-brand/90 text-white font-bold py-2.5 sm:py-3 px-4 rounded-lg transition-colors text-center text-sm sm:text-base"
+                className="w-full sm:w-auto hover:opacity-90 transition-opacity"
               >
-                Download App
+                <Image 
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ativo%202-gG8m72SXp24pzz4bznyR6pF1ztLAtu.webp"
+                  alt="GET IT ON Google Play"
+                  width={240}
+                  height={80}
+                  className="h-auto w-full sm:w-80"
+                />
               </a>
-            </div>
-
-            <div className="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-[#f86c05]/30 rounded-2xl p-6 sm:p-7 md:p-8 hover:-translate-y-3 transition-all duration-500 group">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#f86c05]/20 flex items-center justify-center mb-4 sm:mb-5 group-hover:scale-110 transition-transform duration-300 mx-auto">
-                <svg className="h-6 w-6 sm:h-7 sm:w-7 text-[#f86c05]" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M17.05 13.5c-.91 0-1.82-.23-2.64-.67.77.04 1.54.04 2.3 0-.82.44-1.73.67-2.64.67zm-11.1 0c-.91 0-1.82-.23-2.64-.67.77.04 1.54.04 2.3 0-.82.44-1.73.67-2.64.67zm5.55-5.5h6v6h-6v-6zm-7 0h6v6h-6v-6z"/>
-                </svg>
-              </div>
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 text-center">Baixe na AppStore</h3>
-              <p className="text-gray-300 text-sm sm:text-base leading-relaxed text-center mb-4 sm:mb-6">
-                Acesse nosso app no iOS e gerencie sua internet com facilidade.
-              </p>
               <a 
                 href="https://apps.apple.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="block w-full bg-brand hover:bg-brand/90 text-white font-bold py-2.5 sm:py-3 px-4 rounded-lg transition-colors text-center text-sm sm:text-base"
+                className="w-full sm:w-auto hover:opacity-90 transition-opacity"
               >
-                Download App
+                <Image 
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ativo%203-NDV0qKwxj8VPlXMVKTMh6UxP5YUGVL.webp"
+                  alt="DOWNLOAD ON THE App Store"
+                  width={240}
+                  height={80}
+                  className="h-auto w-full sm:w-80"
+                />
               </a>
             </div>
           </div>
