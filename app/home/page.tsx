@@ -165,7 +165,7 @@ function HomePageContent() {
               className="text-xs lg:text-sm font-semibold hover:text-gray-100 transition-colors text-card"
               aria-label="Ir para seção Benefícios"
             >
-              Benefícios VirtuaX
+              Benefícios
             </button>
             <div className="relative group">
               <button
@@ -227,9 +227,7 @@ function HomePageContent() {
             </div>
 
             <a
-              href="https://virtuax.com.br/area-do-cliente"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#area-do-cliente"
               className="inline-flex items-center justify-center font-semibold transition-all duration-200 text-xs lg:text-sm px-4 lg:px-6 rounded-lg h-9 bg-white text-brand hover:bg-opacity-90 shadow-sm hover:shadow-md"
             >
               Área do Cliente
@@ -295,9 +293,7 @@ function HomePageContent() {
               </div>
 
               <a
-                href="https://virtuax.com.br/area-do-cliente"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#area-do-cliente"
                 className="w-full mt-2 inline-flex items-center justify-center font-semibold transition-all duration-200 text-sm px-4 rounded-lg h-10 bg-brand text-white hover:bg-opacity-90 shadow-sm hover:shadow-md"
               >
                 Área do Cliente
