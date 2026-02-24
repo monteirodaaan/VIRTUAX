@@ -985,176 +985,133 @@ function HomePageContent() {
         </div>
       </section>
 
-      <footer className="bg-gray-900 text-gray-300 pt-12 sm:pt-16 md:pt-20 pb-8">
-        <div className="container mx-auto px-4 sm:px-6 md:px-8">
-          {/* Main Footer Content */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10 mb-12 sm:mb-16">
-            {/* Column 1: Brand */}
-            <div className="space-y-4">
+      <footer className="bg-gray-900 text-white">
+        {/* Main Footer */}
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 py-14 sm:py-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+            {/* Coluna 1: Marca */}
+            <div className="space-y-5">
               <Image
                 src="/images/logo.webp"
                 alt="VirtuaX"
-                width={120}
-                height={30}
-                className="h-8 w-auto"
+                width={140}
+                height={36}
+                className="h-9 w-auto"
               />
               <p className="text-sm text-gray-400 leading-relaxed">
-                Internet de alta velocidade com fibra óptica de última geração para sua casa ou empresa.
+                Conectando você ao mundo com fibra óptica de última geração. Internet de alta velocidade para sua casa ou empresa.
               </p>
-              <div className="flex gap-4 pt-4">
-                <a href="#" className="text-gray-400 hover:text-brand transition-colors" aria-label="Facebook">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <div className="flex gap-4 pt-2">
+                <a href="#" aria-label="Facebook" className="text-white hover:text-brand transition-colors">
+                  <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                   </svg>
                 </a>
-                <a href="#" className="text-gray-400 hover:text-brand transition-colors" aria-label="Instagram">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <a href="#" aria-label="Instagram" className="text-white hover:text-brand transition-colors">
+                  <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.117.63c-.794.297-1.473.648-2.15 1.325-.677.677-1.028 1.356-1.325 2.15-.297.788-.5 1.658-.56 2.936C.015 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.263 2.148.56 2.936.297.792.648 1.472 1.325 2.15.677.677 1.356 1.028 2.15 1.325.788.297 1.659.5 2.936.56C8.333 23.985 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.263 2.936-.56.792-.297 1.472-.648 2.15-1.325.677-.677 1.028-1.356 1.325-2.15.297-.788.5-1.659.56-2.936.057-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.263-2.148-.56-2.936-.297-.792-.648-1.472-1.325-2.15-.677-.677-1.356-1.028-2.15-1.325-.788-.297-1.659-.5-2.936-.56C15.667.015 15.26 0 12 0zm0 2.16c3.203 0 3.585.009 4.849.065 1.17.054 1.805.244 2.227.408.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.354 1.057.408 2.227.056 1.264.065 1.645.065 4.849 0 3.203-.009 3.584-.065 4.849-.054 1.17-.244 1.805-.408 2.227-.217.562-.477.96-.896 1.382-.42.419-.819.679-1.381.896-.422.164-1.057.354-2.227.408-1.264.056-1.645.065-4.849.065-3.203 0-3.584-.009-4.849-.065-1.17-.054-1.805-.244-2.227-.408-.562-.217-.96-.477-1.382-.896-.419-.42-.679-.819-.896-1.381-.164-.422-.354-1.057-.408-2.227-.056-1.264-.065-1.645-.065-4.849 0-3.203.009-3.584.065-4.849.054-1.17.244-1.805.408-2.227.217-.562.477-.96.896-1.382.42-.419.819-.679 1.381-.896.422-.164 1.057-.354 2.227-.408 1.264-.056 1.645-.065 4.849-.065zm0 3.678c-3.401 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.757 6.162-6.162 0-3.401-2.757-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm4.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                   </svg>
                 </a>
-                <a href="#" className="text-gray-400 hover:text-brand transition-colors" aria-label="WhatsApp">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 32 32">
-                    <path d="M16 2C8.28 2 2 8.28 2 16c0 2.46.66 4.76 1.8 6.74L2 30l7.48-1.76A13.9 13.9 0 0 0 16 30c7.72 0 14-6.28 14-14S23.72 2 16 2zm0 25.5a11.4 11.4 0 0 1-5.8-1.58l-.42-.24-4.44 1.04 1.06-4.3-.28-.44A11.43 11.43 0 0 1 4.5 16C4.5 9.6 9.6 4.5 16 4.5S27.5 9.6 27.5 16 22.4 27.5 16 27.5zm6.28-8.54c-.34-.17-2.02-1-2.34-1.1-.32-.12-.56-.17-.78.17-.24.34-.9 1.1-1.1 1.34-.2.22-.4.24-.74.08-.34-.18-1.44-.52-2.74-1.68-1.02-.9-1.7-2-1.9-2.34-.2-.34-.02-.52.14-.7.16-.16.34-.4.52-.6.16-.2.22-.34.34-.58.1-.22.06-.42-.02-.6-.1-.18-.78-1.88-1.08-2.58-.28-.68-.56-.58-.78-.6h-.66c-.22 0-.58.08-.88.42-.3.34-1.16 1.14-1.16 2.78 0 1.64 1.18 3.22 1.36 3.44.16.22 2.34 3.56 5.66 4.98.78.34 1.4.54 1.88.7.78.24 1.5.2 2.06.12.62-.08 1.92-.78 2.2-1.54.28-.74.28-1.38.2-1.52-.1-.14-.32-.22-.66-.38z"/>
+                <a href="#" aria-label="WhatsApp" className="text-white hover:text-brand transition-colors">
+                  <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12.001 2C6.478 2 2 6.478 2 12.001c0 1.77.462 3.468 1.34 4.961L2.046 22l5.185-1.27A9.96 9.96 0 0 0 12.001 22C17.523 22 22 17.523 22 12.001 22 6.478 17.523 2 12.001 2zm0 18.18a8.14 8.14 0 0 1-4.154-1.14l-.298-.177-3.078.754.784-2.998-.194-.308A8.18 8.18 0 0 1 3.82 12c0-4.512 3.669-8.18 8.181-8.18 4.512 0 8.18 3.668 8.18 8.18 0 4.513-3.668 8.18-8.18 8.18zm4.48-6.13c-.245-.123-1.452-.717-1.677-.798-.224-.082-.387-.123-.55.123-.163.245-.632.798-.775.961-.143.163-.286.184-.53.061-.245-.122-1.033-.38-1.968-1.213-.727-.648-1.218-1.449-1.361-1.693-.143-.245-.015-.378.108-.5.111-.11.245-.285.367-.428.122-.143.163-.245.245-.408.082-.163.041-.306-.02-.429-.062-.122-.55-1.327-.754-1.816-.199-.478-.4-.413-.55-.42l-.468-.009c-.163 0-.428.061-.653.306-.224.245-.856.836-.856 2.038 0 1.203.877 2.364 1 2.527.122.163 1.727 2.637 4.184 3.697.585.252 1.041.403 1.397.516.587.187 1.121.16 1.543.097.471-.071 1.452-.593 1.657-1.166.204-.572.204-1.063.143-1.166-.061-.102-.224-.163-.469-.285z"/>
                   </svg>
                 </a>
               </div>
-              {/* Baixe o App - Below Social Icons */}
-              <div className="pt-6 border-t border-gray-700">
-                <p className="text-xs text-gray-500 mb-3">Baixe nosso app</p>
-                <div className="flex gap-3">
-                  <a
-                    href="https://play.google.com/store/apps/details?id=com.virtuax.app"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs text-gray-400 hover:text-brand transition-colors"
-                  >
-                    Google Play
-                  </a>
-                  <a
-                    href="https://apps.apple.com/br/app/virtuax/id1234567890"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs text-gray-400 hover:text-brand transition-colors"
-                  >
-                    App Store
-                  </a>
-                </div>
-              </div>
             </div>
 
-            {/* Column 2: Quick Links */}
-            <div className="space-y-4">
-              <h3 className="text-white font-semibold text-sm">Links Rápidos</h3>
-              <ul className="space-y-2">
-                <li>
-                  <button
-                    onClick={() => {
-                      const element = document.getElementById("sobre");
-                      element?.scrollIntoView({ behavior: "smooth", block: "start" });
-                    }}
-                    className="text-sm text-gray-400 hover:text-brand transition-colors text-left"
-                  >
-                    Sobre
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={() => {
-                      const element = document.getElementById("beneficios");
-                      element?.scrollIntoView({ behavior: "smooth", block: "start" });
-                    }}
-                    className="text-sm text-gray-400 hover:text-brand transition-colors text-left"
-                  >
-                    Benefícios
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={() => {
-                      const element = document.getElementById("planos");
-                      element?.scrollIntoView({ behavior: "smooth", block: "start" });
-                    }}
-                    className="text-sm text-gray-400 hover:text-brand transition-colors text-left"
-                  >
-                    Planos
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={() => {
-                      const element = document.getElementById("contato");
-                      element?.scrollIntoView({ behavior: "smooth", block: "start" });
-                    }}
-                    className="text-sm text-gray-400 hover:text-brand transition-colors text-left"
-                  >
-                    Contato
-                  </button>
-                </li>
+            {/* Coluna 2: Serviços */}
+            <div className="space-y-5">
+              <h3 className="text-white font-bold text-sm uppercase tracking-wider">Serviços</h3>
+              <ul className="space-y-3">
+                <li><span className="text-sm text-gray-400">Internet Fibra Óptica</span></li>
+                <li><span className="text-sm text-gray-400">Plano Residencial</span></li>
+                <li><span className="text-sm text-gray-400">Plano Empresarial</span></li>
+                <li><span className="text-sm text-gray-400">Suporte Técnico</span></li>
+                <li><span className="text-sm text-gray-400">Instalação Gratuita</span></li>
               </ul>
             </div>
 
-            {/* Column 3: Information */}
-            <div className="space-y-4">
-              <h3 className="text-white font-semibold text-sm">Informações</h3>
+            {/* Coluna 3: Links */}
+            <div className="space-y-5">
+              <h3 className="text-white font-bold text-sm uppercase tracking-wider">Links</h3>
               <ul className="space-y-3">
-                <li className="text-sm text-gray-400">
-                  <span className="font-semibold text-white">Telefone:</span>
-                  <a href="tel:08007315050" className="block hover:text-brand transition-colors">
+                {[
+                  { label: "Início", id: null },
+                  { label: "Sobre", id: "sobre" },
+                  { label: "Benefícios", id: "beneficios" },
+                  { label: "Planos", id: "planos" },
+                  { label: "Contato", id: "contato" },
+                ].map(({ label, id }) => (
+                  <li key={label}>
+                    <button
+                      onClick={() => {
+                        if (id) {
+                          document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+                        } else {
+                          window.scrollTo({ top: 0, behavior: "smooth" });
+                        }
+                      }}
+                      className="text-sm text-gray-400 hover:text-brand transition-colors text-left"
+                    >
+                      {label}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Coluna 4: Suporte */}
+            <div className="space-y-5">
+              <h3 className="text-white font-bold text-sm uppercase tracking-wider">Suporte</h3>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <svg className="w-4 h-4 mt-0.5 text-brand shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25z"/>
+                  </svg>
+                  <a href="tel:08007315050" className="text-sm text-gray-400 hover:text-brand transition-colors">
                     0800 731 5050
                   </a>
                 </li>
-                <li className="text-sm text-gray-400">
-                  <span className="font-semibold text-white">WhatsApp:</span>
-                  <a href="https://wa.me/5583991234567" target="_blank" rel="noopener noreferrer" className="block hover:text-brand transition-colors">
-                    +55 (83) 99123-4567
-                  </a>
-                </li>
-                <li className="text-sm text-gray-400">
-                  <span className="font-semibold text-white">Email:</span>
-                  <a href="mailto:contato@virtuax.com.br" className="block hover:text-brand transition-colors">
+                <li className="flex items-start gap-3">
+                  <svg className="w-4 h-4 mt-0.5 text-brand shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/>
+                  </svg>
+                  <a href="mailto:contato@virtuax.com.br" className="text-sm text-gray-400 hover:text-brand transition-colors">
                     contato@virtuax.com.br
                   </a>
                 </li>
-                <li className="text-sm text-gray-400">
-                  <span className="font-semibold text-white">CNPJ:</span>
-                  <span className="block">20.514.953/0001-85</span>
+                <li className="flex items-start gap-3">
+                  <svg className="w-4 h-4 mt-0.5 text-brand shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/>
+                  </svg>
+                  <span className="text-sm text-gray-400">Seg-Sex: 8h às 18h</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <svg className="w-4 h-4 mt-0.5 text-brand shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9z"/>
+                  </svg>
+                  <span className="text-sm text-gray-400">CNPJ: 20.514.953/0001-85</span>
                 </li>
               </ul>
             </div>
-
-            {/* Column 4: Hours */}
-            <div className="space-y-4">
-              <h3 className="text-white font-semibold text-sm">Horário de Atendimento</h3>
-              <div className="space-y-2">
-                <p className="text-xs text-gray-400">Segunda a Sexta</p>
-                <p className="text-sm text-gray-400 font-semibold">8h - 18h</p>
-              </div>
-            </div>
           </div>
+        </div>
 
-          {/* Divider */}
-          <div className="border-t border-gray-700 my-8"></div>
-
-          {/* Bottom Footer */}
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <div className="text-xs text-gray-500 text-center sm:text-left">
-              <p>© 2025 VirtuaX • Todos os direitos reservados</p>
-              <p className="mt-1">
-                Desenvolvido por <span className="text-brand font-semibold">November Marketing</span> & <span className="text-brand font-semibold">dm.art.br</span>
-              </p>
-            </div>
-
-            {/* Bottom Links */}
-            <div className="flex gap-6 text-xs text-gray-500">
-              <a href="#" className="hover:text-brand transition-colors">
-                Política de Privacidade
-              </a>
-              <a href="#" className="hover:text-brand transition-colors">
-                Termos de Uso
-              </a>
-              <a href="#" className="hover:text-brand transition-colors">
-                Sitemap
-              </a>
+        {/* Bottom Bar */}
+        <div className="border-t border-gray-700">
+          <div className="container mx-auto px-4 sm:px-6 md:px-8 py-5 flex flex-col sm:flex-row justify-between items-center gap-3">
+            <p className="text-xs text-gray-500 text-center sm:text-left">
+              © 2025 VirtuaX. Todos os direitos reservados — Dev.{" "}
+              <span className="text-brand font-semibold">November Marketing</span>{" "}
+              Design{" "}
+              <span className="text-brand font-semibold">dm.art.br</span>
+            </p>
+            <div className="flex gap-5 text-xs text-gray-500">
+              <a href="#" className="hover:text-brand transition-colors">Política de Privacidade</a>
+              <a href="#" className="hover:text-brand transition-colors">Termos de Uso</a>
+              <a href="#" className="hover:text-brand transition-colors">LGPD</a>
             </div>
           </div>
         </div>
