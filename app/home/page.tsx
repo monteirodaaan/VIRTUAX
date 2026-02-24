@@ -842,7 +842,7 @@ function HomePageContent() {
                     <p className="text-gray-600 text-xs sm:text-sm">
                       {planType === "empresarial"
                         ? "Especialistas em soluções corporativas"
-                        : "Segunda a sexta, das 8h ����s 18h"}
+                        : "Segunda a sexta, das 8h ������s 18h"}
                     </p>
                   </div>
                 </div>
@@ -1002,7 +1002,7 @@ function HomePageContent() {
               <p className="text-sm text-gray-400 leading-relaxed">
                 Conectando você ao mundo com fibra óptica de última geração. Internet em alta velocidade para sua casa ou empresa.
               </p>
-              <div className="flex gap-4 pt-2">
+              <div className="flex gap-4 pt-2 items-center">
                 <a href="#" aria-label="Facebook" className="text-white hover:text-brand transition-colors">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
@@ -1014,7 +1014,7 @@ function HomePageContent() {
                   </svg>
                 </a>
                 <a href="#" aria-label="WhatsApp" className="text-white hover:text-brand transition-colors">
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12.001 2C6.478 2 2 6.478 2 12.001c0 1.77.462 3.468 1.34 4.961L2.046 22l5.185-1.27A9.96 9.96 0 0 0 12.001 22C17.523 22 22 17.523 22 12.001 22 6.478 17.523 2 12.001 2zm0 18.18a8.14 8.14 0 0 1-4.154-1.14l-.298-.177-3.078.754.784-2.998-.194-.308A8.18 8.18 0 0 1 3.82 12c0-4.512 3.669-8.18 8.181-8.18 4.512 0 8.18 3.668 8.18 8.18 0 4.513-3.668 8.18-8.18 8.18zm4.48-6.13c-.245-.123-1.452-.717-1.677-.798-.224-.082-.387-.123-.55.123-.163.245-.632.798-.775.961-.143.163-.286.184-.53.061-.245-.122-1.033-.38-1.968-1.213-.727-.648-1.218-1.449-1.361-1.693-.143-.245-.015-.378.108-.5.111-.11.245-.285.367-.428.122-.143.163-.245.245-.408.082-.163.041-.306-.02-.429-.062-.122-.55-1.327-.754-1.816-.199-.478-.4-.413-.55-.42l-.468-.009c-.163 0-.428.061-.653.306-.224.245-.856.836-.856 2.038 0 1.203.877 2.364 1 2.527.122.163 1.727 2.637 4.184 3.697.585.252 1.041.403 1.397.516.587.187 1.121.16 1.543.097.471-.071 1.452-.593 1.657-1.166.204-.572.204-1.063.143-1.166-.061-.102-.224-.163-.469-.285z"/>
                   </svg>
                 </a>
