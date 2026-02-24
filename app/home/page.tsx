@@ -206,8 +206,7 @@ function HomePageContent() {
                   <Building2 className="h-4 w-4" />
                   Empresarial
                 </button>
-              </div>
-            </div>
+          </div>
 
           {/* App Download Section */}
           <div className="mt-16 sm:mt-20 md:mt-24 pt-16 sm:pt-20 md:pt-24 border-t border-gray-200">
@@ -220,7 +219,6 @@ function HomePageContent() {
                   width={400}
                   height={100}
                   className="h-12 sm:h-14 md:h-16 w-auto"
-                  priority
                 />
               </div>
 
@@ -260,60 +258,6 @@ function HomePageContent() {
               <p className="text-center text-gray-600 text-sm sm:text-base mt-6 sm:mt-8">
                 Baixe o aplicativo VirtuaX e gerencie sua conexão, faturas e suporte em qualquer lugar
               </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="sobre" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-16">
-          <div className="max-w-4xl mx-auto my-4 sm:my-6">
-            <div className="text-left mb-8 sm:mb-10 md:mb-12 px-4 sm:px-0">
-              <div className="inline-block px-4 sm:px-6 rounded-full bg-brand/10 border border-brand/30 bg-transparent border-orange-500 mb-4 sm:mb-6">
-                <span className="text-brand font-bold text-xs sm:text-sm uppercase tracking-wider">Sobre Nós</span>
-              </div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 text-left">
-                Conectado <span className="text-brand">{cityNames[selectedCity] || "sua região"}</span><br />com qualidade VirtuaX
-              </h2>
-            </div>
-
-            {/* About section - trust message - cache bust */}
-            <div className="space-y-4 sm:space-y-5 md:space-y-6 text-gray-700 text-base sm:text-lg leading-relaxed px-4 sm:px-0">
-              <p>
-                A <strong className="text-brand">VirtuaX</strong> leva fibra óptica de alta performance para cidades da Paraíba, com velocidade real, estabilidade constante e atendimento que resolve.
-              </p>
-              <p>
-                Com experiência no mercado de telecom, entregamos internet ultra-rápida para residências e empresas que precisam trabalhar, estudar, criar e se divertir sem interrupções.
-              </p>
-              <p className="text-brand font-semibold">
-                Mais do que conexão, oferecemos confiança: planos claros, preços justos e suporte humano sempre que você precisar.
-              </p>
-            </div>
-
-            {/* Metrics cards section - cache bust v3 */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mt-8 sm:mt-10 md:mt-12 px-4 sm:px-0">
-              <div className="text-center p-4 sm:p-5 md:p-6 bg-brand/5 rounded-xl border border-brand/20" data-metric="localidades">
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand mb-1 sm:mb-2">
-                  <AnimatedCounter end="+5" />
-                </div>
-                <div className="text-xs sm:text-sm text-gray-600 font-semibold">Localidades</div>
-              </div>
-              <div className="text-center p-4 sm:p-5 md:p-6 bg-[#f86c05]/5 rounded-xl border border-[#f86c05]/20" data-metric="excelencia">
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#f86c05] mb-1 sm:mb-2">
-                  <AnimatedCounter end="97.5%" />
-                </div>
-                <div className="text-xs sm:text-sm text-gray-600 font-semibold">Excelência</div>
-              </div>
-              <div className="text-center p-4 sm:p-5 md:p-6 bg-[#f86c05]/5 rounded-xl border border-[#f86c05]/20" data-metric="disponibilidade">
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#f86c05] mb-1 sm:mb-2">24/7</div>
-                <div className="text-xs sm:text-sm text-gray-600 font-semibold">Disponibilidade</div>
-              </div>
-              <div className="text-center p-4 sm:p-5 md:p-6 bg-[#f86c05]/5 rounded-xl border border-[#f86c05]/20" data-metric="clientes">
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#f86c05] mb-1 sm:mb-2">
-                  <AnimatedCounter end="+9.000" />
-                </div>
-                <div className="text-xs sm:text-sm text-gray-600 font-semibold">Clientes</div>
-              </div>
             </div>
           </div>
         </div>
