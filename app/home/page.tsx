@@ -1074,7 +1074,7 @@ function HomePageContent() {
 
         {/* Main Footer */}
         <div className="py-16 sm:py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr_1fr_1fr] gap-10 lg:gap-12 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-10 lg:gap-6 w-full">
 
             {/* Logo + Descrição + Redes */}
             <div className="flex flex-col gap-6">
@@ -1092,7 +1092,7 @@ function HomePageContent() {
                   style={{ height: "clamp(22px, 3.85vw, 35px)" }}
                 />
               </button>
-              <p className="text-sm text-gray-400 leading-relaxed max-w-xs">
+              <p className="text-sm text-gray-400 leading-relaxed">
                 Conectando você ao mundo com fibra óptica de última geração. Internet em alta velocidade para sua casa ou empresa.
               </p>
               <div className="flex items-center gap-5 pt-1">
