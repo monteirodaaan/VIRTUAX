@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation"
 import { MapPin } from "lucide-react"
 import Image from "next/image"
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect } from "react"
 
 const cities = [
   { value: "areia", label: "Areia" },
@@ -16,60 +16,15 @@ const cities = [
 export default function CitySelectionPage() {
   const router = useRouter()
   const [isLoading, setIsLoading] = useState(true)
-  const [selectedIndex, setSelectedIndex] = useState(0)
-  const scrollContainerRef = useRef<HTMLDivElement>(null)
-  const isScrolling = useRef(false)
 
   useEffect(() => {
+    // Simulate initial load completion
     setIsLoading(false)
-  }, [])
-
-  useEffect(() => {
-    const container = scrollContainerRef.current
-    if (!container) return
-
-    const handleScroll = () => {
-      isScrolling.current = true
-      clearTimeout(handleScroll.timeout)
-      handleScroll.timeout = setTimeout(() => {
-        isScrolling.current = false
-        // Snap to nearest item
-        const scrollLeft = container.scrollLeft
-        const itemWidth = container.offsetWidth / 3
-        const nearestIndex = Math.round(scrollLeft / itemWidth)
-        setSelectedIndex(Math.max(0, Math.min(nearestIndex, cities.length - 1)))
-        
-        container.scrollTo({
-          left: nearestIndex * itemWidth,
-          behavior: "smooth",
-        })
-      }, 150)
-    }
-
-    container.addEventListener("scroll", handleScroll)
-    return () => {
-      container.removeEventListener("scroll", handleScroll)
-      clearTimeout(handleScroll.timeout)
-    }
   }, [])
 
   const handleCitySelect = (cityValue: string) => {
     setIsLoading(true)
     router.push(`/home?city=${cityValue}`)
-  }
-
-  const scrollToIndex = (index: number) => {
-    const container = scrollContainerRef.current
-    if (!container) return
-
-    const itemWidth = container.offsetWidth / 3
-    const scrollLeft = index * itemWidth
-    
-    container.scrollTo({
-      left: scrollLeft,
-      behavior: "smooth",
-    })
-    setSelectedIndex(index)
   }
 
   if (isLoading) {
@@ -107,59 +62,19 @@ export default function CitySelectionPage() {
               <h1 className="font-bold text-white text-2xl sm:text-3xl md:text-4xl">Escolha sua região</h1>
             </div>
 
-            {/* Wheel Picker */}
-            <div className="mb-8 sm:mb-10">
-              <div className="relative">
-                {/* Center indicator line */}
-                <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-16 border-l-2 border-r-2 border-white/40 pointer-events-none z-10" />
-
-                {/* Scroll container */}
-                <div
-                  ref={scrollContainerRef}
-                  className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth"
-                  style={{
-                    scrollBehavior: "smooth",
-                    WebkitOverflowScrolling: "touch",
-                  }}
+            <div className="space-y-3 sm:space-y-4 mb-8 sm:mb-10">
+              {cities.map((city) => (
+                <button
+                  key={city.value}
+                  onClick={() => handleCitySelect(city.value)}
+                  className="w-full bg-white rounded-2xl px-6 sm:px-8 py-4 sm:py-5 flex items-center justify-center gap-3 transition-all hover:shadow-lg hover:scale-[1.02] hover:bg-[#f86c05] hover:text-white group"
                 >
-                  {cities.map((city, index) => (
-                    <div
-                      key={city.value}
-                      className="flex-shrink-0 w-1/3 flex items-center justify-center px-2"
-                    >
-                      <button
-                        onClick={() => scrollToIndex(index)}
-                        className={`w-full aspect-square rounded-2xl flex flex-col items-center justify-center gap-2 sm:gap-3 transition-all ${
-                          selectedIndex === index
-                            ? "bg-white shadow-lg scale-100"
-                            : "bg-white/50 scale-90"
-                        }`}
-                      >
-                        <MapPin
-                          className={`h-5 w-5 sm:h-6 sm:w-6 transition-colors ${
-                            selectedIndex === index ? "text-[#f86c05]" : "text-gray-400"
-                          }`}
-                        />
-                        <span
-                          className={`text-xs sm:text-sm font-bold text-center px-1 transition-colors ${
-                            selectedIndex === index ? "text-gray-700" : "text-gray-500"
-                          }`}
-                        >
-                          {city.label}
-                        </span>
-                      </button>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Selection confirmation */}
-              <button
-                onClick={() => handleCitySelect(cities[selectedIndex].value)}
-                className="w-full mt-6 sm:mt-8 px-4 sm:px-5 md:px-6 py-3 sm:py-4 bg-white text-[#f86c05] font-bold rounded-2xl hover:bg-gray-50 transition-colors text-sm sm:text-base"
-              >
-                Confirmar - {cities[selectedIndex].label}
-              </button>
+                  <MapPin className="h-5 w-5 sm:h-6 sm:w-6 text-[#f86c05] group-hover:text-white transition-colors" />
+                  <span className="text-lg sm:text-xl font-bold text-gray-700 group-hover:text-white transition-colors">
+                    {city.label}
+                  </span>
+                </button>
+              ))}
             </div>
 
             {/* Separator line */}
@@ -167,7 +82,9 @@ export default function CitySelectionPage() {
 
             {/* Área do Cliente Button */}
             <a
-              href="#area-do-cliente"
+              href="http://central.virtuax.com.br/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full px-4 sm:px-5 md:px-6 py-3 sm:py-4 bg-white text-[#f86c05] font-bold rounded-2xl hover:bg-gray-50 transition-colors text-sm sm:text-base text-center block"
             >
               Área do cliente
