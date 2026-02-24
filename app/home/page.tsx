@@ -164,7 +164,7 @@ function HomePageContent() {
               width={120}
               height={30}
               className="w-auto"
-              style={{ height: "clamp(20px, 3.5vw, 32px)" }}
+              style={{ height: "clamp(22px, 3.85vw, 35px)" }}
               priority
             />
           </button>
@@ -1065,8 +1065,8 @@ function HomePageContent() {
                   alt="VirtuaX"
                   width={140}
                   height={36}
-                  className="h-6 w-auto"
-                  style={{ height: "auto" }}
+                  className="w-auto"
+                  style={{ height: "18px" }}
                 />
               </button>
               <p className="text-sm text-gray-400 leading-relaxed max-w-xs">
