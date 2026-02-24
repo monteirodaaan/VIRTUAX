@@ -1177,16 +1177,16 @@ function HomePageContent() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800">
           <div className="container mx-auto px-6 sm:px-8 lg:px-12 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className="text-xs text-gray-600 text-center sm:text-left leading-relaxed">
+            <p className="text-xs text-white text-center sm:text-left leading-relaxed">
               © 2026 VirtuaX. Todos os direitos reservados — Dev.{" "}
               <a href="https://www.instagram.com/november.mkt" target="_blank" rel="noopener noreferrer" className="text-brand font-semibold hover:underline transition-colors">November Marketing</a>{" "}
               || Design{" "}
               <a href="https://dm.art.br/" target="_blank" rel="noopener noreferrer" className="text-brand font-semibold hover:underline transition-colors">dm.art.br</a>
             </p>
-            <div className="flex items-center gap-6 text-xs text-gray-600">
-              <a href="#" className="hover:text-gray-300 transition-colors duration-200">Política de Privacidade</a>
-              <a href="#" className="hover:text-gray-300 transition-colors duration-200">Termos de Uso</a>
-              <a href="#" className="hover:text-gray-300 transition-colors duration-200">LGPD</a>
+            <div className="flex items-center gap-6 text-xs text-white">
+              <a href="#" className="hover:text-brand transition-colors duration-200">Política de Privacidade</a>
+              <a href="#" className="hover:text-brand transition-colors duration-200">Termos de Uso</a>
+              <a href="#" className="hover:text-brand transition-colors duration-200">LGPD</a>
             </div>
           </div>
         </div>
