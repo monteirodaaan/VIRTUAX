@@ -1022,11 +1022,11 @@ function HomePageContent() {
               </div>
             </div>
 
-            {/* Colunas 2-4: Serviços, Links, Suporte */}
+            {/* Colunas 2-4: Cobertura, Links, Suporte */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 lg:gap-16 ml-auto">
-              {/* Coluna 2: Serviços */}
+              {/* Coluna 2: Cobertura */}
               <div className="space-y-5">
-              <h3 className="text-white font-bold text-sm uppercase tracking-wider">Serviços</h3>
+              <h3 className="text-white font-bold text-sm uppercase tracking-wider">Internet em {cityNames[selectedCity] || "sua região"}</h3>
               <ul className="space-y-3">
                 <li><span className="text-sm text-gray-400">Internet Fibra Óptica</span></li>
                 <li><span className="text-sm text-gray-400">Plano Residencial</span></li>
