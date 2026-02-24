@@ -1181,23 +1181,17 @@ function HomePageContent() {
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-800">
-          <div className="container mx-auto px-6 sm:px-8 lg:px-12 py-6">
-            <div className="flex flex-col lg:flex-row lg:gap-16 xl:gap-24 items-center lg:items-center gap-4">
-              {/* Ocupa o mesmo espaço que a coluna esquerda do footer superior */}
-              <div className="lg:w-64 xl:w-72 shrink-0 flex justify-center lg:justify-start">
-                <p className="text-xs text-white text-center lg:text-left leading-relaxed">
-                  © 2026 VirtuaX. Todos os direitos reservados — Dev.{" "}
-                  <a href="https://www.instagram.com/november.mkt" target="_blank" rel="noopener noreferrer" className="text-brand font-semibold hover:underline transition-colors">November Marketing</a>{" "}
-                  || Design{" "}
-                  <a href="https://dm.art.br/" target="_blank" rel="noopener noreferrer" className="text-brand font-semibold hover:underline transition-colors">dm.art.br</a>
-                </p>
-              </div>
-              {/* Ocupa o mesmo espaço que o grid das 3 colunas */}
-              <div className="flex-1 flex justify-end items-center gap-6 text-xs text-white">
-                <a href="#" className="hover:text-brand transition-colors duration-200">Política de Privacidade</a>
-                <a href="#" className="hover:text-brand transition-colors duration-200">Termos de Uso</a>
-                <a href="#" className="hover:text-brand transition-colors duration-200">LGPD</a>
-              </div>
+          <div className="container mx-auto px-6 sm:px-8 lg:px-12 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p className="text-xs text-white text-center sm:text-left leading-relaxed">
+              © 2026 VirtuaX. Todos os direitos reservados — Dev.{" "}
+              <a href="https://www.instagram.com/november.mkt" target="_blank" rel="noopener noreferrer" className="text-brand font-semibold hover:underline transition-colors">November Marketing</a>{" "}
+              || Design{" "}
+              <a href="https://dm.art.br/" target="_blank" rel="noopener noreferrer" className="text-brand font-semibold hover:underline transition-colors">dm.art.br</a>
+            </p>
+            <div className="flex items-center gap-6 text-xs text-white">
+              <a href="#" className="hover:text-brand transition-colors duration-200">Política de Privacidade</a>
+              <a href="#" className="hover:text-brand transition-colors duration-200">Termos de Uso</a>
+              <a href="#" className="hover:text-brand transition-colors duration-200">LGPD</a>
             </div>
           </div>
         </div>
