@@ -170,11 +170,11 @@ function HomePageContent() {
             />
           </button>
 
-          <nav className="hidden md:flex items-center gap-4 lg:gap-6 text-background" aria-label="Navegacao principal">
+          <nav className="hidden md:flex items-center gap-4 lg:gap-6 text-background" aria-label="nav-principal">
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               className="text-xs lg:text-sm font-semibold hover:text-gray-100 transition-colors text-card"
-              aria-label="Ir para o início"
+              aria-label="Ir para o inicio"
             >
               Inicio
             </button>
@@ -357,7 +357,7 @@ function HomePageContent() {
                 // Image banner - full background image only
                 <div className="absolute inset-0 bg-orange-500">
                   {/* Mobile version */}
-                  <div className="relative w-full h-full md:hidden">
+                  <div className="absolute inset-0 md:hidden">
                     <Image
                       src={banner.imagePathMobile || banner.imagePath || ""}
                       alt="Banner Alta Velocidade VirtuaX Mobile"
@@ -368,7 +368,7 @@ function HomePageContent() {
                     />
                   </div>
                   {/* Desktop version */}
-                  <div className="relative w-full h-full hidden md:block">
+                  <div className="absolute inset-0 hidden md:block">
                     <Image
                       src={banner.imagePath || ""}
                       alt="Banner Alta Velocidade VirtuaX"
