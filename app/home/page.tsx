@@ -163,7 +163,6 @@ function HomePageContent() {
               width={120}
               height={30}
               className="h-3 sm:h-3.5 md:h-4 w-auto"
-              style={{ width: "auto", height: "auto" }}
               priority
             />
           </button>
@@ -1059,7 +1058,6 @@ function HomePageContent() {
                 width={140}
                 height={36}
                 className="h-4.5 w-auto"
-                style={{ width: "auto", height: "auto" }}
               />
               <p className="text-sm text-gray-400 leading-relaxed">
                 Conectando você ao mundo com fibra óptica de última geração. Internet em alta velocidade para sua casa ou empresa.
