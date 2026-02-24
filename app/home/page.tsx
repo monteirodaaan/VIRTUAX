@@ -842,7 +842,7 @@ function HomePageContent() {
                     <p className="text-gray-600 text-xs sm:text-sm">
                       {planType === "empresarial"
                         ? "Especialistas em soluções corporativas"
-                        : "Segunda a sexta, das 8h às 18h"}
+                        : "Segunda a sexta, das 8h ��s 18h"}
                     </p>
                   </div>
                 </div>
@@ -1000,8 +1000,7 @@ function HomePageContent() {
                 className="h-9 w-auto"
               />
               <p className="text-sm text-gray-400 leading-relaxed">
-                Conectando você ao mundo com fibra óptica de última geração.<br />
-                Internet de alta velocidade para sua casa ou empresa.
+                Conectando você ao mundo com fibra óptica de última geração. Internet em alta velocidade para sua casa ou empresa.
               </p>
               <div className="flex gap-4 pt-2">
                 <a href="#" aria-label="Facebook" className="text-white hover:text-brand transition-colors">
