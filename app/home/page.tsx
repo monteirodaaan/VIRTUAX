@@ -563,7 +563,7 @@ function HomePageContent() {
 
             {/* Download APP Section */}
             <div className="w-full col-span-full flex flex-col items-center justify-center mt-8 sm:mt-12">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-white via-brand to-white bg-clip-text text-transparent mb-8 sm:mb-10">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 sm:mb-10">
                 Baixe nosso APP
               </h2>
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
