@@ -539,6 +539,8 @@ function HomePageContent() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
 
       <section id="planos" className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 md:px-8">
@@ -998,6 +1000,8 @@ function HomePageContent() {
     </div>
   )
 }
+
+export default function HomePage() {
   return (
     <div className="min-h-screen bg-white">
       <HomePageContent />
