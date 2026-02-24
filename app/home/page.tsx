@@ -120,6 +120,15 @@ function HomePageContent() {
   const [planType, setPlanType] = useState<"residencial" | "empresarial">("residencial")
   const [currentBannerIndex, setCurrentBannerIndex] = useState(0)
 
+  // Função para scroll suave para as seções
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" })
+      setMobileMenuOpen(false)
+    }
+  }
+
   // Banner carousel for hero section
   const banners = [
     {
@@ -145,7 +154,7 @@ function HomePageContent() {
         <div className="container mx-auto px-4 sm:px-6 md:px-8 h-14 sm:h-16 flex items-center justify-between">
           <Image
             src="/images/logo.webp"
-            alt="VirtuaX Telecom - Provedor de Internet Fibra Óptica na Paraíba"
+            alt="VirtuaX"
             width={120}
             height={30}
             className="h-6 sm:h-7 md:h-8 w-auto"
@@ -165,7 +174,7 @@ function HomePageContent() {
               className="text-xs lg:text-sm font-semibold hover:text-gray-100 transition-colors text-card"
               aria-label="Ir para seção Benefícios"
             >
-              Benefícios VirtuaX
+              Benefícios
             </button>
             <div className="relative group">
               <button
@@ -227,9 +236,7 @@ function HomePageContent() {
             </div>
 
             <a
-              href="http://central.virtuax.com.br/"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#area-do-cliente"
               className="inline-flex items-center justify-center font-semibold transition-all duration-200 text-xs lg:text-sm px-4 lg:px-6 rounded-lg h-9 bg-white text-brand hover:bg-opacity-90 shadow-sm hover:shadow-md"
             >
               Área do Cliente
@@ -295,9 +302,7 @@ function HomePageContent() {
               </div>
 
               <a
-                href="http://central.virtuax.com.br/"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#area-do-cliente"
                 className="w-full mt-2 inline-flex items-center justify-center font-semibold transition-all duration-200 text-sm px-4 rounded-lg h-10 bg-brand text-white hover:bg-opacity-90 shadow-sm hover:shadow-md"
               >
                 Área do Cliente
