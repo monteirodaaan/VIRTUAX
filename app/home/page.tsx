@@ -1046,56 +1046,62 @@ function HomePageContent() {
 
       <footer className="bg-gray-900 text-white">
         {/* Main Footer */}
-        <div className="container mx-auto px-4 sm:px-6 md:px-8 py-14 sm:py-16">
-          {/* Flex container: Logo + 3 columns side by side on desktop, stacked on mobile */}
-          <div className="flex flex-col md:flex-row md:gap-12 lg:gap-16">
-            
-            {/* Logo Section - Left side on desktop */}
-            <div className="space-y-5 mb-12 md:mb-0 md:w-60 shrink-0">
-              <Image
-                src="/images/logo.webp"
-                alt="VirtuaX"
-                width={140}
-                height={36}
-                className="h-9 w-auto"
-              />
-              <p className="text-sm text-gray-400 leading-relaxed">
+        <div className="container mx-auto px-6 sm:px-8 lg:px-12 py-16 sm:py-20">
+          <div className="flex flex-col lg:flex-row lg:gap-16 xl:gap-24">
+
+            {/* Logo + Descrição + Redes */}
+            <div className="flex flex-col gap-6 mb-14 lg:mb-0 lg:w-64 xl:w-72 shrink-0">
+              <button
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                className="self-start hover:opacity-80 transition-opacity"
+                aria-label="Voltar ao topo"
+              >
+                <Image
+                  src="/images/logo.webp"
+                  alt="VirtuaX"
+                  width={140}
+                  height={36}
+                  className="h-9 w-auto"
+                />
+              </button>
+              <p className="text-sm text-gray-400 leading-relaxed max-w-xs">
                 Conectando você ao mundo com fibra óptica de última geração. Internet em alta velocidade para sua casa ou empresa.
               </p>
-              <div className="flex gap-6 pt-2 items-center">
-                <a href="#" aria-label="Facebook" className="inline-flex hover:opacity-80 transition-opacity">
-                  <Image src="/images/facebook-icon.svg" alt="Facebook" width={24} height={24} className="w-6 h-6 brightness-0 invert" />
+              <div className="flex items-center gap-5 pt-1">
+                <a href="#" aria-label="Facebook" className="text-gray-500 hover:text-brand transition-colors duration-200">
+                  <Image src="/images/facebook-icon.svg" alt="Facebook" width={20} height={20} className="w-5 h-5 brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
                 </a>
-                <a href="#" aria-label="Instagram" className="inline-flex hover:opacity-80 transition-opacity">
-                  <Image src="/images/instagram-icon.svg" alt="Instagram" width={24} height={24} className="w-6 h-6 brightness-0 invert" />
+                <a href="#" aria-label="Instagram" className="text-gray-500 hover:text-brand transition-colors duration-200">
+                  <Image src="/images/instagram-icon.svg" alt="Instagram" width={20} height={20} className="w-5 h-5 brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
                 </a>
-                <a href="#" aria-label="WhatsApp" className="inline-flex hover:opacity-80 transition-opacity">
-                  <Image src="/images/whatsapp-icon.svg" alt="WhatsApp" width={24} height={24} className="w-6 h-6 brightness-0 invert" />
+                <a href="#" aria-label="WhatsApp" className="text-gray-500 hover:text-brand transition-colors duration-200">
+                  <Image src="/images/whatsapp-icon.svg" alt="WhatsApp" width={20} height={20} className="w-5 h-5 brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
                 </a>
-                <a href="#" aria-label="Email" className="inline-flex hover:opacity-80 transition-opacity">
-                  <Image src="/images/email-icon.svg" alt="Email" width={24} height={24} className="w-6 h-6 brightness-0 invert" />
+                <a href="#" aria-label="Email" className="text-gray-500 hover:text-brand transition-colors duration-200">
+                  <Image src="/images/email-icon.svg" alt="Email" width={20} height={20} className="w-5 h-5 brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
                 </a>
               </div>
             </div>
 
-            {/* Grid: 3 columns - full width on mobile, flex-1 on desktop */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-4 lg:gap-6 flex-1 md:ml-auto">
-              {/* Column 1: Cobertura */}
-              <div className="space-y-5">
-                <h3 className="text-white font-bold text-sm uppercase tracking-wider">Cobertura</h3>
-                <ul className="space-y-3">
-                  <li><span className="text-sm text-gray-400">Internet em Areia</span></li>
-                  <li><span className="text-sm text-gray-400">Internet em Bananeiras</span></li>
-                  <li><span className="text-sm text-gray-400">Internet em Cacimba de Dentro</span></li>
-                  <li><span className="text-sm text-gray-400">Internet em Serraria</span></li>
-                  <li><span className="text-sm text-gray-400">Internet em Solânea</span></li>
+            {/* 3 Colunas alinhadas à direita */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-8 lg:gap-10 flex-1 lg:ml-auto">
+
+              {/* Cobertura */}
+              <div className="flex flex-col gap-5">
+                <h3 className="text-xs font-bold uppercase tracking-widest text-gray-500">Cobertura</h3>
+                <ul className="flex flex-col gap-3.5">
+                  {["Internet em Areia", "Internet em Bananeiras", "Internet em Cacimba de Dentro", "Internet em Serraria", "Internet em Solânea"].map((cidade) => (
+                    <li key={cidade}>
+                      <span className="text-sm text-gray-400 leading-relaxed">{cidade}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
 
-              {/* Column 2: Links */}
-              <div className="space-y-5">
-                <h3 className="text-white font-bold text-sm uppercase tracking-wider">Links</h3>
-                <ul className="space-y-3">
+              {/* Links */}
+              <div className="flex flex-col gap-5">
+                <h3 className="text-xs font-bold uppercase tracking-widest text-gray-500">Links</h3>
+                <ul className="flex flex-col gap-3.5">
                   {[
                     { label: "Início", id: null },
                     { label: "Sobre", id: "sobre" },
@@ -1112,7 +1118,7 @@ function HomePageContent() {
                             window.scrollTo({ top: 0, behavior: "smooth" });
                           }
                         }}
-                        className="text-sm text-gray-400 hover:text-brand transition-colors text-left"
+                        className="text-sm text-gray-400 hover:text-white transition-colors duration-200 text-left"
                       >
                         {label}
                       </button>
@@ -1121,57 +1127,58 @@ function HomePageContent() {
                 </ul>
               </div>
 
-              {/* Column 3: Suporte */}
-              <div className="space-y-5">
-                <h3 className="text-white font-bold text-sm uppercase tracking-wider">Suporte</h3>
-                <ul className="space-y-4">
-                  <li className="flex items-start gap-3">
-                    <svg className="w-4 h-4 mt-0.5 text-brand shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              {/* Suporte */}
+              <div className="flex flex-col gap-5">
+                <h3 className="text-xs font-bold uppercase tracking-widest text-gray-500">Suporte</h3>
+                <ul className="flex flex-col gap-4">
+                  <li className="flex items-center gap-3">
+                    <svg className="w-4 h-4 text-brand shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25z"/>
                     </svg>
-                    <a href="tel:08007315050" className="text-sm text-gray-400 hover:text-brand transition-colors">
+                    <a href="tel:08007315050" className="text-sm text-gray-400 hover:text-white transition-colors duration-200">
                       0800 731 5050
                     </a>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <svg className="w-4 h-4 mt-0.5 text-brand shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <li className="flex items-center gap-3">
+                    <svg className="w-4 h-4 text-brand shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/>
                     </svg>
-                    <a href="mailto:contato@virtuax.com.br" className="text-sm text-gray-400 hover:text-brand transition-colors">
+                    <a href="mailto:contato@virtuax.com.br" className="text-sm text-gray-400 hover:text-white transition-colors duration-200">
                       contato@virtuax.com.br
                     </a>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <svg className="w-4 h-4 mt-0.5 text-brand shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <li className="flex items-center gap-3">
+                    <svg className="w-4 h-4 text-brand shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/>
                     </svg>
                     <span className="text-sm text-gray-400">Seg-Sex: 8h às 18h</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <svg className="w-4 h-4 mt-0.5 text-brand shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <li className="flex items-center gap-3">
+                    <svg className="w-4 h-4 text-brand shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9z"/>
                     </svg>
                     <span className="text-sm text-gray-400">CNPJ: 20.514.953/0001-85</span>
                   </li>
                 </ul>
               </div>
+
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-700">
-          <div className="container mx-auto px-4 sm:px-6 md:px-8 py-5 flex flex-col sm:flex-row justify-between items-center gap-3">
-            <p className="text-xs text-gray-500 text-center sm:text-left">
+        <div className="border-t border-gray-800">
+          <div className="container mx-auto px-6 sm:px-8 lg:px-12 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p className="text-xs text-gray-600 text-center sm:text-left leading-relaxed">
               © 2026 VirtuaX. Todos os direitos reservados — Dev.{" "}
               <a href="https://www.instagram.com/november.mkt" target="_blank" rel="noopener noreferrer" className="text-brand font-semibold hover:underline transition-colors">November Marketing</a>{" "}
               || Design{" "}
               <a href="https://dm.art.br/" target="_blank" rel="noopener noreferrer" className="text-brand font-semibold hover:underline transition-colors">dm.art.br</a>
             </p>
-            <div className="flex gap-5 text-xs text-gray-500">
-              <a href="#" className="hover:text-brand transition-colors">Política de Privacidade</a>
-              <a href="#" className="hover:text-brand transition-colors">Termos de Uso</a>
-              <a href="#" className="hover:text-brand transition-colors">LGPD</a>
+            <div className="flex items-center gap-6 text-xs text-gray-600">
+              <a href="#" className="hover:text-gray-300 transition-colors duration-200">Política de Privacidade</a>
+              <a href="#" className="hover:text-gray-300 transition-colors duration-200">Termos de Uso</a>
+              <a href="#" className="hover:text-gray-300 transition-colors duration-200">LGPD</a>
             </div>
           </div>
         </div>
