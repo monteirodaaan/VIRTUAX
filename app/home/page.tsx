@@ -897,7 +897,7 @@ function HomePageContent() {
                     <p className="text-gray-600 text-xs sm:text-sm">
                       {planType === "empresarial"
                         ? "Especialistas em soluções corporativas"
-                        : "Segunda a sexta, das 8h ����������s 18h"}
+                        : "Segunda a sexta, das 8h às 18h"}
                     </p>
                   </div>
                 </div>
