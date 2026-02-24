@@ -1036,7 +1036,7 @@ function HomePageContent() {
               </div>
 
               {/* Coluna 3: Links */}
-              <div className="space-y-5">
+              <div className="space-y-5 lg:pl-8">
               <h3 className="text-white font-bold text-sm uppercase tracking-wider">Links</h3>
               <ul className="space-y-3">
                 {[
