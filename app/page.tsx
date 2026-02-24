@@ -80,7 +80,7 @@ export default function CitySelectionPage() {
         {/* Conteúdo central */}
         <div className="flex-1 flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-8">
           <div className="w-full max-w-md">
-            <div className="text-center mb-8 sm:mb-10 space-y-4">
+            <div className="text-center mb-4 sm:mb-5">
               <Image
                 src="/images/logo.webp"
                 alt="VirtuaX Logo"
@@ -89,7 +89,6 @@ export default function CitySelectionPage() {
                 className="h-16 sm:h-20 md:h-24 w-auto mx-auto"
                 priority
               />
-              <h1 className="font-bold text-white text-2xl sm:text-3xl md:text-4xl">Escolha sua região</h1>
             </div>
 
             {/* Custom Dropdown */}
@@ -97,11 +96,11 @@ export default function CitySelectionPage() {
               {/* Trigger */}
               <button
                 onClick={() => setIsOpen((o) => !o)}
-                className="w-full flex items-center justify-between gap-3 bg-gray-900/80 backdrop-blur-sm border border-white/10 rounded-2xl px-5 py-4 sm:py-5 transition-all hover:border-[#f86c05]/60 focus:outline-none focus:border-[#f86c05]"
+                className="w-full flex items-center justify-between gap-3 bg-white rounded-2xl px-5 py-4 sm:py-5 shadow-lg transition-all hover:shadow-xl focus:outline-none"
               >
                 <div className="flex items-center gap-3">
                   <MapPin className="h-5 w-5 text-[#f86c05] shrink-0" />
-                  <span className={`text-base sm:text-lg font-semibold ${selectedCity ? "text-white" : "text-gray-400"}`}>
+                  <span className={`text-base sm:text-lg font-semibold ${selectedCity ? "text-gray-800" : "text-gray-400"}`}>
                     {selectedCity ? selectedCity.label : "Selecione sua cidade..."}
                   </span>
                 </div>
@@ -112,14 +111,14 @@ export default function CitySelectionPage() {
 
               {/* Options list */}
               {isOpen && (
-                <div className="absolute top-full left-0 right-0 mt-2 bg-gray-900 border border-white/10 rounded-2xl overflow-hidden shadow-2xl z-50">
+                <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl overflow-hidden shadow-2xl z-50">
                   {cities.map((city, index) => (
                     <button
                       key={city.value}
                       onClick={() => handleSelect(city)}
-                      className={`w-full flex items-center gap-3 px-5 py-4 text-left transition-colors hover:bg-[#f86c05]/20 hover:text-[#f86c05] group
-                        ${selectedCity?.value === city.value ? "text-[#f86c05] bg-[#f86c05]/10" : "text-gray-300"}
-                        ${index !== cities.length - 1 ? "border-b border-white/5" : ""}
+                      className={`w-full flex items-center gap-3 px-5 py-4 text-left transition-colors hover:bg-orange-50 hover:text-[#f86c05] group
+                        ${selectedCity?.value === city.value ? "text-[#f86c05] bg-orange-50" : "text-gray-700"}
+                        ${index !== cities.length - 1 ? "border-b border-gray-100" : ""}
                       `}
                     >
                       <MapPin className="h-4 w-4 text-[#f86c05] shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" />
