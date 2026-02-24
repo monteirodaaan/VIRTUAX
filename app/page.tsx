@@ -91,7 +91,6 @@ export default function CitySelectionPage() {
                 />
               </div>
             </div>
-            </div>
 
             {/* Custom Dropdown */}
             <div ref={dropdownRef} className="relative">
