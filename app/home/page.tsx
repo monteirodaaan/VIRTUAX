@@ -249,7 +249,9 @@ function HomePageContent() {
             </div>
 
             <a
-              href="#area-do-cliente"
+              href="https://virtuax.innave.com.br"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center font-semibold transition-all duration-200 text-xs lg:text-sm px-4 lg:px-6 rounded-lg h-9 bg-white text-brand hover:bg-opacity-90 shadow-sm hover:shadow-md"
             >
               Área do Cliente
@@ -324,7 +326,9 @@ function HomePageContent() {
               </div>
 
               <a
-                href="#area-do-cliente"
+                href="https://virtuax.innave.com.br"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full mt-2 inline-flex items-center justify-center font-semibold transition-all duration-200 text-sm px-4 rounded-lg h-10 bg-brand text-white hover:bg-opacity-90 shadow-sm hover:shadow-md"
               >
                 Área do Cliente
