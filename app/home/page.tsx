@@ -568,11 +568,9 @@ function HomePageContent() {
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto hover:opacity-90 transition-opacity"
               >
-                <Image 
+                <img 
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ativo%202-gG8m72SXp24pzz4bznyR6pF1ztLAtu.webp"
                   alt="GET IT ON Google Play"
-                  width={240}
-                  height={80}
                   className="h-auto w-full sm:w-80"
                 />
               </a>
@@ -582,11 +580,9 @@ function HomePageContent() {
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto hover:opacity-90 transition-opacity"
               >
-                <Image 
+                <img 
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ativo%203-NDV0qKwxj8VPlXMVKTMh6UxP5YUGVL.webp"
                   alt="DOWNLOAD ON THE App Store"
-                  width={240}
-                  height={80}
                   className="h-auto w-full sm:w-80"
                 />
               </a>
