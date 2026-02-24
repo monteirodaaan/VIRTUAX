@@ -1066,7 +1066,7 @@ function HomePageContent() {
                   width={140}
                   height={36}
                   className="w-auto"
-                  style={{ height: "18px" }}
+                  style={{ height: "clamp(22px, 3.85vw, 35px)" }}
                 />
               </button>
               <p className="text-sm text-gray-400 leading-relaxed max-w-xs">
