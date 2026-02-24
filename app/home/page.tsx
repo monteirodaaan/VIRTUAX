@@ -842,7 +842,7 @@ function HomePageContent() {
                     <p className="text-gray-600 text-xs sm:text-sm">
                       {planType === "empresarial"
                         ? "Especialistas em soluções corporativas"
-                        : "Segunda a sexta, das 8h ������s 18h"}
+                        : "Segunda a sexta, das 8h ��������s 18h"}
                     </p>
                   </div>
                 </div>
@@ -988,40 +988,38 @@ function HomePageContent() {
       <footer className="bg-gray-900 text-white">
         {/* Main Footer */}
         <div className="container mx-auto px-4 sm:px-6 md:px-8 py-14 sm:py-16">
-          <div className="flex flex-col lg:flex-row lg:gap-16">
-
-            {/* Coluna 1: Marca */}
-            <div className="space-y-5 lg:w-96 shrink-0">
-              <Image
-                src="/images/logo.webp"
-                alt="VirtuaX"
-                width={140}
-                height={36}
-                className="h-9 w-auto"
-              />
-              <p className="text-sm text-gray-400 leading-relaxed">
-                Conectando você ao mundo com fibra óptica de última geração. Internet em alta velocidade para sua casa ou empresa.
-              </p>
-              <div className="flex gap-6 pt-2 items-center">
-                <a href="#" aria-label="Facebook" className="inline-flex hover:opacity-80 transition-opacity">
-                  <Image src="/images/facebook-icon.svg" alt="Facebook" width={24} height={24} className="w-6 h-6 brightness-0 invert" />
-                </a>
-                <a href="#" aria-label="Instagram" className="inline-flex hover:opacity-80 transition-opacity">
-                  <Image src="/images/instagram-icon.svg" alt="Instagram" width={24} height={24} className="w-6 h-6 brightness-0 invert" />
-                </a>
-                <a href="#" aria-label="WhatsApp" className="inline-flex hover:opacity-80 transition-opacity">
-                  <Image src="/images/whatsapp-icon.svg" alt="WhatsApp" width={24} height={24} className="w-6 h-6 brightness-0 invert" />
-                </a>
-                <a href="#" aria-label="Email" className="inline-flex hover:opacity-80 transition-opacity">
-                  <Image src="/images/email-icon.svg" alt="Email" width={24} height={24} className="w-6 h-6 brightness-0 invert" />
-                </a>
-              </div>
+          {/* Logo Section - Full Width */}
+          <div className="space-y-5 mb-12 sm:mb-16 sm:max-w-md">
+            <Image
+              src="/images/logo.webp"
+              alt="VirtuaX"
+              width={140}
+              height={36}
+              className="h-9 w-auto"
+            />
+            <p className="text-sm text-gray-400 leading-relaxed">
+              Conectando você ao mundo com fibra óptica de última geração. Internet em alta velocidade para sua casa ou empresa.
+            </p>
+            <div className="flex gap-6 pt-2 items-center">
+              <a href="#" aria-label="Facebook" className="inline-flex hover:opacity-80 transition-opacity">
+                <Image src="/images/facebook-icon.svg" alt="Facebook" width={24} height={24} className="w-6 h-6 brightness-0 invert" />
+              </a>
+              <a href="#" aria-label="Instagram" className="inline-flex hover:opacity-80 transition-opacity">
+                <Image src="/images/instagram-icon.svg" alt="Instagram" width={24} height={24} className="w-6 h-6 brightness-0 invert" />
+              </a>
+              <a href="#" aria-label="WhatsApp" className="inline-flex hover:opacity-80 transition-opacity">
+                <Image src="/images/whatsapp-icon.svg" alt="WhatsApp" width={24} height={24} className="w-6 h-6 brightness-0 invert" />
+              </a>
+              <a href="#" aria-label="Email" className="inline-flex hover:opacity-80 transition-opacity">
+                <Image src="/images/email-icon.svg" alt="Email" width={24} height={24} className="w-6 h-6 brightness-0 invert" />
+              </a>
             </div>
+          </div>
 
-            {/* Colunas 2-4: Cobertura, Links, Suporte */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 lg:gap-16 ml-auto">
-              {/* Coluna 2: Cobertura */}
-              <div className="space-y-5">
+          {/* Grid: 1 column mobile, 3 columns desktop */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
+            {/* Column 1: Cobertura */}
+            <div className="space-y-5">
               <h3 className="text-white font-bold text-sm uppercase tracking-wider">Cobertura</h3>
               <ul className="space-y-3">
                 <li><span className="text-sm text-gray-400">Internet em Areia</span></li>
@@ -1030,10 +1028,10 @@ function HomePageContent() {
                 <li><span className="text-sm text-gray-400">Internet em Serraria</span></li>
                 <li><span className="text-sm text-gray-400">Internet em Solânea</span></li>
               </ul>
-              </div>
+            </div>
 
-              {/* Coluna 3: Links */}
-              <div className="space-y-5 lg:pl-8">
+            {/* Column 2: Links */}
+            <div className="space-y-5">
               <h3 className="text-white font-bold text-sm uppercase tracking-wider">Links</h3>
               <ul className="space-y-3">
                 {[
@@ -1059,10 +1057,10 @@ function HomePageContent() {
                   </li>
                 ))}
               </ul>
-              </div>
+            </div>
 
-              {/* Coluna 4: Suporte */}
-              <div className="space-y-5">
+            {/* Column 3: Suporte */}
+            <div className="space-y-5">
               <h3 className="text-white font-bold text-sm uppercase tracking-wider">Suporte</h3>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
@@ -1094,7 +1092,6 @@ function HomePageContent() {
                   <span className="text-sm text-gray-400">CNPJ: 20.514.953/0001-85</span>
                 </li>
               </ul>
-              </div>
             </div>
           </div>
         </div>
