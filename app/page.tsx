@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation"
 import { MapPin, ChevronDown } from "lucide-react"
 import Image from "next/image"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 
 const cities = [
   { value: "areia", label: "Areia" },
@@ -15,9 +15,11 @@ const cities = [
 
 export default function CitySelectionPage() {
   const router = useRouter()
-  const [selectedCity, setSelectedCity] = useState("")
+  const [selectedCity, setSelectedCity] = useState<{ value: string; label: string } | null>(null)
+  const [isOpen, setIsOpen] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [bgLoaded, setBgLoaded] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const img = new window.Image()
@@ -26,12 +28,21 @@ export default function CitySelectionPage() {
     img.onerror = () => setBgLoaded(true)
   }, [])
 
-  const handleCityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const value = e.target.value
-    if (!value) return
-    setSelectedCity(value)
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setIsOpen(false)
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => document.removeEventListener("mousedown", handleClickOutside)
+  }, [])
+
+  const handleSelect = (city: { value: string; label: string }) => {
+    setSelectedCity(city)
+    setIsOpen(false)
     setIsLoading(true)
-    router.push(`/home?city=${value}`)
+    router.push(`/home?city=${city.value}`)
   }
 
   if (!bgLoaded || isLoading) {
@@ -81,24 +92,42 @@ export default function CitySelectionPage() {
               <h1 className="font-bold text-white text-2xl sm:text-3xl md:text-4xl">Escolha sua região</h1>
             </div>
 
-            {/* Dropdown */}
-            <div className="mb-4 relative">
-              <div className="relative">
-                <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-[#f86c05] pointer-events-none z-10" />
-                <select
-                  value={selectedCity}
-                  onChange={handleCityChange}
-                  className="w-full appearance-none bg-white rounded-2xl pl-12 pr-12 py-4 sm:py-5 text-base sm:text-lg font-semibold text-gray-700 cursor-pointer focus:outline-none focus:ring-2 focus:ring-white/50 transition-all shadow-lg text-center"
-                >
-                  <option value="" disabled>Selecione sua cidade...</option>
-                  {cities.map((city) => (
-                    <option key={city.value} value={city.value} className="text-center">
-                      {city.label}
-                    </option>
+            {/* Custom Dropdown */}
+            <div ref={dropdownRef} className="relative">
+              {/* Trigger */}
+              <button
+                onClick={() => setIsOpen((o) => !o)}
+                className="w-full flex items-center justify-between gap-3 bg-gray-900/80 backdrop-blur-sm border border-white/10 rounded-2xl px-5 py-4 sm:py-5 transition-all hover:border-[#f86c05]/60 focus:outline-none focus:border-[#f86c05]"
+              >
+                <div className="flex items-center gap-3">
+                  <MapPin className="h-5 w-5 text-[#f86c05] shrink-0" />
+                  <span className={`text-base sm:text-lg font-semibold ${selectedCity ? "text-white" : "text-gray-400"}`}>
+                    {selectedCity ? selectedCity.label : "Selecione sua cidade..."}
+                  </span>
+                </div>
+                <ChevronDown
+                  className={`h-5 w-5 text-gray-400 shrink-0 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+                />
+              </button>
+
+              {/* Options list */}
+              {isOpen && (
+                <div className="absolute top-full left-0 right-0 mt-2 bg-gray-900 border border-white/10 rounded-2xl overflow-hidden shadow-2xl z-50">
+                  {cities.map((city, index) => (
+                    <button
+                      key={city.value}
+                      onClick={() => handleSelect(city)}
+                      className={`w-full flex items-center gap-3 px-5 py-4 text-left transition-colors hover:bg-[#f86c05]/20 hover:text-[#f86c05] group
+                        ${selectedCity?.value === city.value ? "text-[#f86c05] bg-[#f86c05]/10" : "text-gray-300"}
+                        ${index !== cities.length - 1 ? "border-b border-white/5" : ""}
+                      `}
+                    >
+                      <MapPin className="h-4 w-4 text-[#f86c05] shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <span className="text-base font-semibold">{city.label}</span>
+                    </button>
                   ))}
-                </select>
-                <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400 pointer-events-none" />
-              </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
