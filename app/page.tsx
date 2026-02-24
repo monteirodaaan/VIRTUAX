@@ -81,15 +81,14 @@ export default function CitySelectionPage() {
         <div className="flex-1 flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-8 -mt-16 sm:-mt-20">
           <div className="w-full max-w-md">
             <div className="text-center mb-4 sm:mb-5 flex justify-center">
-              <div className="h-16 sm:h-20 md:h-24 w-auto">
-                <Image
-                  src="/images/logo.webp"
-                  alt="VirtuaX Logo"
-                  width={280}
-                  height={70}
-                  priority
-                />
-              </div>
+              <Image
+                src="/images/logo.webp"
+                alt="VirtuaX Logo"
+                width={280}
+                height={70}
+                priority
+                className="h-16 sm:h-20 md:h-24 w-auto"
+              />
             </div>
 
             {/* Custom Dropdown */}
