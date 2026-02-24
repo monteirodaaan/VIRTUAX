@@ -120,6 +120,15 @@ function HomePageContent() {
   const [planType, setPlanType] = useState<"residencial" | "empresarial">("residencial")
   const [currentBannerIndex, setCurrentBannerIndex] = useState(0)
 
+  // Função para scroll suave para as seções
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" })
+      setMobileMenuOpen(false)
+    }
+  }
+
   // Banner carousel for hero section
   const banners = [
     {
