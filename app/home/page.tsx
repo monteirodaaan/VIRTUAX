@@ -206,62 +206,17 @@ function HomePageContent() {
                   <Building2 className="h-4 w-4" />
                   Empresarial
                 </button>
-          </div>
-
-          {/* App Download Section */}
-          <div className="mt-16 sm:mt-20 md:mt-24 pt-16 sm:pt-20 md:pt-24 border-t border-gray-200">
-            <div className="max-w-3xl mx-auto">
-              {/* Header */}
-              <div className="mb-8 sm:mb-10 md:mb-12 flex justify-center">
-                <Image
-                  src="/images/download-app-header.webp"
-                  alt="Baixe nosso APP"
-                  width={400}
-                  height={100}
-                  className="h-12 sm:h-14 md:h-16 w-auto"
-                />
               </div>
-
-              {/* Download Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
-                <a
-                  href="https://play.google.com/store/apps/details?id=com.virtuax.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-transform hover:scale-105"
-                >
-                  <Image
-                    src="/images/google-play-badge.webp"
-                    alt="Get it on Google Play"
-                    width={250}
-                    height={80}
-                    className="h-12 sm:h-14 w-auto"
-                  />
-                </a>
-                <a
-                  href="https://apps.apple.com/br/app/virtuax/id1234567890"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-transform hover:scale-105"
-                >
-                  <Image
-                    src="/images/app-store-badge.webp"
-                    alt="Download on the App Store"
-                    width={250}
-                    height={80}
-                    className="h-12 sm:h-14 w-auto"
-                  />
-                </a>
-              </div>
-
-              {/* Description */}
-              <p className="text-center text-gray-600 text-sm sm:text-base mt-6 sm:mt-8">
-                Baixe o aplicativo VirtuaX e gerencie sua conexão, faturas e suporte em qualquer lugar
-              </p>
             </div>
-          </div>
-        </div>
-      </section>
+
+            <a
+              href="#area-do-cliente"
+              className="inline-flex items-center justify-center font-semibold transition-all duration-200 text-xs lg:text-sm px-4 lg:px-6 rounded-lg h-9 bg-white text-brand hover:bg-opacity-90 shadow-sm hover:shadow-md"
+            >
+              Área do Cliente
+            </a>
+          </nav>
+        </header>
 
       <section id="beneficios" className="relative z-10 py-16 sm:py-20 md:py-24 lg:py-32 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-16">
@@ -586,7 +541,60 @@ function HomePageContent() {
                 </div>
               </div>
             </div>
-          )}
+          </div>
+
+          {/* App Download Section */}
+          <div className="mt-16 sm:mt-20 md:mt-24 pt-16 sm:pt-20 md:pt-24 border-t border-gray-200">
+            <div className="max-w-3xl mx-auto">
+              {/* Header */}
+              <div className="mb-8 sm:mb-10 md:mb-12 flex justify-center">
+                <Image
+                  src="/images/download-app-header.webp"
+                  alt="Baixe nosso APP"
+                  width={400}
+                  height={100}
+                  className="h-12 sm:h-14 md:h-16 w-auto"
+                />
+              </div>
+
+              {/* Download Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.virtuax.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-transform hover:scale-105"
+                >
+                  <Image
+                    src="/images/google-play-badge.webp"
+                    alt="Get it on Google Play"
+                    width={250}
+                    height={80}
+                    className="h-12 sm:h-14 w-auto"
+                  />
+                </a>
+                <a
+                  href="https://apps.apple.com/br/app/virtuax/id1234567890"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-transform hover:scale-105"
+                >
+                  <Image
+                    src="/images/app-store-badge.webp"
+                    alt="Download on the App Store"
+                    width={250}
+                    height={80}
+                    className="h-12 sm:h-14 w-auto"
+                  />
+                </a>
+              </div>
+
+              {/* Description */}
+              <p className="text-center text-gray-600 text-sm sm:text-base mt-6 sm:mt-8">
+                Baixe o aplicativo VirtuaX e gerencie sua conexão, faturas e suporte em qualquer lugar
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
