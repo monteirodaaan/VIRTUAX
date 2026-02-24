@@ -1069,13 +1069,12 @@ function HomePageContent() {
       </section>
 
       <footer className="bg-gray-900 text-white">
-        <div className="w-full max-w-7xl mx-auto px-6 lg:px-12">
-
-          {/* Linha 1: Logo+Descricao+Social  |  Suporte */}
-          <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-10 pt-14 pb-10">
+        {/* Main Footer */}
+        <div className="container mx-auto px-6 sm:px-8 lg:px-12 py-16 sm:py-20">
+          <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start">
 
             {/* Logo + Descrição + Redes */}
-            <div className="flex flex-col gap-6 lg:max-w-sm">
+            <div className="flex flex-col gap-6 mb-14 lg:mb-0 shrink-0 lg:max-w-[260px]">
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 className="self-start hover:opacity-80 transition-opacity"
@@ -1090,10 +1089,10 @@ function HomePageContent() {
                   style={{ height: "clamp(22px, 3.85vw, 35px)" }}
                 />
               </button>
-              <p className="text-sm text-gray-400 leading-relaxed">
+              <p className="text-sm text-gray-400 leading-relaxed max-w-xs">
                 Conectando você ao mundo com fibra óptica de última geração. Internet em alta velocidade para sua casa ou empresa.
               </p>
-              <div className="flex items-center gap-5">
+              <div className="flex items-center gap-5 pt-1">
                 <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-brand hover:opacity-75 transition-opacity duration-200">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
@@ -1117,90 +1116,100 @@ function HomePageContent() {
               </div>
             </div>
 
-            {/* Suporte — alinhado à direita */}
-            <div className="flex flex-col gap-5">
-              <h3 className="text-xs font-bold uppercase tracking-widest text-gray-500">Suporte</h3>
-              <ul className="flex flex-col gap-4">
-                <li className="flex items-center gap-3">
-                  <svg className="w-4 h-4 text-brand shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25z"/>
-                  </svg>
-                  <a href="tel:08007315050" className="text-sm text-gray-400 hover:text-white transition-colors duration-200">0800 731 5050</a>
-                </li>
-                <li className="flex items-center gap-3">
-                  <svg className="w-4 h-4 text-brand shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/>
-                  </svg>
-                  <a href="mailto:contato@virtuax.com.br" className="text-sm text-gray-400 hover:text-white transition-colors duration-200">contato@virtuax.com.br</a>
-                </li>
-                <li className="flex items-center gap-3">
-                  <svg className="w-4 h-4 text-brand shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/>
-                  </svg>
-                  <span className="text-sm text-gray-400">Seg-Sex: 8h às 18h</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <svg className="w-4 h-4 text-brand shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9z"/>
-                  </svg>
-                  <span className="text-sm text-gray-400">CNPJ: 20.514.953/0001-85</span>
-                </li>
-              </ul>
-            </div>
-          </div>
+            {/* 3 Colunas alinhadas à direita */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-16 lg:gap-20">
 
-          {/* Linha 2: Faixa Cobertura + Links lado a lado */}
-          <div className="border-t border-gray-800/60 py-8 flex flex-col sm:flex-row sm:gap-16 gap-8">
-            {/* Cobertura */}
-            <div className="flex flex-col gap-4">
-              <h3 className="text-xs font-bold uppercase tracking-widest text-gray-500">Cobertura</h3>
-              <ul className="flex flex-col sm:flex-row sm:flex-wrap gap-x-8 gap-y-2.5">
-                {["Internet em Areia", "Internet em Bananeiras", "Internet em Cacimba de Dentro", "Internet em Serraria", "Internet em Solânea"].map((cidade) => {
-                  let nomeCidade = cidade.replace("Internet em ", "").toLowerCase().replace(/\s+/g, "-");
-                  if (nomeCidade === "cacimba-de-dentro") nomeCidade = "cacimba";
-                  return (
-                    <li key={cidade}>
-                      <Link href={`/home?city=${nomeCidade}`} className="text-sm text-gray-400 hover:text-white transition-colors duration-200 whitespace-nowrap">
-                        {cidade}
-                      </Link>
+              {/* Cobertura */}
+              <div className="flex flex-col gap-5">
+                <h3 className="text-xs font-bold uppercase tracking-widest text-gray-500">Cobertura</h3>
+                <ul className="flex flex-col gap-3.5">
+                  {["Internet em Areia", "Internet em Bananeiras", "Internet em Cacimba de Dentro", "Internet em Serraria", "Internet em Solânea"].map((cidade) => {
+                    let nomeCidade = cidade.replace("Internet em ", "").toLowerCase().replace(/\s+/g, "-");
+                    if (nomeCidade === "cacimba-de-dentro") {
+                      nomeCidade = "cacimba";
+                    }
+                    return (
+                      <li key={cidade}>
+                        <Link href={`/home?city=${nomeCidade}`} className="text-sm text-gray-400 hover:text-white transition-colors duration-200">
+                          {cidade}
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+
+              {/* Links */}
+              <div className="flex flex-col gap-5">
+                <h3 className="text-xs font-bold uppercase tracking-widest text-gray-500">Links</h3>
+                <ul className="flex flex-col gap-3.5">
+                  {[
+                    { label: "Início", id: null },
+                    { label: "Sobre", id: "sobre" },
+                    { label: "Benefícios", id: "beneficios" },
+                    { label: "Planos", id: "planos" },
+                    { label: "Contato", id: "contato" },
+                  ].map(({ label, id }) => (
+                    <li key={label}>
+                      <button
+                        onClick={() => {
+                          if (id) {
+                            document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+                          } else {
+                            window.scrollTo({ top: 0, behavior: "smooth" });
+                          }
+                        }}
+                        className="text-sm text-gray-400 hover:text-white transition-colors duration-200 text-left"
+                      >
+                        {label}
+                      </button>
                     </li>
-                  );
-                })}
-              </ul>
-            </div>
+                  ))}
+                </ul>
+              </div>
 
-            {/* Links */}
-            <div className="flex flex-col gap-4">
-              <h3 className="text-xs font-bold uppercase tracking-widest text-gray-500">Links</h3>
-              <ul className="flex flex-col sm:flex-row sm:flex-wrap gap-x-8 gap-y-2.5">
-                {[
-                  { label: "Início", id: null },
-                  { label: "Sobre", id: "sobre" },
-                  { label: "Benefícios", id: "beneficios" },
-                  { label: "Planos", id: "planos" },
-                  { label: "Contato", id: "contato" },
-                ].map(({ label, id }) => (
-                  <li key={label}>
-                    <button
-                      onClick={() => {
-                        if (id) {
-                          document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
-                        } else {
-                          window.scrollTo({ top: 0, behavior: "smooth" });
-                        }
-                      }}
-                      className="text-sm text-gray-400 hover:text-white transition-colors duration-200 whitespace-nowrap"
-                    >
-                      {label}
-                    </button>
+              {/* Suporte */}
+              <div className="flex flex-col gap-5">
+                <h3 className="text-xs font-bold uppercase tracking-widest text-gray-500">Suporte</h3>
+                <ul className="flex flex-col gap-4">
+                  <li className="flex items-center gap-3">
+                    <svg className="w-4 h-4 text-brand shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25z"/>
+                    </svg>
+                    <a href="tel:08007315050" className="text-sm text-gray-400 hover:text-white transition-colors duration-200">
+                      0800 731 5050
+                    </a>
                   </li>
-                ))}
-              </ul>
+                  <li className="flex items-center gap-3">
+                    <svg className="w-4 h-4 text-brand shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/>
+                    </svg>
+                    <a href="mailto:contato@virtuax.com.br" className="text-sm text-gray-400 hover:text-white transition-colors duration-200">
+                      contato@virtuax.com.br
+                    </a>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <svg className="w-4 h-4 text-brand shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/>
+                    </svg>
+                    <span className="text-sm text-gray-400">Seg-Sex: 8h às 18h</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <svg className="w-4 h-4 text-brand shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9z"/>
+                    </svg>
+                    <span className="text-sm text-gray-400">CNPJ: 20.514.953/0001-85</span>
+                  </li>
+                </ul>
+              </div>
+
             </div>
           </div>
+        </div>
 
-          {/* Bottom Bar */}
-          <div className="border-t border-gray-800 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+        {/* Bottom Bar */}
+        <div className="border-t border-gray-800">
+          <div className="container mx-auto px-6 sm:px-8 lg:px-12 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-xs text-white text-center sm:text-left leading-relaxed">
               © 2026 VirtuaX. Todos os direitos reservados — Dev.{" "}
               <a href="https://www.instagram.com/november.mkt" target="_blank" rel="noopener noreferrer" className="text-brand font-semibold hover:underline transition-colors">November Marketing</a>{" "}
@@ -1213,8 +1222,7 @@ function HomePageContent() {
               <a href="#" className="hover:text-brand transition-colors duration-200">LGPD</a>
             </div>
           </div>
-
-        </div>{/* fim wrapper único */}
+        </div>
       </footer>
     </div>
   )
