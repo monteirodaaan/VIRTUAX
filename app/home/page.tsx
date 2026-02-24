@@ -1071,10 +1071,10 @@ function HomePageContent() {
       <footer className="bg-gray-900 text-white">
         {/* Main Footer */}
         <div className="container mx-auto px-6 sm:px-8 lg:px-12 py-16 sm:py-20">
-          <div className="flex flex-col lg:flex-row lg:gap-16 xl:gap-24">
+          <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start">
 
             {/* Logo + Descrição + Redes */}
-            <div className="flex flex-col gap-6 mb-14 lg:mb-0 lg:w-64 xl:w-72 shrink-0">
+            <div className="flex flex-col gap-6 mb-14 lg:mb-0 shrink-0 lg:max-w-[260px]">
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 className="self-start hover:opacity-80 transition-opacity"
@@ -1117,7 +1117,7 @@ function HomePageContent() {
             </div>
 
             {/* 3 Colunas alinhadas à direita */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-8 lg:gap-10 flex-1 lg:ml-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-16 lg:gap-20">
 
               {/* Cobertura */}
               <div className="flex flex-col gap-5">
