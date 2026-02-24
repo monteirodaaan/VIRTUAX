@@ -206,7 +206,8 @@ function HomePageContent() {
                   <Building2 className="h-4 w-4" />
                   Empresarial
                 </button>
-          </div>
+              </div>
+            </div>
 
           {/* App Download Section */}
           <div className="mt-16 sm:mt-20 md:mt-24 pt-16 sm:pt-20 md:pt-24 border-t border-gray-200">
