@@ -18,10 +18,12 @@ export default function CitySelectionPage() {
   const [selectedCity, setSelectedCity] = useState("")
   const [isLoading, setIsLoading] = useState(false)
 
-  const handleConfirm = () => {
-    if (!selectedCity) return
+  const handleCityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const value = e.target.value
+    if (!value) return
+    setSelectedCity(value)
     setIsLoading(true)
-    router.push(`/home?city=${selectedCity}`)
+    router.push(`/home?city=${value}`)
   }
 
   if (isLoading) {
@@ -65,12 +67,12 @@ export default function CitySelectionPage() {
                 <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-[#f86c05] pointer-events-none z-10" />
                 <select
                   value={selectedCity}
-                  onChange={(e) => setSelectedCity(e.target.value)}
-                  className="w-full appearance-none bg-white rounded-2xl pl-12 pr-12 py-4 sm:py-5 text-base sm:text-lg font-semibold text-gray-700 cursor-pointer focus:outline-none focus:ring-2 focus:ring-white/50 transition-all shadow-lg"
+                  onChange={handleCityChange}
+                  className="w-full appearance-none bg-white rounded-2xl pl-12 pr-12 py-4 sm:py-5 text-base sm:text-lg font-semibold text-gray-700 cursor-pointer focus:outline-none focus:ring-2 focus:ring-white/50 transition-all shadow-lg text-center"
                 >
                   <option value="" disabled>Selecione sua cidade...</option>
                   {cities.map((city) => (
-                    <option key={city.value} value={city.value}>
+                    <option key={city.value} value={city.value} className="text-center">
                       {city.label}
                     </option>
                   ))}
@@ -78,15 +80,6 @@ export default function CitySelectionPage() {
                 <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400 pointer-events-none" />
               </div>
             </div>
-
-            {/* Confirm Button */}
-            <button
-              onClick={handleConfirm}
-              disabled={!selectedCity}
-              className="w-full py-4 sm:py-5 rounded-2xl font-bold text-base sm:text-lg transition-all shadow-lg disabled:opacity-50 disabled:cursor-not-allowed bg-[#f86c05] text-white hover:bg-[#e55f00] hover:scale-[1.02] disabled:hover:scale-100"
-            >
-              Ver Planos
-            </button>
 
             {/* Separator */}
             <div className="my-6 sm:my-8 h-px bg-white/20"></div>
