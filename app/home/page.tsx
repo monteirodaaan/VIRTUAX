@@ -614,43 +614,9 @@ function HomePageContent() {
                         <div className="absolute -top-5 left-1/2 -translate-x-1/2 z-20">
                           <div className="bg-gradient-to-r from-[#f86c05] to-orange-500 px-5 py-1.5 rounded-full text-xs font-bold text-white shadow-lg whitespace-nowrap">
                             MAIS POPULAR
-          </div>
-
-          {/* App Store CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-14 sm:mt-16 max-w-xl mx-auto px-4 sm:px-0">
-            {/* Google Play */}
-            <a
-              href="#"
-              className="flex items-center gap-4 bg-gray-900 border-2 border-brand/30 rounded-2xl px-6 py-4 hover:-translate-y-1 transition-all duration-300 group flex-1"
-              aria-label="Baixar na Google Play Store"
-            >
-              <svg className="w-8 h-8 shrink-0 text-white" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M3.18 23.76c.3.17.64.24.99.2l.1-.03L13.64 14 10 10.37 3.18 23.76zm17.27-10.7L17.7 11.6l-3.85 3.85 3.86 3.86 2.73-1.53a1.96 1.96 0 0 0 0-3.42v-.01zM2.12 1.04A1.96 1.96 0 0 0 2 1.96v20.08c0 .32.08.62.22.88L13.28 12 2.12 1.04zm8.5 11L14.5 8.16l-3.85-3.85-9.37-5.27L10.62 12z"/>
-              </svg>
-              <div>
-                <p className="text-gray-400 text-xs leading-tight">Disponível no</p>
-                <p className="text-white font-bold text-base leading-tight group-hover:text-brand transition-colors">Google Play</p>
-              </div>
-            </a>
-
-            {/* App Store */}
-            <a
-              href="#"
-              className="flex items-center gap-4 bg-gray-900 border-2 border-brand/30 rounded-2xl px-6 py-4 hover:-translate-y-1 transition-all duration-300 group flex-1"
-              aria-label="Baixar na Apple App Store"
-            >
-              <svg className="w-8 h-8 shrink-0 text-white" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-              </svg>
-              <div>
-                <p className="text-gray-400 text-xs leading-tight">Baixar na</p>
-                <p className="text-white font-bold text-base leading-tight group-hover:text-brand transition-colors">App Store</p>
-              </div>
-            </a>
-          </div>
-        </div>
-      </section>
-
+                          </div>
+                        </div>
+                      )}
 
                       <div
                         className={`relative bg-gradient-to-br from-white via-white to-orange-50/30 rounded-2xl p-6 lg:p-8 flex flex-col w-full transition-all overflow-hidden hover:-translate-y-1 ${isRecommended ? "border-2 border-brand shadow-xl" : "border border-gray-200 shadow-lg hover:shadow-xl hover:border-brand/40"
