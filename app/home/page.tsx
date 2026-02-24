@@ -331,7 +331,7 @@ function HomePageContent() {
                       src={banner.imagePathMobile || banner.imagePath || ""}
                       alt="Banner Alta Velocidade VirtuaX Mobile"
                       fill
-                      sizes="100vw"
+                      sizes="100%"
                       className="object-cover"
                       priority
                     />
@@ -342,7 +342,7 @@ function HomePageContent() {
                       src={banner.imagePath || ""}
                       alt="Banner Alta Velocidade VirtuaX"
                       fill
-                      sizes="100vw"
+                      sizes="100%"
                       className="object-cover"
                       priority
                     />
@@ -842,7 +842,7 @@ function HomePageContent() {
                     <p className="text-gray-600 text-xs sm:text-sm">
                       {planType === "empresarial"
                         ? "Especialistas em soluções corporativas"
-                        : "Segunda a sexta, das 8h às 18h"}
+                        : "Segunda a sexta, das 8h ��s 18h"}
                     </p>
                   </div>
                 </div>
