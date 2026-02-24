@@ -1098,8 +1098,8 @@ function HomePageContent() {
                   <span className="text-sm text-gray-400">CNPJ: 20.514.953/0001-85</span>
                 </li>
               </ul>
+              </div>
             </div>
-          </div>
         </div>
 
         {/* Bottom Bar */}
