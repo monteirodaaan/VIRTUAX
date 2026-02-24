@@ -988,7 +988,7 @@ function HomePageContent() {
       <footer className="bg-gray-900 text-white">
         {/* Main Footer */}
         <div className="container mx-auto px-4 sm:px-6 md:px-8 py-14 sm:py-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-8 gap-10">
 
             {/* Coluna 1: Marca */}
             <div className="space-y-5 lg:col-span-2">
@@ -1023,7 +1023,7 @@ function HomePageContent() {
             </div>
 
             {/* Coluna 2: Serviços */}
-            <div className="space-y-5">
+            <div className="space-y-5 lg:col-span-2">
               <h3 className="text-white font-bold text-sm uppercase tracking-wider">Serviços</h3>
               <ul className="space-y-3">
                 <li><span className="text-sm text-gray-400">Internet Fibra Óptica</span></li>
@@ -1035,7 +1035,7 @@ function HomePageContent() {
             </div>
 
             {/* Coluna 3: Links */}
-            <div className="space-y-5">
+            <div className="space-y-5 lg:col-span-2">
               <h3 className="text-white font-bold text-sm uppercase tracking-wider">Links</h3>
               <ul className="space-y-3">
                 {[
@@ -1064,7 +1064,7 @@ function HomePageContent() {
             </div>
 
             {/* Coluna 4: Suporte */}
-            <div className="space-y-5">
+            <div className="space-y-5 lg:col-span-2">
               <h3 className="text-white font-bold text-sm uppercase tracking-wider">Suporte</h3>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
