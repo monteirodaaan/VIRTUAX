@@ -162,7 +162,7 @@ function HomePageContent() {
               alt="VirtuaX"
               width={120}
               height={30}
-              className="h-5 sm:h-5 md:h-6 w-auto"
+              className="h-6 sm:h-7 md:h-8 w-auto"
               style={{ width: "auto", height: "auto" }}
               priority
             />
@@ -1058,7 +1058,7 @@ function HomePageContent() {
                 alt="VirtuaX"
                 width={140}
                 height={36}
-                className="h-7 w-auto"
+                className="h-9 w-auto"
                 style={{ width: "auto", height: "auto" }}
               />
               <p className="text-sm text-gray-400 leading-relaxed">
