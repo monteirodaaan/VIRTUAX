@@ -1211,9 +1211,8 @@ function HomePageContent() {
         <div className="border-t border-gray-800">
           <div className="container mx-auto px-6 sm:px-8 lg:px-12 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-xs text-white text-center sm:text-left leading-relaxed">
-              © 2026 VirtuaX. Todos os direitos reservados — Dev.{" "}
-              <a href="https://www.instagram.com/november.mkt" target="_blank" rel="noopener noreferrer" className="text-brand font-semibold hover:underline transition-colors">November Marketing</a>{" "}
-              || Design{" "}
+              © 2026 VirtuaX. Todos os direitos reservados<br/>Dev.{" "}
+              <a href="https://www.instagram.com/november.mkt" target="_blank" rel="noopener noreferrer" className="text-brand font-semibold hover:underline transition-colors">November Marketing</a><br/>Design{" "}
               <a href="https://dm.art.br/" target="_blank" rel="noopener noreferrer" className="text-brand font-semibold hover:underline transition-colors">dm.art.br</a>
             </p>
             <div className="flex items-center gap-6 text-xs text-white">
