@@ -343,7 +343,7 @@ function HomePageContent() {
                 href="http://central.virtuax.com.br/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full mt-2 inline-flex items-center justify-center gap-2 font-semibold transition-all duration-200 text-sm px-4 rounded-lg h-10 bg-white text-brand hover:bg-gray-50"
+                className="text-left text-sm font-semibold text-brand hover:text-orange-600 transition-colors py-2 inline-flex items-center gap-2"
               >
                 <User className="h-4 w-4 shrink-0" />
                 Área do Cliente
@@ -777,7 +777,7 @@ function HomePageContent() {
                             </div>
                             <h4 className="font-bold text-white text-sm sm:text-base">Velocidade Dedicada</h4>
                           </div>
-                          <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">Até 1Gbps com garantia de banda</p>
+                          <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">At�� 1Gbps com garantia de banda</p>
                         </div>
                       </div>
 
@@ -1211,9 +1211,8 @@ function HomePageContent() {
         <div className="border-t border-gray-800">
           <div className="container mx-auto px-6 sm:px-8 lg:px-12 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-xs text-white text-center sm:text-left leading-relaxed">
-              © 2026 VirtuaX. Todos os direitos reservados — Dev.{" "}
-              <a href="https://www.instagram.com/november.mkt" target="_blank" rel="noopener noreferrer" className="text-brand font-semibold hover:underline transition-colors">November Marketing</a>{" "}
-              || Design{" "}
+              © 2026 VirtuaX. Todos os direitos reservados<br/>Dev.{" "}
+              <a href="https://www.instagram.com/november.mkt" target="_blank" rel="noopener noreferrer" className="text-brand font-semibold hover:underline transition-colors">November Marketing</a><br/>Design{" "}
               <a href="https://dm.art.br/" target="_blank" rel="noopener noreferrer" className="text-brand font-semibold hover:underline transition-colors">dm.art.br</a>
             </p>
             <div className="flex items-center gap-6 text-xs text-white">
