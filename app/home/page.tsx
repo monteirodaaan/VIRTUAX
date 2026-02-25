@@ -343,7 +343,7 @@ function HomePageContent() {
                 href="http://central.virtuax.com.br/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full mt-2 inline-flex items-center justify-center gap-2 font-semibold transition-all duration-200 text-sm px-4 rounded-lg h-10 bg-white text-brand hover:bg-gray-50"
+                className="inline-flex items-center justify-center gap-2 font-semibold transition-all duration-200 text-sm px-4 rounded-lg h-10 bg-white text-brand hover:bg-gray-50"
               >
                 <User className="h-4 w-4 shrink-0" />
                 Área do Cliente
