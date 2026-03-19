@@ -174,7 +174,6 @@ function HomePageContent() {
       bg: "",
       type: "image",
       imagePath: "/images/banner-alta-velocidade.webp",
-      imagePathMobile: "/images/banner-alta-velocidade-mobile.webp",
     },
   ]
 
@@ -667,8 +666,8 @@ function HomePageContent() {
             >
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 px-4">
                 {plans.map((plan, index) => {
-                  const cityPricing = pricingData[resolveCity(selectedCity)]
-                  const price = cityPricing[plan.id as keyof typeof pricingData.areia]
+                  const cityPricing = pricingData[resolveCity(selectedCity)] ?? pricingData[DEFAULT_CITY]
+                  const price = cityPricing?.[plan.id as keyof typeof pricingData.areia] ?? 0
                   const isRecommended = plan.id === "intermediario"
                   const isActive = index === activeIndex
                   const features = plan.features
@@ -1082,10 +1081,10 @@ function HomePageContent() {
       <footer className="bg-gray-900 text-white">
         {/* Main Footer */}
         <div className="container mx-auto px-6 sm:px-8 lg:px-12 py-16 sm:py-20">
-          <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start">
+          <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-14 lg:gap-20">
 
             {/* Logo + Descrição + Redes */}
-            <div className="flex flex-col gap-6 mb-14 lg:mb-0 shrink-0 lg:max-w-[260px]">
+            <div className="flex flex-col gap-6 shrink-0 lg:max-w-[240px]">
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 className="self-start hover:opacity-80 transition-opacity"
@@ -1128,7 +1127,7 @@ function HomePageContent() {
             </div>
 
             {/* 3 Colunas alinhadas à direita */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-16 lg:gap-20">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-12 lg:gap-16 flex-1">
 
               {/* Cobertura */}
               <div className="flex flex-col gap-5">
