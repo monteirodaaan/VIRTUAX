@@ -43,10 +43,16 @@ const pricingData = {
 }
 
 const cities = [
+  { value: "juarez-tavora", label: "Juarez Távora" },
   { value: "areia", label: "Areia" },
+  { value: "alagoa-grande", label: "Alagoa Grande" },
   { value: "bananeiras", label: "Bananeiras" },
-  { value: "cacimba", label: "Cacimba de Dentro" },
+  { value: "cacimba-de-dentro", label: "Cacimba de Dentro" },
+  { value: "dona-ines", label: "Dona Inês" },
+  { value: "duas-estradas", label: "Duas Estradas" },
+  { value: "piloes", label: "Pilões" },
   { value: "serraria", label: "Serraria" },
+  { value: "serra-da-raiz", label: "Serra da Raiz" },
   { value: "solanea", label: "Solânea" },
 ]
 
@@ -122,13 +128,17 @@ const cityNames: { [key: string]: string } = {
 
 function HomePageContent() {
   const searchParams = useSearchParams()
-  const [selectedCity, setSelectedCity] = useState<keyof typeof pricingData>("areia")
 
-  // Sincronizar com URL quando o componente monta
-  useEffect(() => {
+  const getValidCity = (): keyof typeof pricingData => {
     const cityFromUrl = searchParams.get("city") || "areia"
-    const validCity = (cityFromUrl in pricingData) ? cityFromUrl : "areia"
-    setSelectedCity(validCity as keyof typeof pricingData)
+    return (cityFromUrl in pricingData ? cityFromUrl : "areia") as keyof typeof pricingData
+  }
+
+  const [selectedCity, setSelectedCity] = useState<keyof typeof pricingData>(getValidCity)
+
+  // Sincronizar com URL quando searchParams muda
+  useEffect(() => {
+    setSelectedCity(getValidCity())
   }, [searchParams])
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [currentPlanIndex, setCurrentPlanIndex] = useState(0)
@@ -866,7 +876,7 @@ function HomePageContent() {
                         Solicite um orçamento personalizado
                       </h4>
                       <p className="text-sm sm:text-base text-gray-300 mb-8 max-w-xl mx-auto">
-                        Nossa equipe de especialistas analisará suas necessidades específicas e criará a melhor solução para seu negócio
+                        Nossa equipe de especialistas analisará suas necessidades específicas e criará a melhor solução para seu neg��cio
                       </p>
                       <Button
                         onClick={() => scrollToSection("contato")}
