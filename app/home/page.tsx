@@ -30,26 +30,26 @@ import {
 // Dados de preços uniformes para todas as cidades
 const pricingData = {
   "juarez-tavora": { basico: 65, intermediario: 80, avancado: 120, ultra: 199 },
-  areia: { basico: 65, intermediario: 80, avancado: 120, ultra: 199 },
+  "areia": { basico: 65, intermediario: 80, avancado: 120, ultra: 199 },
   "alagoa-grande": { basico: 65, intermediario: 80, avancado: 120, ultra: 199 },
-  bananeiras: { basico: 65, intermediario: 80, avancado: 120, ultra: 199 },
+  "bananeiras": { basico: 65, intermediario: 80, avancado: 120, ultra: 199 },
   "cacimba-de-dentro": { basico: 65, intermediario: 80, avancado: 120, ultra: 199 },
   "dona-ines": { basico: 65, intermediario: 80, avancado: 120, ultra: 199 },
   "duas-estradas": { basico: 65, intermediario: 80, avancado: 120, ultra: 199 },
-  piloes: { basico: 65, intermediario: 80, avancado: 120, ultra: 199 },
-  serraria: { basico: 65, intermediario: 80, avancado: 120, ultra: 199 },
+  "piloes": { basico: 65, intermediario: 80, avancado: 120, ultra: 199 },
+  "serraria": { basico: 65, intermediario: 80, avancado: 120, ultra: 199 },
   "serra-da-raiz": { basico: 65, intermediario: 80, avancado: 120, ultra: 199 },
-  solanea: { basico: 65, intermediario: 80, avancado: 120, ultra: 199 },
+  "solanea": { basico: 65, intermediario: 80, avancado: 120, ultra: 199 },
 }
 
 const cities = [
-  { value: "juarez-tavora", label: "Juarez Távora" },
-  { value: "areia", label: "Areia" },
   { value: "alagoa-grande", label: "Alagoa Grande" },
+  { value: "areia", label: "Areia" },
   { value: "bananeiras", label: "Bananeiras" },
   { value: "cacimba-de-dentro", label: "Cacimba de Dentro" },
   { value: "dona-ines", label: "Dona Inês" },
   { value: "duas-estradas", label: "Duas Estradas" },
+  { value: "juarez-tavora", label: "Juarez Távora" },
   { value: "piloes", label: "Pilões" },
   { value: "serraria", label: "Serraria" },
   { value: "serra-da-raiz", label: "Serra da Raiz" },

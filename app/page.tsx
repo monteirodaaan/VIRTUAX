@@ -6,13 +6,13 @@ import Image from "next/image"
 import { useState, useEffect, useRef } from "react"
 
 const cities = [
-  { value: "juarez-tavora", label: "Juarez Távora" },
-  { value: "areia", label: "Areia" },
   { value: "alagoa-grande", label: "Alagoa Grande" },
+  { value: "areia", label: "Areia" },
   { value: "bananeiras", label: "Bananeiras" },
   { value: "cacimba-de-dentro", label: "Cacimba de Dentro" },
   { value: "dona-ines", label: "Dona Inês" },
   { value: "duas-estradas", label: "Duas Estradas" },
+  { value: "juarez-tavora", label: "Juarez Távora" },
   { value: "piloes", label: "Pilões" },
   { value: "serraria", label: "Serraria" },
   { value: "serra-da-raiz", label: "Serra da Raiz" },
