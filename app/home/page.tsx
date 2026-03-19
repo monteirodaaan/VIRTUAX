@@ -126,19 +126,21 @@ const cityNames: { [key: string]: string } = {
   solanea: "Solânea",
 }
 
+const DEFAULT_CITY: keyof typeof pricingData = "areia"
+
+function resolveCity(city: string | null): keyof typeof pricingData {
+  if (city && city in pricingData) return city as keyof typeof pricingData
+  return DEFAULT_CITY
+}
+
 function HomePageContent() {
   const searchParams = useSearchParams()
 
-  const getValidCity = (): keyof typeof pricingData => {
-    const cityFromUrl = searchParams?.get("city") || "areia"
-    return (cityFromUrl in pricingData ? cityFromUrl : "areia") as keyof typeof pricingData
-  }
-
-  const [selectedCity, setSelectedCity] = useState<keyof typeof pricingData>("areia")
+  const [selectedCity, setSelectedCity] = useState<keyof typeof pricingData>(DEFAULT_CITY)
 
   // Sincronizar com URL quando searchParams muda
   useEffect(() => {
-    setSelectedCity(getValidCity())
+    setSelectedCity(resolveCity(searchParams?.get("city") ?? null))
   }, [searchParams])
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [currentPlanIndex, setCurrentPlanIndex] = useState(0)
@@ -665,9 +667,8 @@ function HomePageContent() {
             >
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 px-4">
                 {plans.map((plan, index) => {
-                  const safeCity = (selectedCity in pricingData ? selectedCity : "areia") as keyof typeof pricingData
-                  const cityPricing = pricingData[safeCity]
-                  const price = cityPricing?.[plan.id as keyof typeof pricingData.areia] ?? 0
+                  const cityPricing = pricingData[resolveCity(selectedCity)]
+                  const price = cityPricing[plan.id as keyof typeof pricingData.areia]
                   const isRecommended = plan.id === "intermediario"
                   const isActive = index === activeIndex
                   const features = plan.features
@@ -1132,27 +1133,9 @@ function HomePageContent() {
               {/* Cobertura */}
               <div className="flex flex-col gap-5">
                 <h3 className="text-xs font-bold uppercase tracking-widest text-gray-500">Cobertura</h3>
-                <ul className="flex flex-col gap-3.5">
-                  {[
-                    { label: "Internet em Juarez Távora", slug: "juarez-tavora" },
-                    { label: "Internet em Areia", slug: "areia" },
-                    { label: "Internet em Alagoa Grande", slug: "alagoa-grande" },
-                    { label: "Internet em Bananeiras", slug: "bananeiras" },
-                    { label: "Internet em Cacimba de Dentro", slug: "cacimba-de-dentro" },
-                    { label: "Internet em Dona Inês", slug: "dona-ines" },
-                    { label: "Internet em Duas Estradas", slug: "duas-estradas" },
-                    { label: "Internet em Pilões", slug: "piloes" },
-                    { label: "Internet em Serraria", slug: "serraria" },
-                    { label: "Internet em Serra da Raiz", slug: "serra-da-raiz" },
-                    { label: "Internet em Solânea", slug: "solanea" },
-                  ].map(({ label, slug }) => (
-                    <li key={slug}>
-                      <Link href={`/home?city=${slug}`} className="text-sm text-gray-400 hover:text-white transition-colors duration-200">
-                        {label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  Internet em Juarez Távora, Areia, Alagoa Grande, Bananeiras, Cacimba de Dentro, Dona Inês, Duas Estradas, Pilões, Serraria, Serra da Raiz e Solânea
+                </p>
               </div>
 
               {/* Links */}
