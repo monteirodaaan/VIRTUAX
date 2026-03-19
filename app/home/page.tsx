@@ -130,11 +130,11 @@ function HomePageContent() {
   const searchParams = useSearchParams()
 
   const getValidCity = (): keyof typeof pricingData => {
-    const cityFromUrl = searchParams.get("city") || "areia"
+    const cityFromUrl = searchParams?.get("city") || "areia"
     return (cityFromUrl in pricingData ? cityFromUrl : "areia") as keyof typeof pricingData
   }
 
-  const [selectedCity, setSelectedCity] = useState<keyof typeof pricingData>(getValidCity)
+  const [selectedCity, setSelectedCity] = useState<keyof typeof pricingData>("areia")
 
   // Sincronizar com URL quando searchParams muda
   useEffect(() => {
@@ -390,7 +390,7 @@ function HomePageContent() {
                 // Image banner - full background image only
                 <div className="absolute inset-0 bg-orange-500">
                   {/* Mobile version */}
-                  <div className="relative w-full h-64 md:hidden">
+                  <div className="absolute inset-0 md:hidden">
                     <Image
                       src={banner.imagePathMobile || banner.imagePath || ""}
                       alt="Banner Alta Velocidade VirtuaX Mobile"
@@ -401,7 +401,7 @@ function HomePageContent() {
                     />
                   </div>
                   {/* Desktop version */}
-                  <div className="relative w-full h-96 hidden md:block">
+                  <div className="absolute inset-0 hidden md:block">
                     <Image
                       src={banner.imagePath || ""}
                       alt="Banner Alta Velocidade VirtuaX"
@@ -679,8 +679,9 @@ function HomePageContent() {
             >
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 px-4">
                 {plans.map((plan, index) => {
-                  const cityPricing = pricingData[selectedCity as keyof typeof pricingData]
-                  const price = cityPricing ? cityPricing[plan.id as keyof typeof pricingData.areia] : 0
+                  const safeCity = (selectedCity in pricingData ? selectedCity : "areia") as keyof typeof pricingData
+                  const cityPricing = pricingData[safeCity]
+                  const price = cityPricing?.[plan.id as keyof typeof pricingData.areia] ?? 0
                   const isRecommended = plan.id === "intermediario"
                   const isActive = index === activeIndex
                   const features = plan.features
@@ -876,7 +877,7 @@ function HomePageContent() {
                         Solicite um orçamento personalizado
                       </h4>
                       <p className="text-sm sm:text-base text-gray-300 mb-8 max-w-xl mx-auto">
-                        Nossa equipe de especialistas analisará suas necessidades específicas e criará a melhor solução para seu neg��cio
+                        Nossa equipe de especialistas analisará suas necessidades específicas e criará a melhor solução para seu neg���cio
                       </p>
                       <Button
                         onClick={() => scrollToSection("contato")}
