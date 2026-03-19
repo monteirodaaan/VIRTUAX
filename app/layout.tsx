@@ -227,7 +227,7 @@ export default function RootLayout({
   }
 
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" data-scroll-behavior="smooth">
       <head>
         <meta name="theme-color" content="#f86c05" />
         <script

@@ -29,10 +29,16 @@ import {
 
 // Dados de preços uniformes para todas as cidades
 const pricingData = {
+  "juarez-tavora": { basico: 65, intermediario: 80, avancado: 120, ultra: 199 },
   areia: { basico: 65, intermediario: 80, avancado: 120, ultra: 199 },
+  "alagoa-grande": { basico: 65, intermediario: 80, avancado: 120, ultra: 199 },
   bananeiras: { basico: 65, intermediario: 80, avancado: 120, ultra: 199 },
-  cacimba: { basico: 65, intermediario: 80, avancado: 120, ultra: 199 },
+  "cacimba-de-dentro": { basico: 65, intermediario: 80, avancado: 120, ultra: 199 },
+  "dona-ines": { basico: 65, intermediario: 80, avancado: 120, ultra: 199 },
+  "duas-estradas": { basico: 65, intermediario: 80, avancado: 120, ultra: 199 },
+  piloes: { basico: 65, intermediario: 80, avancado: 120, ultra: 199 },
   serraria: { basico: 65, intermediario: 80, avancado: 120, ultra: 199 },
+  "serra-da-raiz": { basico: 65, intermediario: 80, avancado: 120, ultra: 199 },
   solanea: { basico: 65, intermediario: 80, avancado: 120, ultra: 199 },
 }
 
@@ -101,16 +107,22 @@ const plans = [
 
 // Mapeamento de cidades
 const cityNames: { [key: string]: string } = {
+  "juarez-tavora": "Juarez Távora",
   areia: "Areia",
+  "alagoa-grande": "Alagoa Grande",
   bananeiras: "Bananeiras",
-  cacimba: "Cacimba de Dentro",
+  "cacimba-de-dentro": "Cacimba de Dentro",
+  "dona-ines": "Dona Inês",
+  "duas-estradas": "Duas Estradas",
+  piloes: "Pilões",
   serraria: "Serraria",
+  "serra-da-raiz": "Serra da Raiz",
   solanea: "Solânea",
 }
 
 function HomePageContent() {
   const searchParams = useSearchParams()
-  const [selectedCity, setSelectedCity] = useState("areia")
+  const [selectedCity, setSelectedCity] = useState<keyof typeof pricingData>("areia")
 
   // Sincronizar com URL quando o componente monta
   useEffect(() => {
@@ -367,7 +379,7 @@ function HomePageContent() {
                 // Image banner - full background image only
                 <div className="absolute inset-0 bg-orange-500">
                   {/* Mobile version */}
-                  <div className="relative w-full h-full md:hidden">
+                  <div className="relative w-full h-64 md:hidden">
                     <Image
                       src={banner.imagePathMobile || banner.imagePath || ""}
                       alt="Banner Alta Velocidade VirtuaX Mobile"
@@ -378,7 +390,7 @@ function HomePageContent() {
                     />
                   </div>
                   {/* Desktop version */}
-                  <div className="relative w-full h-full hidden md:block">
+                  <div className="relative w-full h-96 hidden md:block">
                     <Image
                       src={banner.imagePath || ""}
                       alt="Banner Alta Velocidade VirtuaX"
