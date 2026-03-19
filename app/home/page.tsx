@@ -127,7 +127,8 @@ function HomePageContent() {
   // Sincronizar com URL quando o componente monta
   useEffect(() => {
     const cityFromUrl = searchParams.get("city") || "areia"
-    setSelectedCity(cityFromUrl)
+    const validCity = (cityFromUrl in pricingData) ? cityFromUrl : "areia"
+    setSelectedCity(validCity as keyof typeof pricingData)
   }, [searchParams])
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [currentPlanIndex, setCurrentPlanIndex] = useState(0)
@@ -668,8 +669,8 @@ function HomePageContent() {
             >
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 px-4">
                 {plans.map((plan, index) => {
-                  const price =
-                    pricingData[selectedCity as keyof typeof pricingData][plan.id as keyof typeof pricingData.areia]
+                  const cityPricing = pricingData[selectedCity as keyof typeof pricingData]
+                  const price = cityPricing ? cityPricing[plan.id as keyof typeof pricingData.areia] : 0
                   const isRecommended = plan.id === "intermediario"
                   const isActive = index === activeIndex
                   const features = plan.features
@@ -1015,7 +1016,7 @@ function HomePageContent() {
                     >
                       <SelectValue placeholder="Selecione sua cidade" />
                     </SelectTrigger>
-                    <SelectContent>
+                    <SelectContent className="max-h-64 overflow-y-auto">
                       {cities.map((city) => (
                         <SelectItem key={city.value} value={city.value}>
                           {city.label}
