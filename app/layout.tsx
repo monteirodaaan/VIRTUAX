@@ -8,11 +8,11 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "VirtuaX Telecom - Internet Fibra Óptica em Areia, Bananeiras, Cacimba de Dentro, Serraria e Solânea | Planos a partir de R$ 65,00",
+  title: "VirtuaX Telecom - Internet Fibra Óptica em Juarez Távora, Areia, Alagoa Grande, Bananeiras, Cacimba de Dentro, Dona Inês, Duas Estradas, Pilões, Serraria, Serra da Raiz e Solânea | Planos a partir de R$ 65,00",
   description:
-    "Internet fibra óptica de alta velocidade na Paraíba com instalação grátis. Planos residenciais e empresariais de 400MB a 1000MB. Atendemos Areia, Bananeiras, Cacimba de Dentro, Serraria e Solânea com suporte 24h e garantia de qualidade.",
+    "Internet fibra óptica de alta velocidade na Paraíba com instalação grátis. Planos residenciais e empresariais de 400MB a 1000MB. Atendemos Juarez Távora, Areia, Alagoa Grande, Bananeiras, Cacimba de Dentro, Dona Inês, Duas Estradas, Pilões, Serraria, Serra da Raiz e Solânea com suporte 24h.",
   keywords:
-    "internet fibra óptica, internet Areia PB, internet Bananeiras, internet Cacimba de Dentro, internet Serraria, internet Solânea, provedor internet Paraíba, internet rápida, banda larga, fibra óptica residencial, internet empresarial",
+    "internet fibra óptica, internet Juarez Távora, internet Areia PB, internet Alagoa Grande, internet Bananeiras, internet Cacimba de Dentro, internet Dona Inês, internet Duas Estradas, internet Pilões, internet Serraria, internet Serra da Raiz, internet Solânea, provedor internet Paraíba, internet rápida, banda larga, fibra óptica residencial, internet empresarial",
   authors: [{ name: "VirtuaX Telecom" }],
   creator: "VirtuaX Telecom",
   publisher: "VirtuaX Telecom",

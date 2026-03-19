@@ -389,28 +389,14 @@ function HomePageContent() {
               {banner.type === "image" ? (
                 // Image banner - full background image only
                 <div className="absolute inset-0 bg-orange-500">
-                  {/* Mobile version */}
-                  <div className="absolute inset-0 md:hidden">
-                    <Image
-                      src={banner.imagePathMobile || banner.imagePath || ""}
-                      alt="Banner Alta Velocidade VirtuaX Mobile"
-                      fill
-                      sizes="(max-width: 768px) 100vw, 0vw"
-                      className="object-cover"
-                      priority
-                    />
-                  </div>
-                  {/* Desktop version */}
-                  <div className="absolute inset-0 hidden md:block">
-                    <Image
-                      src={banner.imagePath || ""}
-                      alt="Banner Alta Velocidade VirtuaX"
-                      fill
-                      sizes="(min-width: 768px) 100vw, 0vw"
-                      className="object-cover"
-                      priority
-                    />
-                  </div>
+                  <Image
+                    src={banner.imagePath || ""}
+                    alt="Banner Alta Velocidade VirtuaX"
+                    fill
+                    sizes="100vw"
+                    className="object-cover"
+                    priority
+                  />
                 </div>
               ) : (
                 // Text banner - with background and overlay
@@ -1147,19 +1133,25 @@ function HomePageContent() {
               <div className="flex flex-col gap-5">
                 <h3 className="text-xs font-bold uppercase tracking-widest text-gray-500">Cobertura</h3>
                 <ul className="flex flex-col gap-3.5">
-                  {["Internet em Areia", "Internet em Bananeiras", "Internet em Cacimba de Dentro", "Internet em Serraria", "Internet em Solânea"].map((cidade) => {
-                    let nomeCidade = cidade.replace("Internet em ", "").toLowerCase().replace(/\s+/g, "-");
-                    if (nomeCidade === "cacimba-de-dentro") {
-                      nomeCidade = "cacimba";
-                    }
-                    return (
-                      <li key={cidade}>
-                        <Link href={`/home?city=${nomeCidade}`} className="text-sm text-gray-400 hover:text-white transition-colors duration-200">
-                          {cidade}
-                        </Link>
-                      </li>
-                    );
-                  })}
+                  {[
+                    { label: "Internet em Juarez Távora", slug: "juarez-tavora" },
+                    { label: "Internet em Areia", slug: "areia" },
+                    { label: "Internet em Alagoa Grande", slug: "alagoa-grande" },
+                    { label: "Internet em Bananeiras", slug: "bananeiras" },
+                    { label: "Internet em Cacimba de Dentro", slug: "cacimba-de-dentro" },
+                    { label: "Internet em Dona Inês", slug: "dona-ines" },
+                    { label: "Internet em Duas Estradas", slug: "duas-estradas" },
+                    { label: "Internet em Pilões", slug: "piloes" },
+                    { label: "Internet em Serraria", slug: "serraria" },
+                    { label: "Internet em Serra da Raiz", slug: "serra-da-raiz" },
+                    { label: "Internet em Solânea", slug: "solanea" },
+                  ].map(({ label, slug }) => (
+                    <li key={slug}>
+                      <Link href={`/home?city=${slug}`} className="text-sm text-gray-400 hover:text-white transition-colors duration-200">
+                        {label}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
 
