@@ -8,14 +8,14 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "VirtuaX Telecom - Internet Fibra Óptica em Juarez Távora, Areia, Alagoa Grande, Bananeiras, Cacimba de Dentro, Dona Inês, Duas Estradas, Pilões, Serraria, Serra da Raiz e Solânea | Planos a partir de R$ 65,00",
+  title: "Virtuax Telecom - Internet Fibra Óptica em Juarez Távora, Areia, Alagoa Grande, Bananeiras, Cacimba de Dentro, Dona Inês, Duas Estradas, Pilões, Serraria, Serra da Raiz e Solânea | Planos a partir de R$ 65,00",
   description:
     "Internet fibra óptica de alta velocidade na Paraíba com instalação grátis. Planos residenciais e empresariais de 400MB a 1000MB. Atendemos Juarez Távora, Areia, Alagoa Grande, Bananeiras, Cacimba de Dentro, Dona Inês, Duas Estradas, Pilões, Serraria, Serra da Raiz e Solânea com suporte 24h.",
   keywords:
     "internet fibra óptica, internet Juarez Távora, internet Areia PB, internet Alagoa Grande, internet Bananeiras, internet Cacimba de Dentro, internet Dona Inês, internet Duas Estradas, internet Pilões, internet Serraria, internet Serra da Raiz, internet Solânea, provedor internet Paraíba, internet rápida, banda larga, fibra óptica residencial, internet empresarial",
-  authors: [{ name: "VirtuaX Telecom" }],
-  creator: "VirtuaX Telecom",
-  publisher: "VirtuaX Telecom",
+  authors: [{ name: "Virtuax Telecom" }],
+  creator: "Virtuax Telecom",
+  publisher: "Virtuax Telecom",
   formatDetection: {
     email: false,
     address: false,
@@ -26,17 +26,17 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "VirtuaX Telecom - Internet Fibra Óptica de Alta Velocidade na Paraíba",
+    title: "Virtuax Telecom - Internet Fibra Óptica de Alta Velocidade na Paraíba",
     description:
       "Planos de internet fibra óptica residenciais e empresariais a partir de R$ 65,00. Cobertura em Areia, Bananeiras, Cacimba de Dentro, Serraria e Solânea. Instalação grátis e suporte 24h.",
     url: "https://virtuax.com.br",
-    siteName: "VirtuaX Telecom",
+    siteName: "Virtuax Telecom",
     images: [
       {
         url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "VirtuaX Telecom - Internet Fibra Óptica",
+        alt: "Virtuax Telecom - Internet Fibra Óptica",
       },
     ],
     locale: "pt_BR",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "VirtuaX Telecom - Internet Fibra Óptica de Alta Velocidade",
+    title: "Virtuax Telecom - Internet Fibra Óptica de Alta Velocidade",
     description:
       "Planos residenciais e empresariais a partir de R$ 65,00. Instalação grátis, suporte 24h e cobertura em 5 cidades da Paraíba.",
     images: ["/images/og-image.jpg"],
@@ -97,7 +97,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": "https://virtuax.com.br",
-    name: "VirtuaX Telecom",
+    name: "virtuax Telecom",
     image: "https://virtuax.com.br/images/logo.webp",
     description:
       "Provedor de internet fibra óptica de alta velocidade na Paraíba, atendendo Areia, Bananeiras, Cacimba de Dentro, Serraria e Solânea",

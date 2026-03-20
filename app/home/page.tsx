@@ -467,14 +467,14 @@ function HomePageContent() {
                 <span className="text-brand font-bold text-xs sm:text-sm uppercase tracking-wider">Sobre Nós</span>
               </div>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 text-left">
-                Conectado <span className="text-brand">{cityNames[selectedCity] || "sua região"}</span><br />com qualidade VirtuaX
+                Conectado <span className="text-brand">{cityNames[selectedCity] || "sua região"}</span><br />com qualidade Virtuax
               </h2>
             </div>
 
             {/* About section - trust message - cache bust */}
             <div className="space-y-4 sm:space-y-5 md:space-y-6 text-gray-700 text-base sm:text-lg leading-relaxed px-4 sm:px-0">
               <p>
-                A <strong className="text-brand">VirtuaX</strong> leva fibra óptica de alta performance para cidades da Paraíba, com velocidade real, estabilidade constante e atendimento que resolve.
+                A <strong className="text-brand">Virtuax</strong> leva fibra óptica de alta performance para cidades da Paraíba, com velocidade real, estabilidade constante e suporte que resolve.
               </p>
               <p>
                 Com experiência no mercado de telecom, entregamos internet ultra-rápida para residências e empresas que precisam trabalhar, estudar, criar e se divertir sem interrupções.
@@ -930,12 +930,12 @@ function HomePageContent() {
                   </div>
                   <div>
                     <h3 className="font-bold text-gray-900 mb-1 sm:mb-2 text-sm sm:text-base">
-                      {planType === "empresarial" ? "Suporte Comercial" : "Atendimento Comercial"}
+                      {planType === "empresarial" ? "Suporte Comercial" : "Suporte Comercial"}
                     </h3>
                     <p className="text-gray-600 text-xs sm:text-sm">
                       {planType === "empresarial"
                         ? "Especialistas em soluções corporativas"
-                        : "Segunda a sexta, das 8h às 18h"}
+                        : "Seg - Sex 08h às 18h e Sáb 8h às 12h"}
                     </p>
                   </div>
                 </div>
@@ -1190,7 +1190,7 @@ function HomePageContent() {
                     <svg className="w-4 h-4 text-brand shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/>
                     </svg>
-                    <span className="text-sm text-gray-400">Seg-Sex: 8h às 18h</span>
+                    <span className="text-sm text-gray-400">Seg - Sex: 08h às 18h | Sáb: 8h às 12h</span>
                   </li>
                   <li className="flex items-center gap-3">
                     <svg className="w-4 h-4 text-brand shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -1209,7 +1209,7 @@ function HomePageContent() {
         <div className="border-t border-gray-800">
           <div className="container mx-auto px-6 sm:px-8 lg:px-12 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-xs text-white text-center sm:text-left leading-relaxed">
-              © 2026 VirtuaX. Todos os direitos reservados<br/>Dev.{" "}
+              © 2026 Virtuax. Todos os direitos reservados<br/>Dev.{" "}
               <a href="https://www.instagram.com/november.mkt" target="_blank" rel="noopener noreferrer" className="text-brand font-semibold hover:underline transition-colors">November Marketing</a><br/>Design{" "}
               <a href="https://dm.art.br/" target="_blank" rel="noopener noreferrer" className="text-brand font-semibold hover:underline transition-colors">dm.art.br</a>
             </p>
