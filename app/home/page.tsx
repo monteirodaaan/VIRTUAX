@@ -29,17 +29,17 @@ import {
 
 // Dados de preços uniformes para todas as cidades
 const pricingData = {
-  "juarez-tavora": { basico: 65, intermediario: 80, avancado: 120, ultra: 199 },
-  "areia": { basico: 65, intermediario: 80, avancado: 120, ultra: 199 },
-  "alagoa-grande": { basico: 65, intermediario: 80, avancado: 120, ultra: 199 },
-  "bananeiras": { basico: 65, intermediario: 80, avancado: 120, ultra: 199 },
-  "cacimba-de-dentro": { basico: 65, intermediario: 80, avancado: 120, ultra: 199 },
-  "dona-ines": { basico: 65, intermediario: 80, avancado: 120, ultra: 199 },
-  "duas-estradas": { basico: 65, intermediario: 80, avancado: 120, ultra: 199 },
-  "piloes": { basico: 65, intermediario: 80, avancado: 120, ultra: 199 },
-  "serraria": { basico: 65, intermediario: 80, avancado: 120, ultra: 199 },
-  "serra-da-raiz": { basico: 65, intermediario: 80, avancado: 120, ultra: 199 },
-  "solanea": { basico: 65, intermediario: 80, avancado: 120, ultra: 199 },
+  "juarez-tavora": { duzentos: 59.90, basico: 65.00, intermediario: 79.90, avancado: 99.90, ultra: 119.90 },
+  "areia":         { duzentos: 59.90, basico: 65.00, intermediario: 79.90, avancado: 99.90, ultra: 119.90 },
+  "alagoa-grande": { duzentos: 59.90, basico: 65.00, intermediario: 79.90, avancado: 99.90, ultra: 119.90 },
+  "bananeiras":    { duzentos: 59.90, basico: 65.00, intermediario: 79.90, avancado: 99.90, ultra: 119.90 },
+  "cacimba-de-dentro": { duzentos: 59.90, basico: 65.00, intermediario: 79.90, avancado: 99.90, ultra: 119.90 },
+  "dona-ines":     { duzentos: 59.90, basico: 65.00, intermediario: 79.90, avancado: 99.90, ultra: 119.90 },
+  "duas-estradas": { duzentos: 59.90, basico: 65.00, intermediario: 79.90, avancado: 99.90, ultra: 119.90 },
+  "piloes":        { duzentos: 59.90, basico: 65.00, intermediario: 79.90, avancado: 99.90, ultra: 119.90 },
+  "serraria":      { duzentos: 59.90, basico: 65.00, intermediario: 79.90, avancado: 99.90, ultra: 119.90 },
+  "serra-da-raiz": { duzentos: 59.90, basico: 65.00, intermediario: 79.90, avancado: 99.90, ultra: 119.90 },
+  "solanea":       { duzentos: 59.90, basico: 65.00, intermediario: 79.90, avancado: 99.90, ultra: 119.90 },
 }
 
 const cities = [
@@ -57,6 +57,19 @@ const cities = [
 ]
 
 const plans = [
+  {
+    id: "duzentos",
+    name: "200 MB",
+    speed: "200 Mbps",
+    features: [
+      "Canais de TV",
+      "Roteador Incluso",
+      "Instalação Grátis",
+      "Fibra óptica",
+      "Sem limite de uso",
+      "Suporte 24/7",
+    ],
+  },
   {
     id: "basico",
     name: "400 MB",
@@ -98,7 +111,7 @@ const plans = [
   },
   {
     id: "ultra",
-    name: "1GB",
+    name: "1 GB",
     speed: "1000 Mbps",
     features: [
       "Canais de TV",
@@ -664,10 +677,10 @@ function HomePageContent() {
               onMouseEnter={() => setIsPaused(true)}
               onMouseLeave={() => setIsPaused(false)}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 px-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-6 px-4">
                 {plans.map((plan, index) => {
                   const cityPricing = pricingData[resolveCity(selectedCity)] ?? pricingData[DEFAULT_CITY]
-                  const price = cityPricing?.[plan.id as keyof typeof pricingData.areia] ?? 0
+                  const price = cityPricing?.[plan.id as keyof typeof pricingData["areia"]] ?? 0
                   const isRecommended = plan.id === "intermediario"
                   const isActive = index === activeIndex
                   const features = plan.features
