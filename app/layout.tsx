@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Virtuax Telecom - Internet Fibra Óptica de Alta Velocidade",
     description:
-      "Planos residenciais e empresariais a partir de R$ 65,00. Instalação grátis, suporte 24h e cobertura em 5 cidades da Paraíba.",
+      "Planos residenciais e empresariais a partir de R$ 65,00. Instalação grátis, suporte 24h e cobertura em 10+ cidades da Paraíba.",
     images: ["/images/og-image.jpg"],
     creator: "@virtuaxtelecom",
   },

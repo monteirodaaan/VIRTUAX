@@ -501,7 +501,7 @@ function HomePageContent() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mt-8 sm:mt-10 md:mt-12 px-4 sm:px-0">
               <div className="text-center p-4 sm:p-5 md:p-6 bg-brand/5 rounded-xl border border-brand/20" data-metric="localidades">
                 <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand mb-1 sm:mb-2">
-                  <AnimatedCounter end="+5" />
+                  <AnimatedCounter end="+10" />
                 </div>
                 <div className="text-xs sm:text-sm text-gray-600 font-semibold">Localidades</div>
               </div>
