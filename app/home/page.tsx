@@ -890,7 +890,6 @@ function HomePageContent() {
                   </div>
                 </div>
               </div>
-            </div>
           )}
         </div>
       </section>
@@ -1198,7 +1197,8 @@ function HomePageContent() {
         <div className="border-t border-white/10">
           <div className="max-w-[1200px] mx-auto px-6 sm:px-8 py-6">
             <p className="text-xs text-gray-600 leading-relaxed max-w-4xl">
-              <span className="font-semibold">*</span> Apenas no horário comercial | <span className="font-semibold">**</span> Mediante fidelização por 12 meses de contratação
+              <span className="font-semibold">*</span> Apenas no horário comercial<br />
+              <span className="font-semibold">**</span> Mediante fidelização por 12 meses de contratação
             </p>
           </div>
         </div>
