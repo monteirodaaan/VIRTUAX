@@ -6,10 +6,16 @@ import Image from "next/image"
 import { useState, useEffect, useRef } from "react"
 
 const cities = [
+  { value: "alagoa-grande", label: "Alagoa Grande" },
   { value: "areia", label: "Areia" },
   { value: "bananeiras", label: "Bananeiras" },
-  { value: "cacimba", label: "Cacimba de Dentro" },
+  { value: "cacimba-de-dentro", label: "Cacimba de Dentro" },
+  { value: "dona-ines", label: "Dona Inês" },
+  { value: "duas-estradas", label: "Duas Estradas" },
+  { value: "juarez-tavora", label: "Juarez Távora" },
+  { value: "piloes", label: "Pilões" },
   { value: "serraria", label: "Serraria" },
+  { value: "serra-da-raiz", label: "Serra da Raiz" },
   { value: "solanea", label: "Solânea" },
 ]
 
@@ -86,20 +92,20 @@ export default function CitySelectionPage() {
               {/* Trigger */}
               <button
                 onClick={() => setIsOpen((o) => !o)}
-                className="w-full flex items-center justify-center gap-3 bg-white rounded-2xl px-5 py-4 sm:py-5 shadow-lg transition-all hover:shadow-xl focus:outline-none relative"
+                className={`w-full flex items-center justify-center gap-3 rounded-2xl px-5 py-4 sm:py-5 shadow-lg transition-all hover:shadow-xl focus:outline-none relative ${selectedCity ? "bg-[#f86c05]" : "bg-white"}`}
               >
-                <MapPin className="h-5 w-5 text-[#f86c05] shrink-0" />
-                <span className={`text-base sm:text-lg font-semibold ${selectedCity ? "text-gray-800" : "text-gray-400"}`}>
+                <MapPin className={`h-5 w-5 shrink-0 ${selectedCity ? "text-white" : "text-[#f86c05]"}`} />
+                <span className={`text-base sm:text-lg font-semibold ${selectedCity ? "text-white" : "text-gray-400"}`}>
                   {selectedCity ? selectedCity.label : "Selecione sua cidade..."}
                 </span>
                 <ChevronDown
-                  className={`h-5 w-5 text-gray-400 shrink-0 transition-transform duration-200 absolute right-5 ${isOpen ? "rotate-180" : ""}`}
+                  className={`h-5 w-5 shrink-0 transition-transform duration-200 absolute right-5 ${selectedCity ? "text-white/80" : "text-gray-400"} ${isOpen ? "rotate-180" : ""}`}
                 />
               </button>
 
               {/* Options list */}
               {isOpen && (
-                <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl overflow-hidden shadow-2xl z-50">
+                <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl overflow-y-auto shadow-2xl z-50" style={{ maxHeight: "16rem" }}>
                   {cities.map((city, index) => (
                     <button
                       key={city.value}
