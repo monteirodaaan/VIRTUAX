@@ -803,7 +803,6 @@ function HomePageContent() {
                           <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">Até 200GB de dados por mês</p>
                         </div>
                       </div>
-                      </div>
 
                       <div className="group relative overflow-hidden bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-2xl p-6 sm:p-7 hover:border-[#f86c05]/60 transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-[#f86c05]/10">
                         <div className="absolute inset-0 bg-gradient-to-br from-[#f86c05]/0 to-[#f86c05]/0 group-hover:from-[#f86c05]/10 group-hover:to-[#f86c05]/5 transition-all duration-300"></div>
