@@ -800,8 +800,9 @@ function HomePageContent() {
                             </div>
                             <h4 className="font-bold text-white text-sm sm:text-base">Velocidade Dedicada</h4>
                           </div>
-                          <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">At�� 1Gbps com garantia de banda</p>
+                          <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">Até 200GB de dados por mês</p>
                         </div>
+                      </div>
                       </div>
 
                       <div className="group relative overflow-hidden bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-2xl p-6 sm:p-7 hover:border-[#f86c05]/60 transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-[#f86c05]/10">
