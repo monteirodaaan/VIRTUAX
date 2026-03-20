@@ -1080,11 +1080,11 @@ function HomePageContent() {
 
       <footer className="bg-gray-900 text-white">
         {/* Main Footer */}
-        <div className="container mx-auto px-6 sm:px-8 lg:px-12 py-10 sm:py-14">
-          <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-10 lg:gap-16">
+        <div className="container mx-auto px-8 sm:px-12 lg:px-16 py-12 sm:py-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
 
             {/* Logo + Descrição + Redes */}
-            <div className="flex flex-col gap-4 shrink-0 lg:max-w-[240px]">
+            <div className="flex flex-col gap-5">
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 className="self-start hover:opacity-80 transition-opacity"
@@ -1126,11 +1126,10 @@ function HomePageContent() {
               </div>
             </div>
 
-            {/* 3 Colunas alinhadas à direita */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-10 lg:gap-14 flex-1">
+            {/* 3 Colunas */}
 
               {/* Cobertura */}
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-4">
                 <h3 className="text-xs font-bold uppercase tracking-widest text-gray-500">Cobertura</h3>
                 <p className="text-sm text-gray-400 leading-relaxed">
                   Internet em Juarez Távora, Areia, Alagoa Grande, Bananeiras, Cacimba de Dentro, Dona Inês, Duas Estradas, Pilões, Serraria, Serra da Raiz e Solânea
@@ -1138,9 +1137,9 @@ function HomePageContent() {
               </div>
 
               {/* Links */}
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-4">
                 <h3 className="text-xs font-bold uppercase tracking-widest text-gray-500">Links</h3>
-                <ul className="flex flex-col gap-2.5">
+                <ul className="flex flex-col gap-3">
                   {[
                     { label: "Início", id: null },
                     { label: "Sobre", id: "sobre" },
@@ -1167,9 +1166,9 @@ function HomePageContent() {
               </div>
 
               {/* Suporte */}
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-4">
                 <h3 className="text-xs font-bold uppercase tracking-widest text-gray-500">Suporte</h3>
-                <ul className="flex flex-col gap-3">
+                <ul className="flex flex-col gap-3.5">
                   <li className="flex items-center gap-3">
                     <svg className="w-4 h-4 text-brand shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25z" />
@@ -1201,13 +1200,12 @@ function HomePageContent() {
                 </ul>
               </div>
 
-            </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-800">
-          <div className="container mx-auto px-6 sm:px-8 lg:px-12 py-5 flex flex-col sm:flex-row justify-between items-center gap-3">
+          <div className="container mx-auto px-8 sm:px-12 lg:px-16 py-5 flex flex-col sm:flex-row justify-between items-center gap-3">
             <p className="text-xs text-white text-center sm:text-left leading-relaxed">
               © 2026 Virtuax. Todos os direitos reservados<br />Dev.{" "}
               <a href="https://www.instagram.com/november.mkt" target="_blank" rel="noopener noreferrer" className="text-brand font-semibold hover:underline transition-colors">November Marketing</a><br />Design{" "}
