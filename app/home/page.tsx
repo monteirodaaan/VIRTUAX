@@ -3,6 +3,7 @@
 import { useState, useEffect, Suspense } from "react"
 import { useSearchParams } from "next/navigation"
 import Link from "next/link"
+import { LegalModal } from "@/components/legal-modal"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
@@ -1218,11 +1219,7 @@ function HomePageContent() {
               <a href="https://dm.art.br/" target="_blank" rel="noopener noreferrer" className="text-brand hover:underline transition-colors">dm.art.br</a>
             </p>
             <div className="flex items-center gap-4 text-xs text-gray-500 flex-wrap justify-center">
-              <a href="#" className="hover:text-brand transition-colors duration-200">Política de Privacidade</a>
-              <span className="text-gray-700">|</span>
-              <a href="#" className="hover:text-brand transition-colors duration-200">Termos de Uso</a>
-              <span className="text-gray-700">|</span>
-              <a href="#" className="hover:text-brand transition-colors duration-200">LGPD</a>
+              <LegalModal />
             </div>
           </div>
         </div>
