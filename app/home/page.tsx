@@ -871,19 +871,19 @@ function HomePageContent() {
                     </div>
 
                     <div className="bg-gradient-to-r from-brand/25 via-brand/15 to-transparent border border-brand/40 rounded-2xl p-8 sm:p-10 md:p-12 text-center">
-                      <p className="text-sm sm:text-base text-gray-300 mb-4">Cada empresa tem necessidades únicas</p>
+                      <p className="text-sm sm:text-base text-gray-300 mb-4">Cada empresa tem necessidades unicas</p>
                       <h4 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                        Solicite um orçamento personalizado
+                        Solicite um orcamento personalizado
                       </h4>
                       <p className="text-sm sm:text-base text-gray-300 mb-8 max-w-xl mx-auto">
-                        Nossa equipe de especialistas analisará suas necessidades específicas e criará a melhor solução para seu negócio
+                        Nossa equipe de especialistas analisara suas necessidades especificas e criara a melhor solucao para seu negocio
                       </p>
                       <Button
                         onClick={() => scrollToSection("contato")}
                         className="mx-auto px-8 sm:px-12 py-3 sm:py-4 font-bold text-base sm:text-lg hover:scale-105 transition-transform shadow-lg"
                         style={{ backgroundColor: "var(--brand)", color: "white" }}
                       >
-                        Solicitar Orçamento
+                        Solicitar Orcamento
                         <ChevronRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                       </Button>
                     </div>
@@ -1198,7 +1198,7 @@ function HomePageContent() {
         <div className="border-t border-white/10">
           <div className="max-w-[1200px] mx-auto px-6 sm:px-8 py-6">
             <p className="text-xs text-gray-600 leading-relaxed max-w-4xl">
-              <span className="font-semibold">*</span> Apenas no horário comercial &bull; <span className="font-semibold">**</span> Mediante fidelização por 12 meses de contratação
+              <span className="font-semibold">*</span> Apenas no horário comercial | <span className="font-semibold">**</span> Mediante fidelização por 12 meses de contratação
             </p>
           </div>
         </div>
