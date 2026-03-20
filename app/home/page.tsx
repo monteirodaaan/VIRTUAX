@@ -800,7 +800,7 @@ function HomePageContent() {
                             </div>
                             <h4 className="font-bold text-white text-sm sm:text-base">Velocidade Dedicada</h4>
                           </div>
-                          <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">Até 200GB de dados por mês</p>
+                          <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">Velocidade de até 200Mbps dedicada</p>
                         </div>
                       </div>
 
