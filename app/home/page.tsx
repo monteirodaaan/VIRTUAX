@@ -520,7 +520,7 @@ function HomePageContent() {
               <span className="text-brand font-bold text-xs sm:text-sm uppercase tracking-wider">Diferenciais</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-white via-brand to-white bg-clip-text text-transparent">
-              Benefícios VirtuaX
+              Benefícios Virtuax
             </h2>
             <p className="max-w-2xl mx-auto leading-relaxed text-base sm:text-lg px-4 text-foreground">
               Vantagens exclusivas que fazem a diferença na sua conexão
@@ -919,7 +919,7 @@ function HomePageContent() {
                     <p className="text-gray-600 text-xs sm:text-sm">
                       {planType === "empresarial"
                         ? "Avaliamos suas necessidades específicas"
-                        : "Auto-atendimento 24 horas por dia, 7 dias por semana"}
+                        : "Autoatendimento 24 horas por dia, 7 dias por semana"}
                     </p>
                   </div>
                 </div>
@@ -1092,7 +1092,7 @@ function HomePageContent() {
               >
                 <Image
                   src="/images/logo.webp"
-                  alt="VirtuaX"
+                  alt="Virtuax"
                   width={140}
                   height={36}
                   className="w-auto"
