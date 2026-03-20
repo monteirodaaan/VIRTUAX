@@ -1,4 +1,4 @@
-// next.config.mjs - Configuration v2
+// next.config.mjs - Configuration v3
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   typescript: {
