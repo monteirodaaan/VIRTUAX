@@ -1,4 +1,4 @@
-// next.config.mjs
+// next.config.mjs - Configuration cleaned
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   typescript: {
