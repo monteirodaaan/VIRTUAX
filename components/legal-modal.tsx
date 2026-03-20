@@ -237,7 +237,7 @@ Telefone: 0800 731 5050
 
       {openDocument && (
         <Dialog open={true} onOpenChange={() => setOpenDocument(null)}>
-          <DialogContent className="max-w-2xl max-h-[80vh] bg-gray-900 border border-gray-800">
+          <DialogContent className="max-w-2xl max-h-[80vh] bg-gray-900 border border-gray-800 [&>button]:text-brand [&>button]:hover:text-brand [&>button]:hover:bg-brand/10">
             <DialogHeader>
               <DialogTitle className="text-brand text-xl">
                 {documents[openDocument].title}
