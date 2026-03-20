@@ -1,4 +1,4 @@
-// next.config.mjs
+// next.config.mjs - Configuration v5 - Clean rebuild
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   typescript: {
