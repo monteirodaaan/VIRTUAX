@@ -1127,7 +1127,7 @@ function HomePageContent() {
             </div>
 
             {/* Coluna 3 — Links */}
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-5 lg:pl-12">
               <h3 className="text-xs font-bold uppercase tracking-widest text-gray-500">Links</h3>
               <ul className="flex flex-col gap-3">
                 {[
