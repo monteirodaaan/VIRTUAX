@@ -877,7 +877,7 @@ function HomePageContent() {
                         Solicite um orçamento personalizado
                       </h4>
                       <p className="text-sm sm:text-base text-gray-300 mb-8 max-w-xl mx-auto">
-                        Nossa equipe de especialistas analisará suas necessidades específicas e criará a melhor solução para seu neg���cio
+                        Nossa equipe de especialistas analisará suas necessidades específicas e criará a melhor solução para seu negócio
                       </p>
                       <Button
                         onClick={() => scrollToSection("contato")}
