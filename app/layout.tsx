@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Virtuax Telecom - Internet Fibra Óptica de Alta Velocidade",
     description:
-      "Planos residenciais e empresariais a partir de R$ 65,00. Instalação grátis, suporte 24h e cobertura em 5 cidades da Paraíba.",
+      "Planos residenciais e empresariais a partir de R$ 65,00. Instalação grátis, suporte 24h e cobertura em 10+ cidades da Paraíba.",
     images: ["/images/og-image.jpg"],
     creator: "@virtuaxtelecom",
   },
@@ -103,7 +103,7 @@ export default function RootLayout({
       "Provedor de internet fibra óptica de alta velocidade na Paraíba, atendendo Areia, Bananeiras, Cacimba de Dentro, Serraria e Solânea",
     url: "https://virtuax.com.br",
     telephone: "+55-83-XXXX-XXXX",
-    email: "contato@virtuax.com.br",
+    email: "sac@virtuax.com.br",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Rua Exemplo, 123",
