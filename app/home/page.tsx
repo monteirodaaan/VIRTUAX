@@ -159,6 +159,12 @@ function HomePageContent() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [currentPlanIndex, setCurrentPlanIndex] = useState(0)
   const [planType, setPlanType] = useState<"residencial" | "empresarial">("residencial")
+  const [formName, setFormName] = useState("")
+  const [formEmail, setFormEmail] = useState("")
+  const [formPhone, setFormPhone] = useState("")
+  const [formCity, setFormCity] = useState("")
+  const [formCompanySize, setFormCompanySize] = useState("")
+  const [formMessage, setFormMessage] = useState("")
   const [currentBannerIndex, setCurrentBannerIndex] = useState(0)
   const [activeIndex, setActiveIndex] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
@@ -978,13 +984,18 @@ function HomePageContent() {
                 className="space-y-4 sm:space-y-6"
                 onSubmit={(e) => {
                   e.preventDefault()
-                  const form = e.currentTarget
-                  const name = (form.querySelector("#name") as HTMLInputElement)?.value || ""
-                  const email = (form.querySelector("#email") as HTMLInputElement)?.value || ""
-                  const phone = (form.querySelector("#phone") as HTMLInputElement)?.value || ""
-                  const message = (form.querySelector("#message") as HTMLTextAreaElement)?.value || ""
                   const tipo = planType === "empresarial" ? "Empresarial" : "Residencial"
-                  const texto = `Olá! Vim pelo site da Virtuax.\n\n*Tipo:* ${tipo}\n*Nome:* ${name}\n*E-mail:* ${email}\n*Telefone:* ${phone}${message ? `\n*Mensagem:* ${message}` : ""}`
+                  const cityLabel = cities.find(c => c.value === formCity)?.label || formCity
+                  const companySizeMap: Record<string, string> = {
+                    pequena: "Pequena (1-10 funcionários)",
+                    media: "Média (11-50 funcionários)",
+                    grande: "Grande (51-200 funcionários)",
+                    enterprise: "Enterprise (200+ funcionários)",
+                  }
+                  let texto = `Olá! Vim pelo site da Virtuax.\n\n*Tipo:* ${tipo}\n*Nome:* ${formName}\n*E-mail:* ${formEmail}\n*Telefone:* ${formPhone}`
+                  if (cityLabel) texto += `\n*Cidade:* ${cityLabel}`
+                  if (planType === "empresarial" && formCompanySize) texto += `\n*Tamanho da Empresa:* ${companySizeMap[formCompanySize] || formCompanySize}`
+                  if (formMessage) texto += `\n*Mensagem:* ${formMessage}`
                   window.open(`https://wa.me/558007315050?text=${encodeURIComponent(texto)}`, "_blank")
                 }}
               >
@@ -998,6 +1009,8 @@ function HomePageContent() {
                     placeholder={planType === "empresarial" ? "Sua Empresa LTDA" : "Digite seu nome completo"}
                     className="w-full h-10 sm:h-12 bg-gray-50 border-gray-200 rounded-lg focus:border-[#f86c05] focus:ring-[#f86c05] transition-colors text-sm sm:text-base"
                     required
+                    value={formName}
+                    onChange={(e) => setFormName(e.target.value)}
                   />
                 </div>
 
@@ -1012,6 +1025,8 @@ function HomePageContent() {
                       placeholder="seu@email.com"
                       className="w-full h-10 sm:h-12 bg-gray-50 border-gray-200 rounded-lg focus:border-brand text-sm sm:text-base"
                       required
+                      value={formEmail}
+                      onChange={(e) => setFormEmail(e.target.value)}
                     />
                   </div>
 
@@ -1025,6 +1040,8 @@ function HomePageContent() {
                       placeholder="(00) 00000-0000"
                       className="w-full h-10 sm:h-12 bg-gray-50 border-gray-200 rounded-lg focus:border-brand text-sm sm:text-base"
                       required
+                      value={formPhone}
+                      onChange={(e) => setFormPhone(e.target.value)}
                     />
                   </div>
                 </div>
@@ -1033,7 +1050,7 @@ function HomePageContent() {
                   <Label htmlFor="city-contact" className="text-xs sm:text-sm font-semibold text-gray-700 mb-2 block">
                     Cidade *
                   </Label>
-                  <Select>
+                  <Select value={formCity} onValueChange={setFormCity}>
                     <SelectTrigger
                       id="city-contact"
                       className="w-full h-10 sm:h-12 bg-gray-50 border-gray-200 rounded-lg focus:border-brand text-sm sm:text-base"
@@ -1055,7 +1072,7 @@ function HomePageContent() {
                     <Label htmlFor="company-size" className="text-xs sm:text-sm font-semibold text-gray-700 mb-2 block">
                       Tamanho da Empresa *
                     </Label>
-                    <Select>
+                    <Select value={formCompanySize} onValueChange={setFormCompanySize}>
                       <SelectTrigger
                         id="company-size"
                         className="w-full h-10 sm:h-12 bg-gray-50 border-gray-200 rounded-lg focus:border-brand text-sm sm:text-base"
@@ -1084,6 +1101,8 @@ function HomePageContent() {
                         : "Como podemos ajudar você?"
                     }
                     className="w-full min-h-24 sm:min-h-32 bg-gray-50 border-gray-200 rounded-lg resize-none focus:border-brand text-sm sm:text-base"
+                    value={formMessage}
+                    onChange={(e) => setFormMessage(e.target.value)}
                   />
                 </div>
 
