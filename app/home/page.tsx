@@ -410,14 +410,10 @@ function HomePageContent() {
               {banner.type === "image" ? (
                 // Image banner - full background image only
                 <div className="absolute inset-0 bg-orange-500 md:bg-transparent">
-                  {/* Mobile background with texture pattern */}
-                  <div 
+                  {/* Mobile background */}
+                  <div
                     className="absolute inset-0 md:hidden bg-cover bg-center"
-                    style={{
-                      backgroundImage: `url(/images/banner-${currentBannerIndex + 1}-mobile.jpg)`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                    }}
+                    style={{ backgroundImage: "url(/images/banner-mobile-bg.webp)" }}
                   />
                   {/* Desktop image */}
                   <Image
@@ -435,9 +431,7 @@ function HomePageContent() {
                   {/* Background Mobile */}
                   <div
                     className="absolute inset-0 md:hidden bg-cover bg-center"
-                    style={{
-                      backgroundImage: `url(/images/banner-${currentBannerIndex + 1}-mobile.jpg)`,
-                    }}
+                    style={{ backgroundImage: "url(/images/banner-mobile-bg.webp)" }}
                   />
                   {/* Background Desktop */}
                   <div
