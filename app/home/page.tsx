@@ -974,7 +974,20 @@ function HomePageContent() {
 
             {/* Right column - Form */}
             <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 sm:p-8 md:p-10">
-              <form className="space-y-4 sm:space-y-6" onSubmit={(e) => e.preventDefault()}>
+              <form
+                className="space-y-4 sm:space-y-6"
+                onSubmit={(e) => {
+                  e.preventDefault()
+                  const form = e.currentTarget
+                  const name = (form.querySelector("#name") as HTMLInputElement)?.value || ""
+                  const email = (form.querySelector("#email") as HTMLInputElement)?.value || ""
+                  const phone = (form.querySelector("#phone") as HTMLInputElement)?.value || ""
+                  const message = (form.querySelector("#message") as HTMLTextAreaElement)?.value || ""
+                  const tipo = planType === "empresarial" ? "Empresarial" : "Residencial"
+                  const texto = `Olá! Vim pelo site da Virtuax.\n\n*Tipo:* ${tipo}\n*Nome:* ${name}\n*E-mail:* ${email}\n*Telefone:* ${phone}${message ? `\n*Mensagem:* ${message}` : ""}`
+                  window.open(`https://wa.me/558007315050?text=${encodeURIComponent(texto)}`, "_blank")
+                }}
+              >
                 <div>
                   <Label htmlFor="name" className="text-xs sm:text-sm font-semibold text-gray-700 mb-2 block">
                     {planType === "empresarial" ? "Nome da Empresa *" : "Nome completo *"}
