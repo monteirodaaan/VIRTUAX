@@ -410,14 +410,22 @@ function HomePageContent() {
               {banner.type === "image" ? (
                 // Image banner - full background image only
                 <div className="absolute inset-0 bg-orange-500 md:bg-transparent">
-                  {/* Mobile fallback gradient background */}
-                  <div className="absolute inset-0 md:hidden bg-gradient-to-b from-[#f86c05] via-[#f86c05] to-[#ffc107]" />
+                  {/* Mobile background with texture pattern */}
+                  <div 
+                    className="absolute inset-0 md:hidden bg-cover bg-center"
+                    style={{
+                      backgroundImage: `url(/images/banner-${currentBannerIndex + 1}-mobile.jpg)`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                    }}
+                  />
+                  {/* Desktop image */}
                   <Image
                     src={banner.imagePath || ""}
                     alt="Banner Alta Velocidade VirtuaX"
                     fill
                     sizes="100vw"
-                    className="object-cover"
+                    className="object-cover hidden md:block"
                     priority
                   />
                 </div>
