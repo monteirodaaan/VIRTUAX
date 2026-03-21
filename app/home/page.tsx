@@ -569,7 +569,7 @@ function HomePageContent() {
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-[#f86c05]/30 rounded-2xl p-6 sm:p-7 md:p-8 hover:-translate-y-3 transition-all duration-500 group">
+            <div className="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-[#f86c05]/30 rounded-2xl p-6 sm:p-7 md:p-8 hover:-translate-y-3 transition-all duration-500 group" id="card-suporte">
               <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#f86c05]/20 flex items-center justify-center mb-4 sm:mb-5 group-hover:scale-110 transition-transform duration-300 mx-auto">
                 <Users className="h-6 w-6 sm:h-7 sm:w-7 text-[#f86c05]" />
               </div>
@@ -590,7 +590,7 @@ function HomePageContent() {
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-[#f86c05]/30 rounded-2xl p-6 sm:p-7 md:p-8 hover:-translate-y-3 transition-all duration-500 group">
+            <div className="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-[#f86c05]/30 rounded-2xl p-6 sm:p-7 md:p-8 hover:-translate-y-3 transition-all duration-500 group" id="card-instalacao">
               <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#f86c05]/20 flex items-center justify-center mb-4 sm:mb-5 group-hover:scale-110 transition-transform duration-300 mx-auto">
                 <Star className="h-6 w-6 sm:h-7 sm:w-7 text-[#f86c05]" />
               </div>
@@ -1232,10 +1232,10 @@ function HomePageContent() {
           <div className="max-w-[1200px] mx-auto px-6 sm:px-8 py-6">
             <div className="text-xs text-gray-600 leading-relaxed max-w-4xl space-y-2">
               <p id="nota-1">
-                <span className="font-semibold">*</span> Apenas no horário comercial
+                <a href="#card-suporte" className="hover:text-brand transition-colors cursor-pointer"><span className="font-semibold">*</span> Apenas no horário comercial</a>
               </p>
               <p id="nota-2">
-                <span className="font-semibold">**</span> Mediante fidelização por 12 meses de contratação
+                <a href="#card-instalacao" className="hover:text-brand transition-colors cursor-pointer"><span className="font-semibold">**</span> Mediante fidelização por 12 meses de contratação</a>
               </p>
             </div>
           </div>
