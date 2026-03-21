@@ -58,7 +58,7 @@ De acordo com a LGPD, você tem o direito de:
 - Solicitar exclusão de dados
 - Revogar consentimento
 
-Para exercer qualquer desses direitos, entre em contato conosco através de contato@virtuax.com.br
+Para exercer qualquer desses direitos, entre em contato conosco através de sac@virtuax.com.br
 
 6. ALTERAÇÕES NESTA POLÍTICA
 
@@ -67,7 +67,7 @@ Podemos atualizar esta política de tempos em tempos. A data de atualização ma
 7. CONTATO
 
 Se tiver dúvidas sobre esta política, entre em contato:
-Email: contato@virtuax.com.br
+Email: sac@virtuax.com.br
 Telefone: 0800 731 5050
       `
     },
@@ -119,7 +119,7 @@ Estes termos são regidos pelas leis da República Federativa do Brasil.
 9. CONTATO
 
 Para questões sobre estes termos, entre em contato:
-Email: contato@virtuax.com.br
+Email: sac@virtuax.com.br
 Telefone: 0800 731 5050
       `
     },
@@ -170,7 +170,7 @@ Processamos seus dados pessoais com base em:
 4. EXERCER SEUS DIREITOS
 
 Para exercer qualquer dos direitos acima, envie uma solicitação para:
-Email: contato@virtuax.com.br
+Email: sac@virtuax.com.br
 Telefone: 0800 731 5050
 
 Sua solicitação deve incluir:
@@ -206,7 +206,7 @@ Você pode revogar seu consentimento a qualquer momento, mas isso não afeta a l
 10. CONTATO
 
 Dúvidas sobre LGPD? Entre em contato:
-Email: contato@virtuax.com.br
+Email: sac@virtuax.com.br
 Telefone: 0800 731 5050
       `
     }
