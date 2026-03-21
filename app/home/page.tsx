@@ -409,7 +409,9 @@ function HomePageContent() {
             >
               {banner.type === "image" ? (
                 // Image banner - full background image only
-                <div className="absolute inset-0 bg-orange-500">
+                <div className="absolute inset-0 bg-orange-500 md:bg-transparent">
+                  {/* Mobile fallback gradient background */}
+                  <div className="absolute inset-0 md:hidden bg-gradient-to-b from-[#f86c05] via-[#f86c05] to-[#ffc107]" />
                   <Image
                     src={banner.imagePath || ""}
                     alt="Banner Alta Velocidade VirtuaX"
