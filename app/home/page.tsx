@@ -573,7 +573,7 @@ function HomePageContent() {
               <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#f86c05]/20 flex items-center justify-center mb-4 sm:mb-5 group-hover:scale-110 transition-transform duration-300 mx-auto">
                 <Users className="h-6 w-6 sm:h-7 sm:w-7 text-[#f86c05]" />
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 text-center">Suporte Humanizado<span className="text-brand text-sm">*</span></h3>
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 text-center">Suporte Humanizado<a href="#nota-1" className="text-brand text-sm hover:opacity-75 transition-opacity cursor-pointer">*</a></h3>
               <p className="text-gray-300 text-sm sm:text-base leading-relaxed text-center">
                 Equipe local sempre pronta para atender suas necessidades com agilidade e atenção personalizada.
               </p>
@@ -594,7 +594,7 @@ function HomePageContent() {
               <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#f86c05]/20 flex items-center justify-center mb-4 sm:mb-5 group-hover:scale-110 transition-transform duration-300 mx-auto">
                 <Star className="h-6 w-6 sm:h-7 sm:w-7 text-[#f86c05]" />
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 text-center">Instalação Grátis<span className="text-brand text-sm">**</span></h3>
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 text-center">Instalação Grátis<a href="#nota-2" className="text-brand text-sm hover:opacity-75 transition-opacity cursor-pointer">**</a></h3>
               <p className="text-gray-300 text-sm sm:text-base leading-relaxed text-center">
                 Zero custo para começar. Nossa equipe cuida de toda instalação sem cobrar nenhum valor adicional.
               </p>
@@ -1228,13 +1228,13 @@ function HomePageContent() {
         </div>
 
         {/* Notas de Rodapé */}
-        <div className="border-t border-white/10">
+        <div className="border-t border-white/10" id="notas-rodape">
           <div className="max-w-[1200px] mx-auto px-6 sm:px-8 py-6">
             <div className="text-xs text-gray-600 leading-relaxed max-w-4xl space-y-2">
-              <p>
+              <p id="nota-1">
                 <span className="font-semibold">*</span> Apenas no horário comercial
               </p>
-              <p>
+              <p id="nota-2">
                 <span className="font-semibold">**</span> Mediante fidelização por 12 meses de contratação
               </p>
             </div>
