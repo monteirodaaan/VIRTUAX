@@ -140,6 +140,21 @@ const cityNames: { [key: string]: string } = {
   solanea: "Solânea",
 }
 
+// Número WhatsApp exclusivo para fechamento de pedido por cidade (formato internacional, apenas dígitos)
+const DEFAULT_WHATSAPP = "558007315050"
+const cityWhatsApp: { [key: string]: string } = {
+  "alagoa-grande": "5583998330230",
+  areia: "5583981907527",
+  piloes: "5583999570029",
+  solanea: "5583981991337",
+  "cacimba-de-dentro": "5583981772379",
+  serraria: "5583998330124",
+  bananeiras: "5583981740612",
+  "serra-da-raiz": "5583981772379",
+  "duas-estradas": "5583981772379",
+  "juarez-tavora": "5583981772379",
+}
+
 const DEFAULT_CITY: keyof typeof pricingData = "areia"
 
 function resolveCity(city: string | null): keyof typeof pricingData {
@@ -1000,7 +1015,8 @@ function HomePageContent() {
                   if (cityLabel) texto += `\n*Cidade:* ${cityLabel}`
                   if (planType === "empresarial" && formCompanySize) texto += `\n*Tamanho da Empresa:* ${companySizeMap[formCompanySize] || formCompanySize}`
                   if (formMessage) texto += `\n*Mensagem:* ${formMessage}`
-                  window.open(`https://wa.me/558007315050?text=${encodeURIComponent(texto)}`, "_blank")
+                  const targetWhatsApp = cityWhatsApp[formCity] || DEFAULT_WHATSAPP
+                  window.open(`https://wa.me/${targetWhatsApp}?text=${encodeURIComponent(texto)}`, "_blank")
                 }}
               >
                 <div>
