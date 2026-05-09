@@ -68,7 +68,14 @@ export const metadata: Metadata = {
       "facebook-domain-verification": "seu-codigo-facebook",
     },
   },
-  generator: "v0.app",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon-light-32x32.png", type: "image/png", sizes: "32x32" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/apple-icon.png",
+  },
 }
 
 export default function RootLayout({

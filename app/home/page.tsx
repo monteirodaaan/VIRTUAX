@@ -321,7 +321,7 @@ function HomePageContent() {
             </div>
 
             <a
-              href="http://central.virtuax.com.br/"
+              href="https://ambientevirtual.sgp.net.br/central"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 justify-center font-semibold transition-all duration-200 text-xs lg:text-sm px-4 lg:px-5 rounded-lg h-9 bg-white text-brand hover:bg-gray-50"
@@ -373,6 +373,12 @@ function HomePageContent() {
                 Planos
               </button>
               <button
+                onClick={() => scrollToSection("area-cliente")}
+                className="text-left text-sm font-semibold text-gray-700 hover:text-brand transition-colors py-2"
+              >
+                Área do Cliente
+              </button>
+              <button
                 onClick={() => scrollToSection("contato")}
                 className="text-left text-sm font-semibold text-gray-700 hover:text-brand transition-colors py-2"
               >
@@ -399,7 +405,7 @@ function HomePageContent() {
               </div>
 
               <a
-                href="http://central.virtuax.com.br/"
+                href="https://ambientevirtual.sgp.net.br/central"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-left text-sm font-semibold text-brand hover:text-orange-600 transition-colors py-2 inline-flex items-center gap-2"
@@ -921,6 +927,76 @@ function HomePageContent() {
         </div>
       </section>
 
+      {/* Área do Cliente Section */}
+      <section id="area-cliente" className="py-14 sm:py-20 md:py-24 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-5xl">
+          <div className="text-center mb-10 sm:mb-14 space-y-4">
+            <div className="inline-block px-4 sm:px-6 py-1.5 sm:py-2 rounded-full border border-[#f86c05] mb-2">
+              <span className="text-[#f86c05] font-bold text-xs sm:text-sm uppercase tracking-wider">Acesso Rápido</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">Área do Cliente</h2>
+            <p className="text-base sm:text-lg text-gray-500 max-w-xl mx-auto leading-relaxed">
+              Gerencie sua conta, consulte faturas e abra chamados direto pelo portal ou pelo nosso aplicativo.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
+            {/* Portal Web */}
+            <a
+              href="https://ambientevirtual.sgp.net.br/central"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col items-center text-center gap-5 p-8 sm:p-10 rounded-2xl border-2 border-gray-100 hover:border-[#f86c05]/40 hover:shadow-xl transition-all duration-300"
+            >
+              <div className="w-16 h-16 rounded-2xl bg-[#f86c05]/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <User className="h-8 w-8 text-[#f86c05]" />
+              </div>
+              <div>
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">Portal do Cliente</h3>
+                <p className="text-sm sm:text-base text-gray-500 leading-relaxed">
+                  Acesse faturas, 2ª via de boleto, histórico de consumo e suporte online.
+                </p>
+              </div>
+              <span className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-[#f86c05] text-white font-semibold text-sm group-hover:bg-orange-600 transition-colors">
+                Acessar Portal
+                <ChevronRight className="h-4 w-4" />
+              </span>
+            </a>
+
+            {/* App */}
+            <div className="flex flex-col items-center text-center gap-5 p-8 sm:p-10 rounded-2xl border-2 border-gray-100">
+              <div className="w-16 h-16 rounded-2xl bg-[#f86c05]/10 flex items-center justify-center">
+                <Wifi className="h-8 w-8 text-[#f86c05]" />
+              </div>
+              <div>
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">Aplicativo Virtuax</h3>
+                <p className="text-sm sm:text-base text-gray-500 leading-relaxed">
+                  Baixe o app e gerencie sua conexão de onde estiver, na palma da mão.
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.innave.virtuax&hl=pt_BR"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border-2 border-gray-200 hover:border-[#f86c05]/40 transition-colors text-sm font-semibold text-gray-700 hover:text-[#f86c05]"
+                >
+                  Google Play
+                </a>
+                <a
+                  href="https://apps.apple.com/br/app/virtuax/id1626854055"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border-2 border-gray-200 hover:border-[#f86c05]/40 transition-colors text-sm font-semibold text-gray-700 hover:text-[#f86c05]"
+                >
+                  App Store
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contato Section */}
       <section id="contato" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-brand/5 rounded-full blur-3xl"></div>
@@ -1201,6 +1277,7 @@ function HomePageContent() {
                   { label: "Sobre", id: "sobre" },
                   { label: "Benefícios", id: "beneficios" },
                   { label: "Planos", id: "planos" },
+                  { label: "Área do Cliente", id: "area-cliente" },
                   { label: "Contato", id: "contato" },
                 ].map(({ label, id }) => (
                   <li key={label}>
