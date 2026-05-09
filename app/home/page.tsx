@@ -321,7 +321,7 @@ function HomePageContent() {
             </div>
 
             <a
-              href="http://central.virtuax.com.br/"
+              href="https://ambientevirtual.sgp.net.br/central"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 justify-center font-semibold transition-all duration-200 text-xs lg:text-sm px-4 lg:px-5 rounded-lg h-9 bg-white text-brand hover:bg-gray-50"
@@ -405,7 +405,7 @@ function HomePageContent() {
               </div>
 
               <a
-                href="http://central.virtuax.com.br/"
+                href="https://ambientevirtual.sgp.net.br/central"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-left text-sm font-semibold text-brand hover:text-orange-600 transition-colors py-2 inline-flex items-center gap-2"
