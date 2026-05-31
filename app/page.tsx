@@ -123,6 +123,16 @@ export default function CitySelectionPage() {
             </div>
           </div>
         </div>
+
+        {/* Rodapé */}
+        <footer className="w-full px-4 py-6 text-center">
+          <p className="text-xs sm:text-sm text-white/90 font-medium leading-relaxed text-balance">
+            Virtuax Provimento Serviços de Telecomunicações LTDA
+          </p>
+          <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
+            CNPJ: 20.514.953/0001-85
+          </p>
+        </footer>
       </div>
     </div>
   )
